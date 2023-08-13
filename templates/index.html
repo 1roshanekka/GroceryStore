@@ -13,54 +13,64 @@
 <body class = "parent">
   <div class="top1">
 
-    <div class="login">
-    <h1>
-      Manager Login Panel
-    </h1>
-    </div>
-
-    <br><br>
-
-    <div class = "main">
-      <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Username</label>
-        <br>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    <div class="middle">
+      <div class="login">
+        <h1>
+          Manager Login Panel
+        </h1>
       </div>
-      <div class="row g-3 align-items-center">
-        <div class="col-auto">
-          <label for="inputPassword6" class="col-form-label">Password</label>
+      <div class = "main">
+
+
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Username</label>
+          <br><br>
+          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
         </div>
-        <div class="col-auto">
-          <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+
+        <br><br><br>
+
+        <div class="row g-3 align-items-center">
+          <div class="col-auto">
+            <label for="inputPassword6" class="col-form-label">Password</label>
+          </div>
+          <br>
+          <div class="col-auto">
+            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+          </div>
+          <br>
+          <div class="col-auto">
+            <span id="passwordHelpInline" class="form-text">
+              Must be 8-20 characters long.
+            </span>
+          </div>
         </div>
-        <div class="col-auto">
-          <span id="passwordHelpInline" class="form-text">
-            Must be 8-20 characters long.
-          </span>
-        </div>
+
+        <br><br>
+        <button class="login">
+          Login
+        </button>
       </div>
     </div>
-
     <br><br>
-
-    
-
+    <br><br>
   </div>
 
   <div class = "separator">
-    <h5>or</h5>
+    or
   </div>
 
-  <div class="oauth">
+  <div class="oauth-flex">
     <button class="google">
-
+      <!-- <img src="assets/google.png" alt="google icon" width="20px" height="20px"> -->
+      Google
+      <!-- <a href="https://www.flaticon.com/free-icons/google" title="google icons">Google icons created by Freepik - Flaticon</a> -->
     </button>
     <button class="microsoft">
-
+      Microsoft
     </button>
     <button class="apple">
-
+      Apple
     </button>
   </div>
 
@@ -74,4 +84,3 @@
 
 </body>
 </html>
-

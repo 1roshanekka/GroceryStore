@@ -1,6 +1,10 @@
 .parent {
-	background-color: blue;
+	background-color: purple;
 	background-image: url(assets/bg.png);	
+	/* background-size: auto; */
+
+
+
 	font-size: 1500;
 	align-content: center;
 
@@ -17,47 +21,124 @@
 	background-color:silver;
     opacity: 0.9;
 	font-size: 1500;
-	align-content: center;
+	/* align-content: center; */
 
 	border: 10px solid blue;
 	border-radius: 25px;
 
-	margin: 10px 50px 50px 50px;
+	margin: 10px 50px 0px 50px; 
 	/* margin: auto; */
 
-	padding: 50px 50px 50px 200px;
+	/* padding: 50px 50px 50px 200px; */
 
+}
+.middle {
+	/* align-content: center; */
+	text-align: center;
+}
+
+/* .login {
+	margin: auto;
+} */
+h1 {
+	color: blue;
+	align-content: center;
 }
 
 .login {
-	margin: auto;
+	padding: 10px;
+	border-radius: 10px;
 }
 
+/*
 .main {
 	padding: 50px 50px 50px 50px;
+	text-align: center;
 }
+*/
 
 .separator {
-	align-content: center;
-	margin: 50px 50px 50px 50px;
-	background-color: aqua;
+	/* align-content: center; */
+	font: 40px;
+	text-align: center;
+	color: white;
+	/* margin: 50px 50px 50px 50px; */
+	/* background-color: aqua; */
 }
 
 
 
 /* login oauth buttons */
 
-.oauth {
+.oauth-flex {
+	display: flex;
+	flex-direction: row;
 	background-color: violet;
+	margin: 10px 50px 0px 50px; 
+
+	border: 10px solid blue;
+	border-radius: 25px;
+
+
+	/* align-content: center; */
+	/* this has been depricated */
+
+	justify-content: space-evenly;
+
+	/* #SEEEE */
+}
+
+.google {
+	padding: 10px;
+	border-radius: 10%;
+	color: white;
+	font-size: 30px;
+	background-color: orange;
+	transition-duration: 0.2s;
+}
+.google:hover{
+	opacity: 1;
+	
+	background-color: blue;
+	
 }
 
 
+.microsoft {
+	padding: 10px;
+	border-radius: 10%;
+	color: white;
+	font-size: 30px;
+	background-color: orange;
+	transition-duration: 0.2s;
+}
+.microsoft:hover{
+	opacity: 1;
+	
+	background-color: blue;
+	
+}
+
+
+.apple {
+	padding: 10px;
+	border-radius: 10%;
+	color: white;
+	font-size: 30px;
+	background-color: orange;
+	transition-duration: 0.2s;
+}
+.apple:hover{
+	opacity: 1;
+	
+	background-color: blue;
+	
+}
 /* foot */
 
 
 .butt {
 	align-content: center;
 	background-color: yellow;
-
-	margin: 0px 40px;
+	margin: 10px 50px 0px 50px; 
 }

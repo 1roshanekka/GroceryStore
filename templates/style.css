@@ -1,17 +1,63 @@
 .parent {
-	background-color: orangered;
+	background-color: blue;
+	background-image: url(assets/bg.png);	
+	font-size: 1500;
+	align-content: center;
+
+	border: 10px solid red;
+	border-radius: 25px;
+
+	margin: 30px 40px 40px 40px;
+
+	padding: 0px 40px 40px 40px;
+}
+
+.top1 {
+	background-color: silver;
+	background-color:silver;
+    opacity: 0.9;
 	font-size: 1500;
 	align-content: center;
 
 	border: 10px solid blue;
 	border-radius: 25px;
 
-	margin: 50px 50px 50px 50px;
+	margin: 10px 50px 50px 50px;
+	/* margin: auto; */
 
-	padding: 50px 50px 50px 500px;
+	padding: 50px 50px 50px 200px;
+
 }
 
+.login {
+	margin: auto;
+}
 
 .main {
 	padding: 50px 50px 50px 50px;
+}
+
+.separator {
+	align-content: center;
+	margin: 50px 50px 50px 50px;
+	background-color: aqua;
+}
+
+
+
+/* login oauth buttons */
+
+.oauth {
+	background-color: violet;
+}
+
+
+/* foot */
+
+
+.butt {
+	align-content: center;
+	background-color: yellow;
+
+	margin: 0px 40px;
 }

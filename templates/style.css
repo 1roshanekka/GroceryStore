@@ -1,6 +1,10 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
 .parent {
-	background-color: purple;
-	background-image: url(assets/bg.png);	
+	background-color: silver;
+	/* background-image: url(assets/bg.png);	 */
 	/* background-size: auto; */
 
 
@@ -17,8 +21,8 @@
 }
 
 .top1 {
-	background-color: silver;
-	background-color:silver;
+
+	background-color: #4E4FEB;
     opacity: 0.9;
 	font-size: 1500;
 	/* align-content: center; */
@@ -41,7 +45,7 @@
 	margin: auto;
 } */
 h1 {
-	color: blue;
+	color: white;
 	align-content: center;
 }
 
@@ -56,6 +60,10 @@ h1 {
 	text-align: center;
 }
 */
+
+.profileIcon {
+	padding: 10px;
+}
 
 .separator {
 	/* align-content: center; */
@@ -139,6 +147,20 @@ h1 {
 
 .butt {
 	align-content: center;
-	background-color: yellow;
-	margin: 10px 50px 0px 50px; 
+	background-color: #FFBFBF;
+	/* margin: 10px 50px 0px 50px;  */
+	/* pasted code */
+	
+	 /* position: fixed;  */
+
+	/* fixed should be used for top bar */
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+.foot {
+	padding: 0.3%;
+	text-align: center;
+	/* margin: 0px 0px 0px 10px; */
 }

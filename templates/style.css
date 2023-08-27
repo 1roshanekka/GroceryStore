@@ -2,10 +2,37 @@
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
+	/* display: grid; */
+
+	
 }
 
+input[type=email] {
+	/* border: 1px solid red;
+	border-radius: 5px; */
+	padding: 10px 10px;
+	width: 30%;
+	font-size: 15px;
+}
+input[type=email]:focus {
+	border: 1px solid red;
+	border-radius: 5px;
+}
+
+input[type=password] {
+	/* border: 1px solid red;
+	border-radius: 5px; */
+	padding: 10px 10px;
+	width: 30%;
+	font-size: 15px;
+}
+input[type=password]:focus {
+	border: 1px solid red;
+	border-radius: 5px;
+}
 .body {
-	background-image: url(assets/abstract.jpg);
+	/* background-image: url(assets/bg.jpg); */
+
 }
 .parent {
 	background-color: silver;
@@ -89,6 +116,14 @@ h1 {
 	padding: 10px;
 }
 
+.email {
+	padding: 10px 0px;
+}
+
+input[type-text]:focus {
+	border: 1px solid red;
+	padding: 10px 0px;
+}
 .separator {
 	/* align-content: center; */
 	font: 40px;
@@ -176,7 +211,32 @@ h1 {
 
 	column-rule: 2px solid black;
 }
+
+.tools {
+	margin: 0px 100px 0px 100px;
+	padding: 40px 0px 40px 0px;
+}
+.appearance {
+	margin: 0px 0px 0px 700px;
+
+	border: 1px solid #006ee6;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+
+	justify-content: center;
+
+}
+
+.light	{
+	padding: 2px;
+}
+
+.dark {
+	padding: 2px;
+}
 /* foot */
+
 
 
 .butt {

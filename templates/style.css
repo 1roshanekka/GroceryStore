@@ -140,66 +140,85 @@ input[type-text]:focus {
 .oauth-flex {
 	display: flex;
 	flex-direction: row;
-	background-color: violet;
-	margin: 10px 50px 10px 50px; 
+	flex-wrap: wrap;
+	padding: 10px 0px;
+	/* background-color: violet; */
+	/* margin: 10px 500px 10px 500px;  */
 
-	border: solid blue;
-	border-radius: 25px;
+	/* border: solid blue; */
+	/* border-radius: 25px; */
 
 
 	/* align-content: center; */
 	/* this has been depricated */
 
-	justify-content: space-evenly;
+	/* justify-content: space-evenly; */
+	justify-content: center;
 
 	/* #SEEEE */
 }
 
 .google {
-	padding: 10px;
-	border-radius: 10%;
+	/* padding: 10px 10px 10px 10px; */
+	/* border-radius: 10%; */
+	margin-right: 20px;
 	color: white;
-	font-size: 30px;
-	background-color: orange;
+	/* padding: 7px 7px 1px 7px; */
+	border: none;
+	border-radius: 100%;
+	/* background-color: orange; */
+
+	opacity: 0.75;
+	padding: 10px;
+	border-radius: 50%;
 	transition-duration: 0.2s;
+	/* transition-duration: 0.2s; */
 }
 .google:hover{
+	/* padding: 10px 10px; */
 	opacity: 1;
-	
-	background-color: blue;
-	
+	border: none;
+
 }
 
 
 .microsoft {
-	padding: 10px;
-	border-radius: 10%;
+	/* border-radius: 10%; */
+	margin-right: 20px;
+	border: none;
 	color: white;
-	font-size: 30px;
-	background-color: orange;
+	/* background-color: orange; */
+	opacity: 0.75;
+	padding: 10px;
+	border-radius: 100%;
 	transition-duration: 0.2s;
 }
 .microsoft:hover{
+
 	opacity: 1;
-	
-	background-color: blue;
-	
+	border: none;
+
 }
 
 
 .apple {
-	padding: 10px;
-	border-radius: 10%;
+	/* border-radius: 10%; */
+	/* margin-right: 20px; */
+	border: none;
 	color: white;
-	font-size: 30px;
-	background-color: orange;
+	/* background-color: orange; */
+	opacity: 0.75;
+	/* padding: 7px 7px 5px 7px; */
+	padding: 10px;
+	border-radius: 100%;
 	transition-duration: 0.2s;
 }
 .apple:hover{
+
 	opacity: 1;
-	
-	background-color: blue;
-	
+	border: none;
+	border-radius: 50%;
+
 }
 
 .lorem {

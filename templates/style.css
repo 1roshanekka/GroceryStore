@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 	/* display: grid; */
 
+	/* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+	font-family: sans-serif;
+
 	
 }
 
@@ -15,8 +18,9 @@ input[type=email] {
 	font-size: 15px;
 }
 input[type=email]:focus {
-	border: 1px solid red;
-	border-radius: 5px;
+	/* border: 1px solid red; */
+	/* border-radius: 5px; */
+	d
 }
 
 input[type=password] {
@@ -27,8 +31,14 @@ input[type=password] {
 	font-size: 15px;
 }
 input[type=password]:focus {
-	border: 1px solid red;
-	border-radius: 5px;
+	/* border: 1px solid red; */
+	/* border-radius: 5px; */
+	font-family: Verdana;
+    letter-spacing: 0.125em;
+}
+
+input[type=search] {
+	padding: 10px 10px;
 }
 .body {
 	/* background-image: url(assets/bg.jpg); */
@@ -52,6 +62,15 @@ input[type=password]:focus {
 	padding: 0px 40px 40px 40px;
 }
 
+.nav {
+	padding: 10px;
+	align-content: center;
+	/* display: inline; */
+}
+
+.menuIcons {
+	padding: 10px;
+}
 .top1 {
 
 	background-color: #4E4FEB;
@@ -120,10 +139,6 @@ h1 {
 	padding: 10px 0px;
 }
 
-input[type-text]:focus {
-	border: 1px solid red;
-	padding: 10px 0px;
-}
 .separator {
 	/* align-content: center; */
 	font: 40px;
@@ -140,6 +155,8 @@ input[type-text]:focus {
 .oauth-flex {
 	display: flex;
 	flex-direction: row;
+	/* display: grid; */
+	column-gap: 20px;
 	flex-wrap: wrap;
 	padding: 10px 0px;
 	/* background-color: violet; */
@@ -161,7 +178,7 @@ input[type-text]:focus {
 .google {
 	/* padding: 10px 10px 10px 10px; */
 	/* border-radius: 10%; */
-	margin-right: 20px;
+	/* margin-right: 20px; */
 	color: white;
 	/* padding: 7px 7px 1px 7px; */
 	border: none;
@@ -184,7 +201,7 @@ input[type-text]:focus {
 
 .microsoft {
 	/* border-radius: 10%; */
-	margin-right: 20px;
+	/* margin-right: 20px; */
 	border: none;
 	color: white;
 	/* background-color: orange; */
@@ -233,26 +250,63 @@ input[type-text]:focus {
 
 .tools {
 	margin: 0px 100px 0px 100px;
-	padding: 40px 0px 40px 0px;
+	padding: 40px 0px 0px 0px;
+	display: flex;
+	justify-content: flex-end;
 }
 .appearance {
-	margin: 0px 0px 0px 700px;
+	/* margin: 0px 0px 0px 700px;  instead of this we can do flex with right */
 
-	border: 1px solid #006ee6;
+	border: 1.5px solid #006ee6;
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;
+	column-gap: 2px;
 
-	justify-content: center;
-
+	/* justify-content: flex-end; */
+	/* padding: 3px; imp */
+	padding: 2px;
+	align-content: center;
+	font-size: 12px;
+	color: white; 
+	/* alter this for dark */
 }
 
 .light	{
-	padding: 2px;
+	border: none;
+	background-color: #006ee6;
+	border-radius: 20px;
+	padding: 2px 7px;
+	border-width: 100%;
+}
+
+/* its a slider not a button */
+
+.lightButton {
+	border: none;
+	background-color: #006ee6;
+	border-radius: 20px;
+	/* padding: 2px 5px; */
 }
 
 .dark {
-	padding: 2px;
+	/* padding: 2px; */
+	border: none;
+	background-color: #006ee6;
+	border-radius: 20px;
+	padding: 2px 5px;
+}
+.darkButton {
+	border: none;
+	/* background-color: #006ee6; */
+	border-radius: 20px;
+	/* padding: 2px 5px; */
+}
+
+#sep {
+	margin: 0px 100px 0px 100px;
+	padding-top: 5px;
+	/* padding: 40px 0px 40px 0px; */
 }
 /* foot */
 

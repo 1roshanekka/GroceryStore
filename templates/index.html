@@ -4,13 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- <link rel=”stylesheet” href="style.css"> -->
-    <link href="style.css" rel="stylesheet">
+    <link href="lightStyle.css" rel="stylesheet" id="view">
     <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
 
     <title>Login</title>
 </head>
 
 <body class = "body">
+  <script src="app.js"></script>
 
   <div class="parent">
     <div class="nav">
@@ -104,14 +105,14 @@
   
 <div class="tools">
   <div class="appearance">
-    <div class="light">
-      <!-- <button class="lightButton">
+    <div class="light" onclick="appearanceLight()">
+      <!-- <button class="light" onclick="appearanceLight()">
         Light
       </button> -->
       Light
     </div>
-    <div class="dark">
-      <!-- <button class="darkButton">
+    <div class="dark" onclick="appearanceDark()">
+      <!-- <button class="dark" onclick="appearanceDark()">
         Dark
       </button> -->
       Dark

@@ -10,6 +10,10 @@
 	
 }
 
+#clickable {
+	cursor: pointer;
+}
+
 input[type=email] {
 	/* border: 1px solid red;
 	border-radius: 5px; */
@@ -72,8 +76,7 @@ input[type=search] {
 }
 .top1 {
 
-	background-color: #4E4FEB;
-	background-color: #35A29F;
+	background-color: #EF9A9A;
 	border-width: 5px;
 	border-style: ridge;
     opacity: 0.9;
@@ -310,6 +313,19 @@ h1 {
 	/* padding: 40px 0px 40px 0px; */
 }
 /* foot */
+.links {
+	padding: 10px;
+}
+
+a:link{
+	color: gray;
+	text-decoration: none;
+}
+
+th, td {
+	padding: 2px 200px 0px 0px;
+}
+
 
 
 

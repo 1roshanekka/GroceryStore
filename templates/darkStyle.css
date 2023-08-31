@@ -6,9 +6,6 @@
 
 	/* font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
 	font-family: sans-serif;
-	
-
-	
 }
 
 input[type=email] {
@@ -74,15 +71,12 @@ input[type=search] {
 	padding: 10px;
 }
 .top1 {
-
-	background-color: #4E4FEB;
-	background-color: #35A29F;
+	background-color: #EF9A9A;
 	border-width: 5px;
 	border-style: ridge;
     opacity: 0.9;
 	font-size: 1500;
 	/* align-content: center; */
-
 	/* border: 10px solid blue; */
 	border-radius: 5px;
 
@@ -251,6 +245,15 @@ h1 {
 	column-rule: 2px solid black;
 }
 
+.app {
+	margin: 0px 100px 0px 100px;
+	padding-top: 5px;
+	z-index: -1;
+}
+
+#store {
+
+}
 .tools {
 	margin: 0px 100px 0px 100px;
 	padding: 40px 0px 0px 0px;
@@ -311,8 +314,28 @@ h1 {
 	margin: 0px 100px 0px 100px;
 	padding-top: 5px;
 	/* padding: 40px 0px 40px 0px; */
+	display: flex;
+}
+.footLinks {
+	margin: 0px 100px 0px 100px;
+	padding: 40px 0px 0px 0px;
+
+	display: flex;
 }
 /* foot */
+.links {
+	padding: 10px;
+}
+
+a:link{
+	color: gray;
+	text-decoration: none;
+}
+
+th, td {
+	padding: 2px 200px 0px 0px;
+}
+
 
 
 

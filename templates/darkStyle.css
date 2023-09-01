@@ -311,10 +311,13 @@ h1 {
 }
 
 #sep {
-	margin: 0px 100px 0px 100px;
+	margin: 0px 100px 50px 100px;
 	padding-top: 5px;
 	/* padding: 40px 0px 40px 0px; */
 	display: flex;
+}
+.footSeparator{
+	margin-bottom: 20px;
 }
 .footLinks {
 	margin: 0px 100px 0px 100px;
@@ -323,6 +326,9 @@ h1 {
 	display: flex;
 }
 /* foot */
+.quicklinks {
+	margin-bottom: 100px;
+}
 .links {
 	padding: 10px;
 }

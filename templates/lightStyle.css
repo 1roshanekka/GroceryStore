@@ -15,9 +15,9 @@
 }
 
 input[type=email] {
-	/* border: 1px solid red;
-	border-radius: 5px; */
-	padding: 10px 10px;
+	border: none;
+	border-radius: 5px; 
+	padding: 7px 7px;
 	width: 30%;
 	font-size: 15px;
 }
@@ -27,9 +27,9 @@ input[type=email] {
 } */
 
 input[type=password] {
-	/* border: 1px solid red;
-	border-radius: 5px; */
-	padding: 10px 10px;
+	border: none;
+	border-radius: 5px; 
+	padding: 7px 7px;
 	width: 30%;
 	font-size: 15px;
 }

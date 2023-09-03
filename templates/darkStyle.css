@@ -73,7 +73,9 @@ input[type=search] {
 	padding: 10px;
 }
 .top1 {
-	background-color: #EF9A9A;
+	background-color: #1A120B;
+
+	color: white;
 	border-width: 5px;
 	border-style: ridge;
     opacity: 0.9;

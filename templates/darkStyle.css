@@ -8,6 +8,10 @@
 	font-family: sans-serif;
 }
 
+#clickable {
+	cursor: pointer;
+}
+
 input[type=email] {
 	/* border: 1px solid red;
 	border-radius: 5px; */
@@ -62,10 +66,14 @@ input[type=search] {
 	padding-top: 50px;
 }
 
+.imageLogo {
+	margin-left: 10px;
+}
+
 .nav {
-	padding: 10px;
+	padding: 20px;
 	align-content: center;
-	background-color: #322216;
+	background-color: #040D12;
 	/* display: inline; */
 }
 

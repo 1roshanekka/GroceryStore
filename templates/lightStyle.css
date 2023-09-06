@@ -16,7 +16,7 @@ input[type=email] {
 	border: none;
 	border-radius: 5px; 
 	padding: 7px 7px;
-	width: 30%;
+	width: 40%;
 	font-size: 15px;
 }
 input[type=email]:focus {
@@ -28,7 +28,7 @@ input[type=password] {
 	border: none;
 	border-radius: 5px; 
 	padding: 7px 7px;
-	width: 30%;
+	width: 40%;
 	font-size: 15px;
 }
 input[type=password]:focus {
@@ -106,12 +106,7 @@ input[type=search] {
 	text-align: center;
 }
 
-.l1 {
-	margin: 10px
-}
-.username-label {
-	align-content: baseline;
-}
+
 .login {
 	/* margin: auto; */
 	font-size: 15px;
@@ -154,6 +149,7 @@ h1 {
 }
 .stick {
 	display: block;
+	padding-bottom: 10px;
 }
 
 .email {

@@ -4,18 +4,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- <link rel=”stylesheet” href="style.css"> -->
-    <link href="lightStyle.css" rel="stylesheet" id="view">
-    <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
+
+    <!-- <link href="lightStyle.css" rel="stylesheet" id="view"> -->
+    <link href="{{ url_for ('static', filename='lightStyle.css') }}" rel="stylesheet" id="view">
+
+    <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
+    <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
 
     <title> {% block title %} {% endblock %} </title>
 </head>
 
 <body class = "body">
-  <script src="app.js"></script>
+  <!-- <script src="app.js"></script> -->
+  <script src="{{ url_for ('static', filename='app.js') }}"></script>
 
   <div class="nav">
     <span class="imageLogo">
-      <img src="assets/google.png" alt="logo" width="35px">
+      <!-- <img src="assets/google.png" alt="logo" width="35px"> -->
+      <img src="{{ url_for ('static', filename='assets/google.png') }}" alt="logo" width="35px">
     </span>
 
     <!-- <input type="search" class="searchBar"> -->
@@ -29,47 +35,11 @@
     <div class="top1">
       <div class="middle">
 
-        <div class="login1">
-          <h1>
-            Manager Login Panel
-          </h1>
-        </div>
-        <br>
-        <div class = "main">
-  
-          <div class="profileIcon">
-            <img src="assets/profileIcon.png" alt="profile icon" width="40px" height="40px" id="profileIcon">
-          </div>
-          <br>
-          <div class="l1">
-            <span class = "stick">
-              <label for="exampleFormControlInput1" class="username-label">Username</label>
-            </span>
-            <!-- <br> -->
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-          </div>
+        {% block body %}
 
-          <br><br>
-  
-          <div class="l2">
-            <span class="stick">
-              <label for="inputPassword6" class="col-form-label">Password</label>
-            </span>
-            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            <br><br><br>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
-          </div>
-  
-          <br><br>
-          <button class="login">
-            Login
-          </button>
-        </div>
+        {% endblock %}
       </div>
+
       <br><br>
       <br><br>
     </div>
@@ -80,16 +50,19 @@
   
     <div class="oauth-flex">
       <button class="google">
-        <img src="assets/google.png" alt="google icon" width="25px" height="25px">
+        <!-- <img src="assets/google.png" alt="google icon" width="25px" height="25px"> -->
+        <img src= "{{ url_for ('static', filename='assets/google.png') }}" alt="google icon" width="25px" height="25px">
         <!-- Sign up with Google -->
         <!-- <a href="https://www.flaticon.com/free-icons/google" title="google icons">Google icons created by Freepik - Flaticon</a> -->
       </button>
       <button class="microsoft">
-        <img src="assets/microsoft.png" alt="microsoft icon" width="25px" height="25px">
+        <!-- <img src="assets/microsoft.png" alt="microsoft icon" width="25px" height="25px"> -->
+        <img src= "{{ url_for ('static', filename='assets/microsoft.png') }}" alt="microsoft icon" width="25px" height="25px">
         <!-- Microsoft -->
       </button>
       <button class="apple">
-        <img src="assets/apple.png" alt="apple icon" width="25px" height="25px">
+        <!-- <img src="assets/apple.png" alt="apple icon" width="25px" height="25px"> -->
+        <img src="{{ url_for ('static', filename='assets/apple.png') }}" alt="apple icon" width="25px" height="25px">
         <!-- Apple -->
       </button>
     </div>
@@ -108,7 +81,8 @@
 
 
   <div class="store" id="sep">
-    <img src="assets/DownloadOnAppStoreDark.svg" alt="appstore" id="store">
+    <!-- <img src="assets/DownloadOnAppStoreDark.svg" alt="appstore" id="store"> -->
+    <img src="{{ url_for ('static', filename='assets/DownloadOnAppStoreDark.svg') }}" alt="appstore" id="store">
   </div>
   
   <div class="tools">
@@ -169,7 +143,5 @@
         Copyright &copy TheBrokenStudios Private Limited. 2023 &nbsp &nbsp All Rights Reserved.
     </div>
     </footer>
-    {% block body %}
-    {% endblock %}
 </body>
 </html>

@@ -339,6 +339,7 @@ h1 {
 }
 .quicklinks {
 	margin-bottom: 100px;
+	text-decoration: none;
 }
 /* foot */
 .links {

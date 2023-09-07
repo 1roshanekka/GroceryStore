@@ -6,8 +6,8 @@
     <!-- <link rel=”stylesheet” href="style.css"> -->
     <link href="lightStyle.css" rel="stylesheet" id="view">
     <link href="assets/favicon.ico" rel="icon" type="image/x-icon">
-    {% extends title}
-    <title>Login</title>
+
+    <title> {% block title %} {% endblock %} </title>
 </head>
 
 <body class = "body">
@@ -164,11 +164,12 @@
   </div>
   <br><br>
 
-<footer class = "butt">
-  <div class="foot">
-    Copyright &copy TheBrokenStudios Private Limited. 2023 &nbsp &nbsp All Rights Reserved.
-  </div>
-</footer>
-
+    <footer class = "butt">
+    <div class="foot">
+        Copyright &copy TheBrokenStudios Private Limited. 2023 &nbsp &nbsp All Rights Reserved.
+    </div>
+    </footer>
+    {% block body %}
+    {% endblock %}
 </body>
 </html>

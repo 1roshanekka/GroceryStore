@@ -267,6 +267,13 @@ h1 {
 	column-rule: 2px solid black;
 }
 
+.submit {
+	display: flex;
+	justify-content: center;
+	column-gap: 20px;
+}
+
+
 .tools {
 	margin: 0px 100px 0px 100px;
 	padding: 0px 0px 0px 0px;

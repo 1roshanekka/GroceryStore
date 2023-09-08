@@ -1,6 +1,7 @@
 function appearanceDark() {
     document.getElementById("view").href="/static/darkStyle.css"
     // document.getElementById("view").href="{{ url_for ('static', filename='darkStyle.css') }}"
+    
     // this templating is only done in jinja within HTML File
 
     document.getElementById("store").src="/static/assets/DownloadOnAppStoreLight.svg"

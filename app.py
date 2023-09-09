@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+from flask import request
 from flask_sqlalchemy import SQLAlchemy
 
 from datetime import datetime
@@ -88,23 +89,23 @@ def manager():
 
 
 # @app.route("/UserLogin", methods=['GET', 'POST'])
-@app.route("/UserLogin")
+@app.route('/UserLogin', methods = ['GET', 'POST'])
 
 def user():
-    # try:
-    #     new_user = registry(username="1roshanekka@gmail.com", password="qwerty12345")
-    #     db.session.add(new_user)
-    #     db.session.commit()
-    #     print ("User added successfully!")
-    #     print("--Rendering User Login Page")
-    #     return render_template("userLogin.html")
+    if(request.method =="POST"):
+        # print(request.form['email'])
+        submittedUsername = request.form['email'] #coming in hot from html POST request
+        submittedPassword = request.form['passkey']
+        print("******-------posted--------******")
 
-    # except Exception as e:
-    #     return str(e)
+        # new_user = registry(username="aaass@gmail.com", password="qwertsssy12345", dateCreated=current_dat  etime)
+        new_user = registry(username=submittedUsername, password=submittedPassword, dateCreated=current_datetime)
+        db.session.add(new_user)
+        db.session.commit() 
+        print("now reloading userLogin.html")
 
-    user = registry(username="aaa@gmail.com", password="qwertsssy12345", dateCreated=current_datetime)
-    db.session.add(user)
-    db.session.commit()
+        
+    
     print ("User added successfully!")
     print("--Rendering User Login Page")
     return render_template("userLogin.html")
@@ -133,7 +134,7 @@ def showUsers():
 
 
     allUsers = registry.query.all()
-    print(allUsers)
+    print(allUsers)   
     # to the console
 
     return render_template("users.html", fullDB=allUsers)

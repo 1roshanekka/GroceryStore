@@ -21,38 +21,43 @@ User-Login
             <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
         </div>
         <br>
-        <div class="l1">
-            <span class = "stick">
-            <label for="exampleFormControlInput1" class="username-label">Username</label>
-            </span>
-            <!-- <br> -->
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-        </div>
 
-        <br><br>
+        <form action="/UserLogin" method="POST">
 
-        <div class="l2">
-            <span class="stick">
-            <label for="inputPassword6" class="col-form-label">Password</label>
-            </span>
-            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            <br><br>
-            <div class="col-auto">
-            <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-            </span>
+            <div class="l1">
+                <span class = "stick">
+                <label for="exampleFormControlInput1" class="username-label">Username</label>
+                </span>
+                <!-- <br> -->
+                <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
             </div>
-        </div>
+    
+            <br><br>
+    
+            <div class="l2">
+                <span class="stick">
+                <label for="inputPassword6" class="col-form-label">Password</label>
+                </span>
+                <input type="password" name="passkey" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                <br><br>
+                <div class="col-auto">
+                <span id="passwordHelpInline" class="form-text">
+                    Must be 8-20 characters long.
+                </span>
+                </div>
+            </div>
+    
+            <br><br>
+            <div class="submit">
+                <!-- <button class="login">
+                    Login
+                </button> -->
+                <button class="login">
+                    Register
+                </button>
+            </div>
 
-        <br><br>
-        <div class="submit">
-            <button class="login">
-                Login
-            </button>
-            <button class="login">
-                Register
-            </button>
-        </div>
+        </form>
         
     </div>
     

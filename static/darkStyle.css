@@ -323,6 +323,11 @@ h1 {
 	color: white;
 }
 
+table.table-1 tr,td,th {
+	border: 1px solid white;
+	padding: 2px 5px 0px 0px;
+}
+
 /* its a slider not a button */
 
 .lightButton {
@@ -376,9 +381,13 @@ a:link{
 	text-decoration: none;
 }
 
-th, td {
+table.links th, td {
+	border: none;
 	padding: 2px 200px 0px 0px;
 }
+/* th, td {
+	padding: 2px 200px 0px 0px;
+} */
 
 
 

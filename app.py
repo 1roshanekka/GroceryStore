@@ -3,26 +3,48 @@ from flask import render_template
 from flask_sqlalchemy import SQLAlchemy
 
 from datetime import datetime
-
+current_datetime = datetime.now()
 # without this "render_template" we cant use ->
 # return render_template("which file to load")
 
 # only possible is return "Hello, World :P"
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite :///member.db"
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# -------------------------------
+# create the extension
+db = SQLAlchemy()
 
-db = SQLAlchemy(app)
+# create the app
+app = Flask(__name__)
+
+# configure the SQLite database, relative to the app instance folder
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///member.db"
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+# initialize the app with the extension
+db.init_app(app)
+
+# direct init
+# db = SQLAlchemy(app)
+#this above 'db' we call
+
+# Make sure to include the app context when working with the database
+with app.app_context():
+    # Create the database tables
+    db.create_all()
 
 # -------------------------------
+
+def create_app():
+    with app.app_context():
+        db.create_all()
+    return app
+
 
 # we are defining our schema
 
 
 class member(db.Model):
     username = db.Column(db.String(30), primary_key = True)
-    password = db.Column(db.String(30), nullable=True) 
+    password = db.Column(db.String(30), unique=False, nullable=False) 
 
     dateCreated = db.Column(db.DateTime, default=datetime.utcnow)
 
@@ -31,6 +53,7 @@ class member(db.Model):
 
 
 # -------------------------------
+
 
 @app.route("/") # this targets the templates folder 
 # "/" means it is by default looking for index.html unless specified, like here its managerLogin.html
@@ -41,11 +64,41 @@ def manager():
 
 # -------------------------------
 
+# @app.route("/UserLogin")
+
+# def user():
+#     print("--Rendering User Login Page")
+#     return render_template("userLogin.html")
+
+# ``` only routing was done uptill now, to post data and to get data we need to configure in the flask app
+
+# -------------------------------
+
+
+# @app.route("/UserLogin", methods=['GET', 'POST'])
 @app.route("/UserLogin")
 
 def user():
+    users = member(username="1roshanekka@gmail.com", password="qwerty12345" ,dateCreated=current_datetime)
+    
+    db.session.add(users)    
+    db.session.commit()
+
     print("--Rendering User Login Page")
     return render_template("userLogin.html")
+
+
+# -------------------------------
+@app.route("/users") 
+
+def showUsers():
+    print("--Rendering Manager Login Page")
+
+    allUsers = member.query.all()
+    print(allUsers)
+    # to the console
+
+    return render_template("users.html", fullDB=allUsers)
 
 # -------------------------------
 

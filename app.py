@@ -17,45 +17,57 @@ db = SQLAlchemy()
 app = Flask(__name__)
 
 # configure the SQLite database, relative to the app instance folder
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///member.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///members.db"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
+#import database after you instantiate your db.
+
+# db = SQLAlchemy()  # create the extension
 # initialize the app with the extension
 db.init_app(app)
+
+# we will do this manually by db.create_all() ----- its depricated IG 
+
+# no-use
+
+# def create_app():
+#     app = Flask(__name__)
+#     db.init_app(app)
+#     return app
+
+
+# def create_app():
+#     app = Flask(__name__)
+
+#     with app.app_context():
+#         db.create_all()
+#         # init_db()
+#         # app.app_context().push()
+
+#     return app
 
 # direct init
 # db = SQLAlchemy(app)
 #this above 'db' we call
 
-# Make sure to include the app context when working with the database
-with app.app_context():
-    # Create the database tables
-    db.create_all()
-
 # -------------------------------
 
-def create_app():
-    with app.app_context():
-        db.create_all()
-    return app
-
-
 # we are defining our schema
+class registry(db.Model):
+    slno = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String, nullable=False)
+    password = db.Column(db.String, nullable=False) 
 
-
-class member(db.Model):
-    username = db.Column(db.String(30), primary_key = True)
-    password = db.Column(db.String(30), unique=False, nullable=False) 
+    #as we are declaring directly, we should remove unique as it will coflict in the database
 
     dateCreated = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self) -> str:
-        return f"{self.username} - {self.password}"
-
+        return f"{self.slno} - {self.username}"
 
 # -------------------------------
 
-
-@app.route("/") # this targets the templates folder 
+@app.route("/manager") # this targets the templates folder 
 # "/" means it is by default looking for index.html unless specified, like here its managerLogin.html
 
 def manager():
@@ -79,13 +91,38 @@ def manager():
 @app.route("/UserLogin")
 
 def user():
-    users = member(username="1roshanekka@gmail.com", password="qwerty12345" ,dateCreated=current_datetime)
-    
-    db.session.add(users)    
-    db.session.commit()
+    # try:
+    #     new_user = registry(username="1roshanekka@gmail.com", password="qwerty12345")
+    #     db.session.add(new_user)
+    #     db.session.commit()
+    #     print ("User added successfully!")
+    #     print("--Rendering User Login Page")
+    #     return render_template("userLogin.html")
 
+    # except Exception as e:
+    #     return str(e)
+
+    user = registry(username="aaa@gmail.com", password="qwertsssy12345", dateCreated=current_datetime)
+    db.session.add(user)
+    db.session.commit()
+    print ("User added successfully!")
     print("--Rendering User Login Page")
     return render_template("userLogin.html")
+
+
+
+
+# -------------------------------
+
+# !! Maintain level of integrity as the code blocks execute serially
+
+# Make sure to include the app context when working with the database
+with app.app_context():
+    # Create the database tables
+    db.create_all()
+
+    # idk why not to use this below code 
+    # app.app_context().push() 
 
 
 # -------------------------------
@@ -94,7 +131,8 @@ def user():
 def showUsers():
     print("--Rendering Manager Login Page")
 
-    allUsers = member.query.all()
+
+    allUsers = registry.query.all()
     print(allUsers)
     # to the console
 

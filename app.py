@@ -137,7 +137,7 @@ def showUsers():
     print(allUsers)   
     # to the console
 
-    return render_template("users.html", fullDB=allUsers)
+    return render_template("users.html", fullDB=allUsers) # when /users page is requested render the user page and also pass the database as fullDB
 
 # -------------------------------
 

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel=”stylesheet” href="style.css"> -->
+
+    <!-- <link href="lightStyle.css" rel="stylesheet" id="view"> -->
+    <link href="{{ url_for ('static', filename='lightStyle.css') }}" rel="stylesheet" id="view">
+
+    <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
+    <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
+
+    <title> {% block title %} {% endblock %} </title>
+</head>
+
+<body class = "body" id="body">
+
+  <!-- <script src="app.js"></script> -->
+  <script src="{{ url_for ('static', filename='app.js') }}"></script>
+
+  <div class="nav">
+    <span class="imageLogo">
+      <!-- <img src="assets/google.png" alt="logo" width="35px"> -->
+      <img src="{{ url_for ('static', filename='assets/google.png') }}" alt="logo" width="35px">
+    </span>
+
+    <!-- <input type="search" class="searchBar"> -->
+    <!-- <span class="menuIcons">
+      <img src="assets/cart.png" alt="cart image" width="35px" height="35px" id="cart"> 
+    </span> -->
+  </div>
+
+  <div class="parent" id="parent">
+    
+    <div class="top1delll">
+      <div class="middle">
+
+        {% block body %}
+
+        {% endblock %}
+      </div>
+
+      <br><br>
+      <br><br>
+    </div>
+  
+    <div class = "separator">
+      or
+    </div>
+  
+    <div class="oauth-flex">
+      <button class="google">
+        <!-- <img src="assets/google.png" alt="google icon" width="25px" height="25px"> -->
+        <img src= "{{ url_for ('static', filename='assets/google.png') }}" alt="google icon" width="25px" height="25px">
+        <!-- Sign up with Google -->
+        <!-- <a href="https://www.flaticon.com/free-icons/google" title="google icons">Google icons created by Freepik - Flaticon</a> -->
+      </button>
+      <button class="microsoft">
+        <!-- <img src="assets/microsoft.png" alt="microsoft icon" width="25px" height="25px"> -->
+        <img src= "{{ url_for ('static', filename='assets/microsoft.png') }}" alt="microsoft icon" width="25px" height="25px">
+        <!-- Microsoft -->
+      </button>
+      <button class="apple">
+        <!-- <img src="assets/apple.png" alt="apple icon" width="25px" height="25px"> -->
+        <img src="{{ url_for ('static', filename='assets/apple.png') }}" alt="apple icon" width="25px" height="25px">
+        <!-- Apple -->
+      </button>
+    </div>
+  
+    <!-- <div class="lorem">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem non, iure asperiores saepe dignissimos ex repudiandae doloribus, incidunt provident facilis perspiciatis. Commodi, natus expedita! Maxime modi vel repudiandae id. Laudantium!
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque explicabo consequuntur quisquam quae quaerat ea assumenda eligendi velit ipsum ipsa est fugit voluptatem provident inventore esse dolorum, eos sint quidem!
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi id nisi corporis inventore tempore nostrum recusandae perferendis molestias in sunt quam, deleniti architecto quas minus dolorum ex? Deleniti, nostrum recusandae.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus culpa expedita accusantium, magni architecto itaque praesentium minima! Quo consequuntur rem adipisci iure vero. Soluta beatae voluptas facilis iste, esse nobis?
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque maxime amet pariatur ab itaque, voluptatibus quas est, recusandae quam eos rerum, quod hic error ipsam tempora consectetur ea. Voluptas, maxime?
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, officia accusamus sequi recusandae porro deleniti nam veniam quae mollitia inventore eveniet a ipsa minus tempora voluptate eum impedit? Asperiores, voluptas.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet non quam, doloremque similique consectetur aliquid alias reprehenderit impedit quibusdam, sit accusantium modi? Veniam animi sapiente dicta maxime consequuntur dolorem suscipit.
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut quae quam magni atque exercitationem necessitatibus natus quaerat aperiam ratione labore perspiciatis autem, ducimus ipsam animi temporibus unde nulla cupiditate nostrum.
+    </div> -->
+  </div>
+
+
+  <div class="store" id="sep">
+    <!-- <img src="assets/DownloadOnAppStoreDark.svg" alt="appstore" id="store"> -->
+    <img src="{{ url_for ('static', filename='assets/DownloadOnAppStoreDark.svg') }}" alt="appstore" id="store">
+  </div>
+  
+  <div class="tools">
+    <!-- <img src="assets/getItOnPlayStore.png" alt="playstore" width="250px" height="120px"> -->
+    <div class="appearance">
+      <div class="light" onclick="appearanceLight()" id="clickable">
+        <!-- <button class="light" onclick="appearanceLight()">
+          Light
+        </button> -->
+        Light
+      </div>
+      <div class="dark" onclick="appearanceDark()" id="clickable">
+        <!-- <button class="dark" onclick="appearanceDark()">
+          Dark
+        </button> -->
+        Dark
+      </div>
+    </div>
+  </div>
+  <div class="footSeparator" id="sep">
+
+    <hr>
+    
+    <br>
+    <div class="quickLinks">
+      <table class="links">
+        <tr>
+          <th>
+          <!-- Quick Links -->
+          </th>
+        </tr>
+        
+        <tr>
+          <td><a href="/UserLogin">Home</a></td>
+          <td><a href="helpCenter.html">Help Center</a></td>
+          <td><a href="Terms.html">Terms & Condition</a></td>
+          <td><a href="/manager">Manager Login</a></td>
+        </tr>
+
+        <tr>
+          <td><a href="account.html">Account</a></td>
+          <td><a href="return.html">Return Policy</a></td>
+          <td><a href="privacy.html">Privacy Policy</a></td>
+          <td><a href="/UserLogin">User Login</a></td>
+
+        </tr>
+
+        <tr>
+          <td></td>
+          <td><a href="warranty.html">Warranty</a></td>
+          <td><a href="agreement.html">Agreements & Guidelines</a></td>
+          <td><a href="/users">User DataBase</a></td>
+        </tr>
+
+      </table>
+    </div>  
+  </div>
+  <br><br>
+
+    <footer class = "butt">
+    <div class="foot">
+        Copyright &copy TheBrokenStudios Private Limited. 2023 &nbsp &nbsp All Rights Reserved.
+    </div>
+    </footer>
+</body>
+</html>

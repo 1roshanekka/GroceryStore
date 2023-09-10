@@ -50,6 +50,14 @@ input[type=search] {
 	background-color: #210012;
 
 }
+#body {
+	background-image: url(/static/assets/flower.png);
+	background-size: 120% auto;
+	background-repeat: no-repeat;
+	background-color: #210012;
+	
+}
+
 .parent {
 	/* background-color: silver; */
 	/* background-image: url(assets/bg.png);	 */
@@ -67,6 +75,10 @@ input[type=search] {
 
 	padding: 0px 150px 40px 150px;
 	padding-top: 50px;
+}
+#parent {
+	padding: 0px 50px 40px 50px;
+
 }
 
 
@@ -307,9 +319,13 @@ h1 {
 	border-width: 100%;
 	color: white;
 }
+.data {
+	align-content: center;
+}
 table.table-1 tr,td,th {
 	border: 1px solid white;
 	padding: 2px 5px 0px 0px;
+	align-content: center;
 }
 /* its a slider not a button */
 
@@ -399,4 +415,14 @@ th, td {
 	padding: 0.3%;
 	text-align: center;
 	/* margin: 0px 0px 0px 10px; */
+}
+
+
+/* --------------------------------------------------------------- */
+
+#actions {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	column-gap: 10px;
 }

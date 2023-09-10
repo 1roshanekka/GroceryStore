@@ -1,4 +1,4 @@
-{% extends 'baseManagerUser.html' %}
+{% extends 'database.html' %}
 
 {% block title %}
 All Users Database
@@ -27,6 +27,9 @@ All Users Database
         <table class="table-1">
             <tr>
                 <th>
+                    Actions
+                </th>
+                <th>
                     Email Address
                 </th>
                 <th>
@@ -40,6 +43,14 @@ All Users Database
                 {% for lists in fullDB %}
                     <!-- row created everytime the loop executes-->
                     <tr>
+                        <td  id="actions">
+                            <button class="update">
+                                Update
+                            </button>
+                            <button class="delete">
+                                Delete
+                            </button>
+                        </td>
                         <td>
                             {{lists.username}}
                         </td>

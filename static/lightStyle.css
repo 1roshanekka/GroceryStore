@@ -46,6 +46,8 @@ input[type=search] {
 .body {
 	background-image: url(/static/assets/1.jpg);
 	background-size: 120% auto;
+	background-repeat: no-repeat;
+	background-color: #210012;
 
 }
 .parent {
@@ -356,7 +358,13 @@ table.table-1 tr,td,th {
 	padding: 10px;
 }
 
-a:link{
+/* link which user has not visited */
+a:link{ 
+	color: gray;
+	text-decoration: none;
+}
+/* link which user has visited */
+a:visited{
 	color: gray;
 	text-decoration: none;
 }

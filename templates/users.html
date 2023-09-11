@@ -30,6 +30,9 @@ All Users Database
                     Actions
                 </th>
                 <th>
+                    Serial Number
+                </th>
+                <th>
                     Email Address
                 </th>
                 <th>
@@ -43,13 +46,18 @@ All Users Database
                 {% for lists in fullDB %}
                     <!-- row created everytime the loop executes-->
                     <tr>
-                        <td  id="actions">
-                            <button class="update">
+                        <td  id="actions" class="submit">
+                            <a href="/update/{{lists.slno}}" type="button" class="update">Update</button>
+                            <!-- <button class="update">
                                 Update
-                            </button>
-                            <button class="delete">
+                            </button> -->
+                            <a href="/delete/{{lists.slno}}" type="button" class="delete">Delete</button>
+                            <!-- <button class="delete">
                                 Delete
-                            </button>
+                            </button> -->
+                        </td>
+                        <td>
+                            {{loop.index}}
                         </td>
                         <td>
                             {{lists.username}}

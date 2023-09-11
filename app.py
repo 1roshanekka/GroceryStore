@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template
 from flask import request
+from flask import redirect
 from flask_sqlalchemy import SQLAlchemy
 
 from datetime import datetime
@@ -138,6 +139,57 @@ def showUsers():
     # to the console
 
     return render_template("users.html", fullDB=allUsers) # when /users page is requested render the user page and also pass the database as fullDB
+
+# -------------------------------
+# Creating a CRUD Operation
+
+# the above was read and create was from the login page
+
+# This is update function
+
+@app.route("/update") 
+
+def update():
+    print("--updating--")
+
+
+    allUsers = registry.query.all()
+    print(allUsers)   
+    # to the console
+
+    return render_template("users.html", fullDB=allUsers) # when /users page is requested render the user page and also pass the database as fullDB
+
+# -------------------------------
+
+@app.route("/delete/<int:slno>") 
+
+def delete(slno): 
+    print("--deleting--")
+
+    # slno from the database must match with the serial_no that we pass to delete
+    particularUser = registry.query.filter_by(slno=slno).first()
+    db.session.delete(particularUser) 
+    db.session.commit() # do not forget to commit
+
+    updatedDB = registry.query.all()
+
+    print(particularUser)   
+
+    # this Flask's redirect function does not accept additional arguments like this. Instead, you should pass data using query parameters.
+    # return redirect("/users", fullDB = updatedDB) 
+
+    # this is working
+    # return redirect(f"/users?fullDB={updatedDB}")
+
+    return render_template("users.html", fullDB = updatedDB)  # fullDB is the variable taken by jinja template
+    
+    # to the console
+    return render_template("users.html", fullDB = updatedDB)  # fullDB is the variable taken by jinja template
+    return render_template("users.html", fullDB=allUsers) # when /users page is requested render the user page and also pass the database as fullDB
+
+
+
+
 
 # -------------------------------
 

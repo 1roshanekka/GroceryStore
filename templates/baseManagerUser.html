@@ -12,10 +12,12 @@
     <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
 
     <title> {% block title %} {% endblock %} </title>
+    <!-- <style>{% block style %} {% endblock %}</style> -->
 </head>
 
 <body class = "body">
   <!-- <script src="app.js"></script> -->
+  
   <script src="{{ url_for ('static', filename='app.js') }}"></script>
 
   <div class="nav">

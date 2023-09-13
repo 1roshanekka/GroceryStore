@@ -97,9 +97,9 @@ class registry(db.Model):
 
 def manager():
 
-        # if request=='POST' :
+        # if request=='POST' : will not work
         if (request.method=='POST') :
-            # session.pop('user', None) # drops the current session before you submit a request through POST
+            session.pop('user', None) # drops the current session before you submit a request through POST
 
             # fetch from the form present in manager login page
             owner = request.form['email']
@@ -137,6 +137,7 @@ def manager():
 
 
 
+
 # @app.route("/UserLogin")
 
 # def user():
@@ -165,6 +166,15 @@ def registerUser():
         print ("User added successfully!")
         print("now reloading userLogin.html")
 
+    elif(request.method == "GET"):
+        session['user_info'] = {'email': request.form['email'], 'password': request.form['passkey']}
+
+        thisSessionEmail = session['user_info']['email']
+        thisSessionPassword = session['user_info']['password']
+
+
+
+
     print("--Rendering User Login Page")
     return render_template("userLogin.html")
 
@@ -178,6 +188,7 @@ def registerUser():
 
 def login():
     if(request.method =="POST"):
+        session.pop('user', None)
         username_in = request.form("username")
 
         session['user'] = username_in  # making dictionary key

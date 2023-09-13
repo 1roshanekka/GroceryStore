@@ -97,23 +97,35 @@ class registry(db.Model):
 
 def manager():
 
-    if request=='POST' :
-        session.pop('user', None) # drops the current session before you submit a request through POST
+        # if request=='POST' :
+        if (request.method=='POST') :
+            # session.pop('user', None) # drops the current session before you submit a request through POST
 
-        # fetch from the form present in manager login page
-        owner = request.form("email")
-        owner_passkey = request.form("password")
+            # fetch from the form present in manager login page
+            owner = request.form['email']
+            owner_passkey = request.form['passkey']
+            print(owner, owner_passkey)
 
-        if owner == '1roshanekka@gmail.com' and owner_passkey == 'Norah69':
-            # session.['user'] = request.form['username']
-            print("--Rendering Manager Login Page")
-            return redirect( url_for('usersDataBase') )
-        
+            if (owner == 'a@gmail.com' and owner_passkey == 'a'):
+                # session.['user'] = request.form['username']
+                print("--Rendering Manager Login Page")
+                # return redirect( url_for('showUsers') ) 
+                # or 
+                return redirect('/usersDataBase')
+
+                # return render_template('users.html') this will return empty DB as we dont pass DB with the render template
+        # elif request=='GET':
+        #     return render_template("/manager.html")
+
+        print('failed')
+        return render_template("/managerLogin.html")
+
     # return render_template("/")
     # or
-    return redirect(url_for("login"))
+    # return redirect(url_for("login"))
 
-    we cant access this as to access the maanger login page we need to pass POST request other wise accessing through link or route will lead to login page
+    
+    # we cant access this as to access the maanger login page we need to pass POST request other wise accessing through link or route will lead to login page
 
 
     # return render_template("/") for html link not route link

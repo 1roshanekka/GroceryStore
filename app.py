@@ -4,6 +4,26 @@ from flask import request
 from flask import redirect
 from flask_sqlalchemy import SQLAlchemy
 
+from flask import session
+from flask import g
+from flask import url_for
+# from flask import flask_login
+
+import os
+
+# create the app
+app = Flask(__name__)
+
+#app secret key
+# (hard coded)
+# session is enrypted in server
+
+app.secretkey = "admin90"
+
+
+
+
+
 from datetime import datetime
 current_datetime = datetime.now()
 # without this "render_template" we cant use ->
@@ -14,9 +34,6 @@ current_datetime = datetime.now()
 # -------------------------------
 # create the extension
 db = SQLAlchemy()
-
-# create the app
-app = Flask(__name__)
 
 # configure the SQLite database, relative to the app instance folder
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///members.db"
@@ -69,14 +86,44 @@ class registry(db.Model):
 
 # -------------------------------
 
-@app.route("/manager") # this targets the templates folder 
+
+# login_admin = LoginManager()
+
+
+# -------------------------------
+
+@app.route("/manager", methods=['GET', 'POST']) # this targets the templates folder 
 # "/" means it is by default looking for index.html unless specified, like here its managerLogin.html
 
 def manager():
-    print("--Rendering Manager Login Page")
-    return render_template("managerLogin.html")
+
+    if request=='POST' :
+        session.pop('user', None) # drops the current session before you submit a request through POST
+
+        # fetch from the form present in manager login page
+        owner = request.form("email")
+        owner_passkey = request.form("password")
+
+        if owner == '1roshanekka@gmail.com' and owner_passkey == 'Norah69':
+            # session.['user'] = request.form['username']
+            print("--Rendering Manager Login Page")
+            return redirect( url_for('usersDataBase') )
+        
+    # return render_template("/")
+    # or
+    return redirect(url_for("login"))
+
+    we cant access this as to access the maanger login page we need to pass POST request other wise accessing through link or route will lead to login page
+
+
+    # return render_template("/") for html link not route link
+    # url_for is helper to find the route when the function name is passed 
+    # but it has to be used with redirect
+
 
 # -------------------------------
+
+
 
 # @app.route("/UserLogin")
 
@@ -92,7 +139,7 @@ def manager():
 # @app.route("/UserLogin", methods=['GET', 'POST'])
 @app.route('/UserLogin', methods = ['GET', 'POST'])
 
-def user():
+def registerUser():
     if(request.method =="POST"):
         # print(request.form['email'])
         submittedUsername = request.form['email'] #coming in hot from html POST request
@@ -103,11 +150,9 @@ def user():
         new_user = registry(username=submittedUsername, password=submittedPassword, dateCreated=current_datetime)
         db.session.add(new_user)
         db.session.commit() 
+        print ("User added successfully!")
         print("now reloading userLogin.html")
 
-        
-    
-    print ("User added successfully!")
     print("--Rendering User Login Page")
     return render_template("userLogin.html")
 
@@ -115,6 +160,44 @@ def user():
 
 
 # -------------------------------
+
+# @app.route("/UserLogin", methods=['GET', 'POST'])
+@app.route('/login', methods = ['GET', 'POST'])
+
+def login():
+    if(request.method =="POST"):
+        username_in = request.form("username")
+
+        session['user'] = username_in  # making dictionary key
+        print("now reloading userLogin.html")
+        return render_template( url_for("user"), person = user)
+        
+    
+    print ("User added successfully!")
+    print("--Rendering User Login Page")
+    return render_template("userLogin.html")
+
+# -------------------------------
+
+# @app.route("/UserLogin", methods=['GET', 'POST'])
+# @app.route('/user')
+
+# def user(): 
+#     if "username_in" in session:
+#         user_got = session["username_in"]
+#         return f"<h1>{user_got}</h1>"
+
+#         session['user'] = user
+#         print("now reloading userLogin.html")
+#         return render_template( url_for("user"), person = user)
+#     else: # no use in session
+#         return redirect(url_for("login"))
+    
+#     print ("User added successfully!")
+#     print("--Rendering User Login Page")
+#     return render_template("userLogin.html")
+
+
 
 # !! Maintain level of integrity as the code blocks execute serially
 
@@ -128,10 +211,10 @@ with app.app_context():
 
 
 # -------------------------------
-@app.route("/users") 
+@app.route("/usersDataBase") 
 
 def showUsers():
-    print("--Rendering Manager Login Page")
+    print("--Rendering DataBase")
 
 
     allUsers = registry.query.all()
@@ -161,7 +244,7 @@ def update():
 
 # -------------------------------
 
-@app.route("/delete/<int:slno>") 
+@app.route("/delete/<int:slno>")  # what if you want to pass username, should it be the primary key
 
 def delete(slno): 
     print("--deleting--")
@@ -192,6 +275,13 @@ def delete(slno):
 
 
 # -------------------------------
+
+@app.route('/')
+def index() :
+    return render_template('index.html')
+
+# -------------------------------
+
 
 # def userLoggedIn():
 #     return render_template(); 

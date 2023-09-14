@@ -4,7 +4,23 @@
 Manager-Login
 {% endblock %}
 
+
 {% block body %}
+
+    <script>
+        var passedParams = '{{ params }}'
+
+        if ( passedParams == 0 ){
+            alert('Wrong Username')
+        }
+        else if ( passedParams == 1 ){
+            alert('Wrong Password')
+        }
+        else if ( passedParams == 2 ){
+            alert('Wrong Credentials')
+        }
+    </script>
+
     <h4>"This is Manager Login Page"</h4>
 
     <div class="login1">
@@ -21,7 +37,10 @@ Manager-Login
             <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
         </div>
         <br>
-        <form action="/manager" method="POST">
+
+        <form action="/admin" method="POST"> 
+            <!-- will send it to adminRoute and render the template after submit is clicked -->
+
             <div class="l1">
                 <span class = "stick">
                 <label for="exampleFormControlInput1" class="username-label">Username</label>
@@ -45,11 +64,13 @@ Manager-Login
                 </div>
                 <br><br>
             </div>
+
             <div class="submit">
                 <button class="login">
                     Login
                 </button>
             </div>
+
         </form>
         
     </div>

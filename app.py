@@ -18,7 +18,7 @@ app = Flask(__name__)
 # (hard coded)
 # session is enrypted in server
 
-app.secretkey = "admin90"
+# app.secretkey = "admin90"
 
 
 
@@ -88,6 +88,66 @@ class registry(db.Model):
 
 
 # login_admin = LoginManager()
+@app.route("/admin", methods=['GET', 'POST']) # this targets the templates folder 
+# "/" means it is by default looking for index.html unless specified, like here its managerLogin.html
+
+def admin():
+
+        # if request=='POST' : will not work
+        if (request.method=='POST') :
+            # session.pop('user', None) # drops the current session before you submit a request through POST
+
+            # fetch from the form present in manager login page
+            owner = request.form['email']
+            owner_passkey = request.form['passkey']
+            print(owner, owner_passkey)
+
+            if (owner == '1roshanekka@gmail.com' and owner_passkey == 'qwerty12345'):
+                # session.['user'] = request.form['username']
+                # return redirect( url_for('showUsers') ) 
+                # or 
+
+                print("--Login Successfull--")
+                # if login is success
+                return redirect('/usersDataBase')
+            elif (owner!='1roshanekka@gmail.com'):
+                print ('Wrong Username')
+                flag = 0
+            elif(owner=='1roshanekka@gmail.com' and owner_passkey != 'qwerty12345'):
+                print ('Wrong Password')
+                flag = 1
+            else:
+                print ('Wrong Credentials')
+                flag = 2
+                
+            print('--who tf are you--')
+            # return redirect('/manager', param = flag )
+            # if you probably want to pass params value
+            # redirect(url_for('index', logout=logout))
+            return redirect( url_for('managerFunc', params = flag))
+
+
+            # return render_template('users.html') this will return empty DB as we dont pass DB with the render template
+        # elif request=='GET':
+        #     return render_template("/manager.html")
+
+        print('--access denied--')
+        return render_template("/managerLogin.html") # same as redirect('/manager')
+
+    # return render_template("/")
+    # or
+    # return redirect(url_for("login"))
+
+    
+    # we cant access this as to access the maanger login page we need to pass POST request other wise accessing through link or route will lead to login page
+
+
+    # return render_template("/") for html link not route link
+    # url_for is helper to find the route when the function name is passed 
+    # but it has to be used with redirect
+
+
+# -------------------------------
 
 
 # -------------------------------
@@ -95,29 +155,28 @@ class registry(db.Model):
 @app.route("/manager", methods=['GET', 'POST']) # this targets the templates folder 
 # "/" means it is by default looking for index.html unless specified, like here its managerLogin.html
 
-def manager():
+def managerFunc():
 
         # if request=='POST' : will not work
-        if (request.method=='POST') :
-            session.pop('user', None) # drops the current session before you submit a request through POST
+        # if (request.method=='POST') :
+        #     session.pop('user', None) # drops the current session before you submit a request through POST
 
-            # fetch from the form present in manager login page
-            owner = request.form['email']
-            owner_passkey = request.form['passkey']
-            print(owner, owner_passkey)
+        #     # fetch from the form present in manager login page
+        #     owner = request.form['email']
+        #     owner_passkey = request.form['passkey']
+        #     print(owner, owner_passkey)
 
-            if (owner == 'a@gmail.com' and owner_passkey == 'a'):
-                # session.['user'] = request.form['username']
-                print("--Rendering Manager Login Page")
-                # return redirect( url_for('showUsers') ) 
-                # or 
-                return redirect('/usersDataBase')
+        #     if (owner == 'a@gmail.com' and owner_passkey == 'a'):
+        #         # session.['user'] = request.form['username']
+        #         print("--Rendering Manager Login Page")
+        #         # return redirect( url_for('showUsers') ) 
+        #         # or 
+        #         return redirect('/usersDataBase')
 
                 # return render_template('users.html') this will return empty DB as we dont pass DB with the render template
         # elif request=='GET':
         #     return render_template("/manager.html")
 
-        print('failed')
         return render_template("/managerLogin.html")
 
     # return render_template("/")

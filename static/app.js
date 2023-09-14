@@ -13,6 +13,8 @@ function appearanceDark() {
     document.getElementById("cart").src="/static/assets/cartDark.png"
     // document.getElementById("cart").src="{{ url_for ('static', filename='assets/cartDark.png') }}"
 
+    var passedParams = '{{ param }}'
+
     // if one of the sequencing commands fail then subsequent will not work
     
     

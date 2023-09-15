@@ -7,21 +7,25 @@ Manager-Login
 
 {% block body %}
 
-    <script>
-        var passedParams = '{{ params }}'
+        <script>
+            var passedParams = '{{ params }}'
+            console.log(passedParams)
 
-        if ( passedParams == 0 ){
-            alert('Wrong Username')
-        }
-        else if ( passedParams == 1 ){
-            alert('Wrong Password')
-        }
-        else if ( passedParams == 2 ){
-            alert('Wrong Credentials')
-        }
-    </script>
+            if (passedParams === '0') {
+                alert('Wrong Username')
+            }
+            else if (passedParams === '1') {
+                alert('Wrong Password')
+            }
+            else if (passedParams === '2') {
+                alert('Wrong Credentials')
+            }
+        </script>
 
     <h4>"This is Manager Login Page"</h4>
+    <!-- <script>
+        document.write(passedParams);
+    </script> -->
 
     <div class="login1">
         <h1>

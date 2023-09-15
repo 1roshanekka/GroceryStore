@@ -7,6 +7,8 @@ from flask_sqlalchemy import SQLAlchemy
 from flask import session
 from flask import g
 from flask import url_for
+from flask import flash
+
 # from flask import flask_login
 
 import os
@@ -18,7 +20,7 @@ app = Flask(__name__)
 # (hard coded)
 # session is enrypted in server
 
-# app.secretkey = "admin90"
+app.secretkey = "admin90"
 
 
 
@@ -106,25 +108,35 @@ def admin():
                 # session.['user'] = request.form['username']
                 # return redirect( url_for('showUsers') ) 
                 # or 
-
+                # flash("Login Successfull", 'info')
                 print("--Login Successfull--")
                 # if login is success
                 return redirect('/usersDataBase')
             elif (owner!='1roshanekka@gmail.com'):
                 print ('Wrong Username')
                 flag = 0
+                # flash("Wrong Username", 'info')
+
             elif(owner=='1roshanekka@gmail.com' and owner_passkey != 'qwerty12345'):
                 print ('Wrong Password')
                 flag = 1
+                # flash("Wrong Password", 'info')
             else:
                 print ('Wrong Credentials')
                 flag = 2
+                # flash("Wrong Credentials", 'info')
                 
             print('--who tf are you--')
             # return redirect('/manager', param = flag )
-            # if you probably want to pass params value
+            # if you probably want to pass params value || but this will take route variable
             # redirect(url_for('index', logout=logout))
-            return redirect( url_for('managerFunc', params = flag))
+
+            # return redirect( url_for('managerFunc', params = flag))
+        
+            # Redirects: Depending on the outcome of the validation, it redirects to different routes. The managerFunc route is called with params set to the value of flag.
+
+            # to pass variable use render template
+            return render_template('managerLogin.html', params = flag)
 
 
             # return render_template('users.html') this will return empty DB as we dont pass DB with the render template
@@ -152,9 +164,11 @@ def admin():
 
 # -------------------------------
 
+# This route should expect a parameter named params.
+# @app.route('/managerFunc/<int:params>')
+
 @app.route("/manager", methods=['GET', 'POST']) # this targets the templates folder 
 # "/" means it is by default looking for index.html unless specified, like here its managerLogin.html
-
 def managerFunc():
 
         # if request=='POST' : will not work
@@ -176,7 +190,6 @@ def managerFunc():
                 # return render_template('users.html') this will return empty DB as we dont pass DB with the render template
         # elif request=='GET':
         #     return render_template("/manager.html")
-
         return render_template("/managerLogin.html")
 
     # return render_template("/")

@@ -1,0 +1,27 @@
+{% extends "baseAdmin.html" %}
+
+{% block title %} 
+Admin Panel
+{% endblock %}
+
+{% block body %}
+    <div class="add">
+        <h1>ADD</h1>
+        Options
+        <br>
+        <hr><br>
+
+        <form action="/adminCockpit" method="GET">
+            <div class="button">
+                <!-- <input type="button" value="Get DataBase"/> --> 
+                <!-- why the above is not working -->
+                <button>
+                    DB
+                </button>
+            </div>
+        </form>
+
+    </div>
+{% endblock %}
+
+

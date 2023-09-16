@@ -87,6 +87,16 @@ class registry(db.Model):
         return f"{self.slno} - {self.username}"
 
 # -------------------------------
+@app.route("/adminCockpit", methods=['GET', 'POST'])
+
+def bossPanel():
+
+    if (request.method=='GET'):
+        print("--loading DB--")
+        return redirect('/usersDataBase')
+    else:
+        return render_template("index.html")
+# -------------------------------
 
 
 # login_admin = LoginManager()
@@ -110,8 +120,12 @@ def admin():
                 # or 
                 # flash("Login Successfull", 'info')
                 print("--Login Successfull--")
+
                 # if login is success
+                return render_template('adminPanel.html')
+
                 return redirect('/usersDataBase')
+            
             elif (owner!='1roshanekka@gmail.com'):
                 print ('Wrong Username')
                 flag = 0

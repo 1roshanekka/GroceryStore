@@ -1,0 +1,46 @@
+* {
+    font-family: sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+
+.navigation {
+    align-content: center;
+    font-size: 30px;
+    background-color: bisque;
+    left: 0;
+	bottom: 0;
+	width: 100%;
+    position: -webkit-sticky; /* Safari */
+    
+    position: sticky;
+    top: 0; /* sticks to top of the page */
+
+    padding-bottom: 20px;
+    
+}
+
+
+
+/* --------------------------------------------------------------- */
+.butt {
+	align-content: center;
+	background-color: #FFBFBF;
+	/* margin: 10px 50px 0px 50px;  */
+	/* pasted code */
+	
+	 /* position: fixed;  */
+
+	/* fixed should be used for top bar */
+	left: 0;
+	bottom: 0;
+	width: 100%;
+}
+
+
+.foot {
+	padding: 0.3%;
+	text-align: center;
+	/* margin: 0px 0px 0px 10px; */
+}
+

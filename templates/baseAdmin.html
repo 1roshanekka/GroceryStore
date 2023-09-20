@@ -9,7 +9,7 @@
 </head>
 
 <body>
-
+    
     <script src="{{ url_for ('static', filename='adminApp.js') }}"></script>
 
     <nav class="navigation">    
@@ -18,14 +18,27 @@
         </div>
     </nav>
 
-    {% block body %}
-        
-    {% endblock %}
+    <div class="main-body">
+
+        {% block body %}
+            
+        {% endblock %}
+
+    </div>
+    
+    <div class="interface">
+        <div class="ss" id="clickable">
+            <!-- <img src="/static/assets/box.png" alt="box" width="40px" height="40px" > -->
+            <!-- <h1>Roshan Ekka</h1> -->
+            +
+        </div>
+    </div>
 
     <footer class = "butt">
         <div class="foot">
             Copyright &copy TheBrokenStudios Private Limited. 2023 &nbsp &nbsp All Rights Reserved.
         </div>
     </footer>
+
 </body>
 </html>

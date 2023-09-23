@@ -42,3 +42,7 @@ function storeImageDark() {
 function storeImageLight() {
     document.getElementById("store").src=""
 }
+
+function rotateAnimation() {
+    document.getElementById("rotate")
+}

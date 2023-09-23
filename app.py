@@ -96,7 +96,7 @@ def bossPanel():
         print("--loading DB--")
         return redirect('/usersDataBase')
     else:
-        return render_template("index.html")
+        return render_template("managerLogin.html")
 # -------------------------------
 # to get items on sale and panel
 @app.route("/adminCockpit_option1-sales", methods=['GET', 'POST'])
@@ -107,7 +107,7 @@ def sales_forAdmin():
         print("--loading sales--")
         return redirect('/sales')
     else:
-        return render_template("index.html")
+        return render_template("managerLogin.html")
 # -------------------------------
 @app.route("/adminCockpit_option2-summary", methods=['GET', 'POST'])
 
@@ -117,7 +117,7 @@ def summary_forAdmin():
         print("--loading DB--")
         return redirect('/summary')
     else:
-        return render_template("index.html")
+        return render_template("managerLogin.html")
     
 # -------------------------------
 
@@ -328,7 +328,6 @@ def login():
 #     print ("User added successfully!")
 #     print("--Rendering User Login Page")
 #     return render_template("userLogin.html")
-
 
 
 # !! Maintain level of integrity as the code blocks execute serially

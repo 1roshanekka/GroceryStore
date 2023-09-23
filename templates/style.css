@@ -1,0 +1,17 @@
+.parent {
+	background-color: orangered;
+	font-size: 1500;
+	align-content: center;
+
+	border: 10px solid blue;
+	border-radius: 25px;
+
+	margin: 50px 50px 50px 50px;
+
+	padding: 50px 50px 50px 500px;
+}
+
+
+.main {
+	padding: 50px 50px 50px 50px;
+}

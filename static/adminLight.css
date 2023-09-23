@@ -28,19 +28,25 @@
 	display: flex;
 	column-gap: 40px;
 }
-.space {
-	padding: 200px;
+.dashboard {
+	padding: 500px;
+	background-color: antiquewhite;
 
 }
+
 .interface {
-	position: absolute;
+	/* position: fixed; */
+	background-color: aqua;
+	/* padding-bottom: 2000px; */
+	padding: 200px;
 }
 .ss {
-	position: fixed;
+	
+	position: fixed; 
+	top: 75%;
+	right: 5%;
+	/* relative ?? */
 	/* margin-top: 30%; */
-	margin-left: 85%;
-	right: 10;
-	bottom: 10;
 	background-color: red;
 	padding: 0px 15px 5px 15px;
 	font-size: 40px;

@@ -87,6 +87,7 @@ class registry(db.Model):
         return f"{self.slno} - {self.username}"
 
 # -------------------------------
+# to get database
 @app.route("/adminCockpit", methods=['GET', 'POST'])
 
 def bossPanel():
@@ -96,6 +97,28 @@ def bossPanel():
         return redirect('/usersDataBase')
     else:
         return render_template("index.html")
+# -------------------------------
+# to get items on sale and panel
+@app.route("/adminCockpit_option1-sales", methods=['GET', 'POST'])
+
+def sales_forAdmin():
+
+    if (request.method=='GET'):
+        print("--loading sales--")
+        return redirect('/sales')
+    else:
+        return render_template("index.html")
+# -------------------------------
+@app.route("/adminCockpit_option2-summary", methods=['GET', 'POST'])
+
+def summary_forAdmin():
+
+    if (request.method=='GET'):
+        print("--loading DB--")
+        return redirect('/summary')
+    else:
+        return render_template("index.html")
+    
 # -------------------------------
 
 
@@ -380,7 +403,18 @@ def delete(slno):
     return render_template("users.html", fullDB=allUsers) # when /users page is requested render the user page and also pass the database as fullDB
 
 
+# -------------------------------
 
+@app.route('/sales')
+def getSalesforAdmin() :
+    return render_template('saleAdmin.html')
+
+# -------------------------------
+@app.route('/summary')
+def getSummaryforAdmin() :
+    return render_template('summaryAdmin.html')
+
+# -------------------------------
 
 
 # -------------------------------

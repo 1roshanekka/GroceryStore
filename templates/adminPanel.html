@@ -14,24 +14,37 @@ Admin Panel - Dashboard
         <hr>
         <br>
 
-        <form action="/adminCockpit" method="GET">
-            <div class="button">
-                <!-- <input type="button" value="Get DataBase"/> --> 
-                <!-- why the above is not working -->
-                <div class="flexbox">
+
+        <!-- <input type="button" value="Get DataBase"/> --> 
+        <!-- why the above is not working -->
+        <div class="flexbox">
+            <div class="option1">
+                <form action="/adminCockpit" method="GET">
                     <button class="admin-tools">
                         DataBase
                     </button>
+                </form>
+                
+            </div>
+
+            <div class="option2">
+                <form action="/adminCockpit_option1-sales" method="GET">
                     <button class="admin-tools">
                         Items on Sale
                     </button>
+                </form>
+            </div>
+
+            <div class="option3">
+                <form action="/adminCockpit_option2-summary" method="GET">
                     <button class="admin-tools">
                         Summary
                     </button>
-                </div>
-                
+                </form>
             </div>
-        </form>
+
+        </div>
+
 
         <div class="dashboard">
             

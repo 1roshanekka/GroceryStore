@@ -34,14 +34,34 @@
     /* padding-bottom: 20px; */
     
 }
+.navigation-right {
+	display: flex;
+	justify-content: space-around;
+	height: 60px;
+	align-items: center;
+
+}
+.displayName-dynamic {
+	font-size: 18px;
+	margin-left: 40px;
+	padding-right: 40px;
+}
 
 .bar {
 	margin-left: 20px;
+	font-weight: 700;
+	/* !! adds bold */
 }
 
 .navMenu {
 	margin-right: 30px;
 	margin-top: 5px;
+}
+
+.navMenuList {
+	font-size: 16px;
+	text-decoration: none;
+
 }
 
 
@@ -143,3 +163,17 @@
 
 } 
 
+
+/* link which user has not visited */
+a:link{ 
+	color: gray;
+	text-decoration: none;
+}
+/* link which user has visited */
+a:visited{
+	color: gray;
+	text-decoration: none;
+}
+.drop-button {
+	border: none;
+}

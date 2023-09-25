@@ -16,9 +16,27 @@
         <div class="bar">
             The Broken Studios
         </div>
-        <div class="navMenu">
-            <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile" width="30px">
+        <div class="navigation-right">
+            <div class="displayName-dynamic">
+                Welcome {{ user }}
+            </div>
+            <div class="navMenu">
+                <div class="navMenuList">
+
+                    <button onclick="navMenu_js()" class="drop-button" id="clickable">
+                        <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile" width="30px">
+                    </button>
+
+                    <div class="dropdown">
+                        <ul><a href="/adminProfile">Profile</a></ul>
+                        <ul><a href="/adminSetting">Setting</a></ul>
+                        <ul><a href="/adminSignOut">Sign Out</a></ul>
+                    </div>
+
+                </div>
+            </div>
         </div>
+        
     </nav>
 
     <div class="main-body">

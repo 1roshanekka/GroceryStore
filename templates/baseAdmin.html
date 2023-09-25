@@ -23,14 +23,19 @@
             <div class="navMenu">
                 <div class="navMenuList">
 
-                    <button onclick="navMenu_js()" class="drop-button" id="clickable">
-                        <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile" width="30px">
-                    </button>
+                    <!-- <button onclick="navMenu_js()" class="drop-button" id="clickable">
+                        <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" onclick="navMenu_js()" alt="profile" width="30px" >
+                    </button> -->
+                    <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" onclick="navMenu_js()" alt="profile" width="30px" id="clickable" class="drop-button">
 
-                    <div class="dropdown">
+
+                    <div class="dropdown-list" id="dropdown-listID">
                         <ul><a href="/adminProfile">Profile</a></ul>
                         <ul><a href="/adminSetting">Setting</a></ul>
                         <ul><a href="/adminSignOut">Sign Out</a></ul>
+                        <!-- <a href="/adminProfile">Profile</a>
+                        <a href="/adminSetting">Setting</a>
+                        <a href="/adminSignOut">Sign Out</a> -->
                     </div>
 
                 </div>

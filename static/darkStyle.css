@@ -458,8 +458,9 @@ table.links th, td {
 	column-gap: 10px;
 }
 
+
 .empty {
-	padding-right: 50px;
+	padding: 200px;
 }
 
 .black {

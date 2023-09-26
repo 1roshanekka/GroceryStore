@@ -20,10 +20,13 @@
   <script src="{{ url_for ('static', filename='app.js') }}"></script>
 
   <div class="nav">
-    <span class="imageLogo">
-      <!-- <img src="assets/google.png" alt="logo" width="35px"> -->
-      <img src="{{ url_for ('static', filename='assets/akatsuki.png') }}" alt="logo" width="100px">
-    </span>
+    <a href="/manager">
+      <span class="imageLogo">
+        <!-- <img src="assets/google.png" alt="logo" width="35px">  -->
+        <!-- <img src="{{ url_for ('static', filename='assets/google.png') }}" alt="logo" width="35px"> -->
+        <img src="{{ url_for ('static', filename='assets/akatsuki.png') }}" alt="logo" width="100px">
+      </span>
+    </a>
     <div class="name">
       <h2>Grocery Store</h2>
     </div>

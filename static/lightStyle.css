@@ -52,7 +52,7 @@ input[type=search] {
 
 }
 #body {
-	background-image: url(/static/assets/flower.png);
+	background-image: url(/static/assets/3.jpg);
 	background-size: 120% auto;
 	background-repeat: no-repeat;
 	background-color: #210012;
@@ -315,6 +315,7 @@ h1 {
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;
+
 	column-gap: 1px;
 
 	/* justify-content: flex-end; */
@@ -442,7 +443,7 @@ th, td {
 }
 
 .empty {
-	padding-right: 50px;
+	padding: 200px;
 }
 
 .black {

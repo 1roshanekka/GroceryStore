@@ -99,18 +99,23 @@
 
 .flexbox-adminpanel {
 	display: flex;
-	justify-content: space-evenly;
+	/* justify-content: space-around; */
+	justify-content: center;
+
 	column-gap: 200px;
 	
 }
 
 .admin-tools {
+	width: 15rem;
+	/* text-align: center; */
 
+	color: white;
 
 	border: none;
 	border-radius: 20px;
-	border: 1px solid rebeccapurple;
-	background-color: aquamarine;
+	/* border: 1px solid rebeccapurple; */
+	background-color: #419197;
 	padding: 50px;
 	font-size: 20px;
 	/* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
@@ -169,7 +174,7 @@
 /* --------------------------------------------------------------- */
 .butt {
 	align-content: center;
-	background-color: #FFBFBF;
+	background-color: #79AC78;
 	/* margin: 10px 50px 0px 50px;  */
 	/* pasted code */
 	
@@ -259,4 +264,36 @@ a:visited{
 
 .space {
 	padding: 70px;
+}
+.appearance {
+	/* margin: 0px 0px 0px 700px;  instead of this we can do flex with right */
+
+	border: 1.5px solid #006ee6;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+	column-gap: 1px;
+
+	/* justify-content: flex-end; */
+	/* padding: 3px; imp */
+	padding: 2px;
+	align-content: center;
+	font-size: 12px;
+	/* alter this for dark */
+}
+.light	{
+	border: none;
+	background-color: #006ee6;
+	border-radius: 20px;
+	padding: 2px 7px;
+	border-width: 100%;
+	color: white;
+}
+.dark {
+	/* padding: 2px; */
+	border: none;
+	/* background-color: #006ee6; */
+	border-radius: 20px;
+	padding: 2px 5px;
+	color: #006ee6;
 }

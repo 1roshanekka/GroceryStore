@@ -71,7 +71,7 @@ input[type=search] {
 	/* border: 10px solid red; */
 	border-radius: 25px;
 
-	margin: 0px 40px 40px 40px;
+	margin: 0px 40px 0px 40px;
 
 	padding: 0px 150px 40px 150px;
 	padding-top: 50px;
@@ -83,14 +83,24 @@ input[type=search] {
 
 
 .imageLogo {
-	margin-left: 50px;
+	/* margin-left: 50px; */
+}
+.name{
+	font-size: 30px;
+	font-weight: 900;
 }
 
-
 .nav {
-	padding: 12px;
-	align-content: center;
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+
+	/* padding: 12px; */
 	background-color: #FFFEFC	;
+
+	height: 70px;
+	padding: 0px 20px;
+	align-items: center;
 	/* display: inline; */
 }
 
@@ -425,4 +435,8 @@ th, td {
 	flex-direction: row;
 	justify-content: space-around;
 	column-gap: 10px;
+}
+
+.empty {
+	padding-right: 50px;
 }

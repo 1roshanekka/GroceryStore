@@ -8,11 +8,11 @@
     <link href="{{ url_for( 'static', filename='adminLight.css') }}" rel="stylesheet" id="view">
 </head>
 
-<body>
+<body class="body">
     
     <script src="{{ url_for ('static', filename='adminApp.js') }}"></script>
 
-    <nav class="navigation">    
+    <nav class="navigation">   
         <div class="bar">
             The Broken Studios
         </div>
@@ -30,9 +30,9 @@
 
 
                     <div class="dropdown-list" id="dropdown-listID">
-                        <ul><a href="/adminProfile">Profile</a></ul>
-                        <ul><a href="/adminSetting">Setting</a></ul>
-                        <ul><a href="/adminSignOut">Sign Out</a></ul>
+                        <div class="list-div"><ul><a href="/adminProfile">Profile</a></ul></div>
+                        <div class="list-div"><ul><a href="/adminSetting">Setting</a></ul></div>
+                        <div class="list-div"><ul><a href="/adminSignOut">Sign Out</a></ul></div>
                         <!-- <a href="/adminProfile">Profile</a>
                         <a href="/adminSetting">Setting</a>
                         <a href="/adminSignOut">Sign Out</a> -->
@@ -43,6 +43,7 @@
         </div>
         
     </nav>
+    
 
     <div class="main-body">
 

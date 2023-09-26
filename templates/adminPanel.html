@@ -12,16 +12,19 @@ Admin Panel - Dashboard
         <b>Options</b>
         <br>
         <hr>
-        <br>
+
+        <div class="space">
+            <!-- &nsbp; -->
+        </div>
 
 
         <!-- <input type="button" value="Get DataBase"/> --> 
         <!-- why the above is not working -->
-        <div class="flexbox">
+        <div class="flexbox-adminpanel" >
             <div class="option1">
                 <form action="/adminCockpit" method="GET">
-                    <button class="admin-tools">
-                        DataBase
+                    <button class="admin-tools" id="clickable">
+                        First
                     </button>
                 </form>
                 
@@ -29,16 +32,16 @@ Admin Panel - Dashboard
 
             <div class="option2">
                 <form action="/adminCockpit_option1-sales" method="GET">
-                    <button class="admin-tools">
-                        Items on Sale
+                    <button class="admin-tools" id="clickable">
+                        Itna jagah kha rah hu
                     </button>
                 </form>
             </div>
 
             <div class="option3">
                 <form action="/adminCockpit_option2-summary" method="GET">
-                    <button class="admin-tools">
-                        Summary
+                    <button class="admin-tools" id="clickable">
+                        Last
                     </button>
                 </form>
             </div>

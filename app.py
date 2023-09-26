@@ -145,7 +145,7 @@ def admin():
                 print("--Login Successfull--")
 
                 # if login is success
-                return render_template('adminPanel.html')
+                return render_template('adminPanel.html', user = owner)
 
                 return redirect('/usersDataBase')
             

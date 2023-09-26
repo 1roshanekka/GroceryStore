@@ -28,7 +28,21 @@
 	background-color: black;
 	border: 2px solid red;
 }
+.blurred{
+	position: fixed;
 
+
+	height: 60px;
+	width: 100%;
+	/* filter: blur(12px); */
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+	/* background-color: green;
+	opacity: 0.2; */
+	background-color: rgba(215, 192, 174, 0.5);
+
+	z-index: -1;
+}
 .navigation {
 	display: flex;
 	justify-content: space-between;
@@ -51,6 +65,7 @@
     /* padding-bottom: 20px; */
     
 }
+
 .navigation-right {
 	display: flex;
 	justify-content: space-around;
@@ -99,11 +114,12 @@
 	padding: 50px;
 	font-size: 20px;
 	/* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
-	box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+	/* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .dashboard {
-	padding: 200px;
+	padding: 400px;
 	/* background-color: antiquewhite; */
 
 }

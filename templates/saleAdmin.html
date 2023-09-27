@@ -17,6 +17,25 @@ Admin Panel - Sales
                 <img src="{{ url_for( 'static', filename='assets/plus.png')}}" alt="add button" height="50px" width="50px">
             </div>
         </button>
+        <div class="modal" id="mymodal">
+            <div class="modal-content">
+
+                <div class="close">&times;</div>
+                <br><br><br>
+                <form action="" method="POST">
+                    <div class="formContent">
+                        <label for="item" class="modalForm">Category Name  : </label>  
+                        <span class="placeholder">
+                            <input type="text" name="item" id="item" placeholder="item name">
+                        </span>
+                    </div>
+                    <br><br><br>
+                    <input type="submit" class="login" value="Save">
+                </form>
+
+                <br>
+            </div>
+        </div>
     </div>
 {% endblock %}
 

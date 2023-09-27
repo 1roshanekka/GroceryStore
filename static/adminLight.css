@@ -165,6 +165,7 @@
 .addItem {
 	border: none;
 	border: 50%;
+	cursor: pointer;
 }
 .getInside {
 	/* color: black; */
@@ -227,7 +228,7 @@
 
 /* The Modal (background) */
 .modal {
-	display: nodne; /* Hidden by default */
+	display: none; /* Hidden by default */
 	position: fixed; /* Stay in place */
 	z-index: 1; /* Sit on top */
 	left: 0;

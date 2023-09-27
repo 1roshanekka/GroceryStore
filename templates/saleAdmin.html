@@ -12,17 +12,23 @@ Admin Panel - Sales
     <div class="interface">
             <!-- <img src="/static/assets/box.png" alt="box" width="40px" height="40px" > -->
             <!-- <h1>Roshan Ekka</h1> -->
-        <button class="addItem" id="clickable">
+        <!-- <button class="addItem" id="ass" >
+            <div class="ss" id="rotateThis" onclick="rotate()">
+                <img src="{{ url_for( 'static', filename='assets/plus.png')}}" alt="add button" height="50px" width="50px">
+            </div> 
+        </button> -->
+        <button class="addItem" id="ass">
             <div class="ss" id="rotateThis" onclick="rotate()">
                 <img src="{{ url_for( 'static', filename='assets/plus.png')}}" alt="add button" height="50px" width="50px">
             </div>
         </button>
         <div class="modal" id="mymodal">
-            <div class="modal-content">
 
-                <div class="close">&times;</div>
+            <div class="modal-content" id="ls">
+
+                <span class="close">&times;</span>
                 <br><br><br>
-                <form action="" method="POST">
+                <form action="/" method="POST">
                     <div class="formContent">
                         <label for="item" class="modalForm">Category Name  : </label>  
                         <span class="placeholder">

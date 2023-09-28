@@ -28,15 +28,19 @@ Admin Panel - Sales
 
                 <span class="close">&times;</span>
                 <br><br><br>
-                <form action="/" method="POST">
+                <form action="/addItems" method="POST">
                     <div class="formContent">
                         <label for="item" class="modalForm">Category Name  : </label>  
                         <span class="placeholder">
-                            <input type="text" name="item" id="item" placeholder="item name">
+                            <input type="text" name="itemNameform" id="item" placeholder="item name">
                         </span>
                     </div>
                     <br><br><br>
-                    <input type="submit" class="login" value="Save">
+                    <!-- <input type="submit" class="login" value="Save"> -->
+                    <!-- NOT NULL error -->
+                    <button class="login">
+                        Save
+                    </button>
                 </form>
 
                 <br>

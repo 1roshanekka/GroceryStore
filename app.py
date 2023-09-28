@@ -8,6 +8,7 @@ from flask import session
 from flask import g
 from flask import url_for
 from flask import flash
+from flask_migrate import Migrate
 
 # from flask import flask_login
 
@@ -39,7 +40,13 @@ db = SQLAlchemy()
 
 # configure the SQLite database, relative to the app instance folder
 app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///members.db"
+
+app.config['SQLALCHEMY_BINDS'] = {
+    'store': "sqlite:///store.db",
+}
+
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+migrate = Migrate(app, db)
 
 #import database after you instantiate your db.
 
@@ -86,6 +93,23 @@ class registry(db.Model):
     def __repr__(self) -> str:
         return f"{self.slno} - {self.username}"
 
+# -------------------------------
+
+# we are defining our schema of sales item
+class salesStock(db.Model):
+    __bind_key__ = 'store'
+    id = db.Column(db.Integer, primary_key=True)
+    itemName = db.Column(db.String(255), nullable=False)
+    # itemName = db.Column(db.String, primary_key=True)
+    # unit = db.Column(db.Integer, nullable=True)
+    # rate = db.Column(db.Integer, nullable=True)
+    # quantity = db.Column(db.Integer, nullable=True)
+    # checkbox = db.Column(db.Integer, nullable=True)  
+    #as we are declaring directly, we should remove unique as it will coflict in the database
+      
+    def __repr__(item) -> str:
+        return f"{item.itemName}"
+    
 # -------------------------------
 # to get database
 @app.route("/adminCockpit", methods=['GET', 'POST'])
@@ -197,6 +221,25 @@ def admin():
 
 
 # -------------------------------
+# adds item to DATABASE which has binds to --store--
+@app.route("/addItems", methods=['GET', 'POST'])
+
+def khata():
+
+    if (request.method=='POST') :
+
+        submittedItem = request.form['itemNameform']
+        print(submittedItem, '*****-----posted-----*****') 
+        newItem = salesStock(itemName=submittedItem)
+        db.session.add(newItem)
+        db.session.commit()
+
+        print(submittedItem, "Item added successfully !")
+    else:
+        return render_template('adminPanel.html')
+
+    print("--Rendering User Admin Panel")
+    return render_template("adminPanel.html")
 
 
 # -------------------------------

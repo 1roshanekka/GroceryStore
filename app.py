@@ -96,10 +96,9 @@ class registry(db.Model):
 # -------------------------------
 
 # we are defining our schema of sales item
-class salesStock(db.Model):
+class stock(db.Model):
     __bind_key__ = 'store'
-    id = db.Column(db.Integer, primary_key=True)
-    itemName = db.Column(db.String(255), nullable=False)
+    itemName = db.Column(db.String(255), primary_key=True, nullable=False)
     # itemName = db.Column(db.String, primary_key=True)
     # unit = db.Column(db.Integer, nullable=True)
     # rate = db.Column(db.Integer, nullable=True)
@@ -230,7 +229,7 @@ def khata():
 
         submittedItem = request.form['itemNameform']
         print(submittedItem, '*****-----posted-----*****') 
-        newItem = salesStock(itemName=submittedItem)
+        newItem = stock(itemName=submittedItem)
         db.session.add(newItem)
         db.session.commit()
 

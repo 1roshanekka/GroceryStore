@@ -5,9 +5,20 @@ Admin Panel - Sales
 {% endblock %}
 
 {% block body %}
+    <br><br>
     This is Sales Admin
+    <br><br>
+    <div class="dashboard-flex-container">
+        {% for samaan in totalStocks %}
+            <div class="dashboard-flex-items">
+                <!-- {{loop.slno}} -->
+                <!-- for looping the serial number -->
+                {{samaan.itemName}}
+            </div>
+        {% endfor %}
+    </div>
     <div class="dashboard">
-
+        
     </div>
     <div class="interface">
             <!-- <img src="/static/assets/box.png" alt="box" width="40px" height="40px" > -->

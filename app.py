@@ -128,7 +128,11 @@ def sales_forAdmin():
 
     if (request.method=='GET'):
         print("--loading sales--")
-        return redirect('/sales')
+        # return redirect('/sales')
+        # this was not passing db when it was loaded first 
+
+        
+        return redirect('/updatedSales')
     else:
         return render_template("managerLogin.html")
 # -------------------------------
@@ -235,10 +239,26 @@ def khata():
 
         print(submittedItem, "Item added successfully !")
     else:
-        return render_template('adminPanel.html')
+        print('--loading back into sales--')
+        return redirect('/updatedSales')
 
-    print("--Rendering User Admin Panel")
-    return render_template("adminPanel.html")
+    print("--rendering admin panel for Sales")
+    return redirect('/updatedSales')
+
+
+# -------------------------------
+
+@app.route('/updatedSales')
+
+def salesNewList():
+    print('--loading new list from stock DB--')
+
+    allStocks = stock.query.all()
+    print(allStocks)
+
+    # return redirect('addItems', totalStocks=allStocks)
+    return render_template("saleAdmin.html", totalStocks=allStocks)
+
 
 
 # -------------------------------

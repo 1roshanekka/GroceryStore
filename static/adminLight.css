@@ -122,11 +122,47 @@
 	/* box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px; */
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
-
-.dashboard {
+.dashboard{
 	padding: 400px;
+}
+.dashboard-flex-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	order: 3;
+
+	justify-content: flex;
+	
+	height: auto;
+	
+	column-gap: 20px;
+	row-gap: 20px;
 	/* background-color: antiquewhite; */
 
+}
+.dashboard-flex-items {
+	padding: 20px;
+
+	width: auto;
+	height: 100px;
+	margin: 5px;
+	text-align: center;
+	/* align-self: center; */
+
+	flex: 1 0 20%;
+	
+	/* !!flex-grow: 1: Allows the boxes to grow and fill any available space.
+	!! flex-shrink: 0: Prevents the boxes from shrinking if there's not enough space.
+	!! flex-basis: 22%: Sets an initial width of approximately 22% of the container's width for each box */
+	/* flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: auto; */
+	
+	background-color: antiquewhite;
+	border: 2px solid rebeccapurple;
+	border-radius: 15px;
+	align-items: end;
+	justify-content: center;
 }
 
 .interface {
@@ -142,7 +178,8 @@
 	position: fixed; 
 	top: 75%;
 	right: 10%;
-	background: 3px solid red;
+	background-color: white;
+	border-radius: 50%;
 	/* relative ?? */
 	/* margin-top: 30%; */
 	/* background-color: red; */
@@ -150,8 +187,6 @@
 	/* padding: 10px 20px; */
 	/* padding: 0px 15px 5px 14px; */
 	font-size: 40px;
-
-	border: 50%;
 
 	/* border: 5px solid black; */
 

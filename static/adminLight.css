@@ -13,10 +13,7 @@
 	margin: 0px 40px;
 }
 
-.add {
-	/* text-align: center;
-	align-content: center; */
-}
+
 .navigation:before {
 	height: 60px;
 	left: 0;
@@ -126,12 +123,15 @@
 	padding: 400px;
 }
 .dashboard-flex-container {
+
+	font-size: 1.4rem;
+	font-weight: bolder;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	order: 3;
 
-	justify-content: flex;
+	justify-content: center;
 	
 	height: auto;
 	
@@ -144,8 +144,8 @@
 	padding: 20px;
 
 	width: auto;
-	height: 100px;
-	margin: 5px;
+	/* height: 200px; */
+	/* margin: 5px; */
 	text-align: center;
 	/* align-self: center; */
 
@@ -161,7 +161,7 @@
 	background-color: antiquewhite;
 	border: 2px solid rebeccapurple;
 	border-radius: 15px;
-	align-items: end;
+	align-items: center;
 	justify-content: center;
 }
 
@@ -171,6 +171,36 @@
 	/* padding-bottom: 2000px; */
 	padding: 200px;
 	
+}
+.add {
+	display: flex;  
+	/* div was taking 50x53 which was leaking out , flex solved it */
+	/* text-align: center;
+	align-content: center; */
+	/* border-radius: 30%; */
+	border: none;
+	border-radius: 50%;
+	background-color: #419197;
+	
+	cursor: pointer;
+
+}
+.addStock {
+	
+	/* align-items: center; */
+	/* align-content: center; */
+	/* background-color: white; */
+
+	border: none;
+	background-color: #006ee6;
+	border-radius: 50%;
+	/* width: 100px; */
+}
+
+.addItem {
+	border: none;
+	/* border: 50%; */
+	cursor: pointer;
 }
 .ss {
 	display: flex;
@@ -197,11 +227,7 @@
 	/* transform: rotate(45deg); */
 	transition: transform 0.1s;
 }
-.addItem {
-	border: none;
-	border: 50%;
-	cursor: pointer;
-}
+
 .getInside {
 	/* color: black; */
 	/* top: 50%;
@@ -235,6 +261,10 @@
 	margin-left: 10%;
 }
 
+.CRUDbuttons {
+	letter-spacing: 0.100em;
+}
+
 .login {
 	background-color: #006ee6;
 	padding: 10px 30px;
@@ -254,6 +284,60 @@
 	background-color: #006ee6;
 	opacity: 0.9;
 }
+.edit {
+	display: inline;
+
+	letter-spacing: 0.100em;
+	background-color: #419197;
+	
+	padding: 10px 30px;
+	border-radius: 50px;
+	border: none;
+
+	color: white;
+	transition-duration: 10ms;
+
+	align-items: center;
+
+
+
+
+}
+
+.edit:hover {
+	background-color: #006ee6;
+	/* background-color: #419197; */
+	opacity: 0.9;
+}
+
+
+.delete {
+	display: inline;
+
+	letter-spacing: 0.100em;
+	background-color: #419197;
+	padding: 10px 30px;
+	/* border-radius: 10px; */
+
+	border-radius: 50px;
+	border: none;
+	
+	/* border-radius: 8px; */
+	color: white;
+	transition-duration: 10ms;
+
+	margin-left: 20px;
+	align-items: center;
+
+
+
+}
+
+.delete:hover {
+	background-color: red;
+	opacity: 0.9;
+}
+
 
 .placeholder {
 	margin-left: 5px;
@@ -434,4 +518,15 @@ input[type=text]:focus {
 }
 #item {
 	text-align: left;
+}
+
+
+.insideContainer {
+	display: flex;
+	flex-direction: column;
+
+	justify-content: space-around;
+	row-gap: 25px;
+
+	align-items: center;
 }

@@ -111,7 +111,7 @@ class stock(db.Model):
     
 # -------------------------------
 # to get database
-@app.route("/adminCockpit", methods=['GET', 'POST'])
+@app.route("/`admin`Cockpit", methods=['GET', 'POST'])
 
 def bossPanel():
 

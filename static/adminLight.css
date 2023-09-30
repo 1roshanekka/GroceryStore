@@ -180,7 +180,7 @@
 	/* border-radius: 30%; */
 	border: none;
 	border-radius: 50%;
-	background-color: #419197;
+	/* background-color: #419197; */
 	
 	cursor: pointer;
 
@@ -190,10 +190,11 @@
 	/* align-items: center; */
 	/* align-content: center; */
 	/* background-color: white; */
-
+	background-color: antiquewhite;
 	border: none;
-	background-color: #006ee6;
+	/* background-color: #006ee6; */
 	border-radius: 50%;
+	
 	/* width: 100px; */
 }
 
@@ -334,7 +335,7 @@
 }
 
 .delete:hover {
-	background-color: red;
+	background-color: #C70000;
 	opacity: 0.9;
 }
 
@@ -411,12 +412,12 @@ cursor: pointer;
 
 /* link which user has not visited */
 a:link{ 
-	color: gray;
+	color: white;
 	text-decoration: none;
 }
 /* link which user has visited */
 a:visited{
-	color: gray;
+	color: white;
 	text-decoration: none;
 }
 .drop-button {
@@ -428,41 +429,62 @@ a:visited{
 }
 
 .dropdown-list {
-	
+
+	margin-top: 10px;
+	margin-right: 40px;
+
 	align-items: end;
 	/* visibility: hidden; */
 	display: none;
-	position: relative;
-	background-color: blueviolet;
-	z-index: 1;
+	position: fixed;
 
-	border: 4px solid black;
+	right: 0;
+	background-color: #D988B9;
+	z-index: 1;
+	border-radius: 10px 0px 10px 10px;
+
+	border: 2px solid black;
 }
 .dropdown-list.ul {
-	display: block;
-	
+	color: white;
 }
 
 .dropdown-list.a {
 	background-color: aqua;
 	display: block;
 	width: 50%;
+
 }
 
 .show {
 	/* visibility: visible; */
-	display: block;
-	padding: 30px;
-	float: left;
+	display: flex;
+	flex-direction: column;
 
+	justify-content: start;
+	align-items: start;
+	row-gap: 10px;
+	padding: 15px 0px 15px 0px;
+	color: white;
+	
 	
 }
 
 .list-div {
-	border: 2px solid red;
-	width: 50%;
-	padding: auto;
+	font-size: 18px;
+	
+	color: #006ee6;
+	/* border: 2px solid black; */
+	width: 100%;
+	/* padding: 0px 10px 0px 10px; */
+	margin-left: 10px;
+	margin-right: 10px;
 }
+
+.list-div.a:link {
+	color: rebeccapurple;
+}
+
 
 .space {
 	padding: 70px;

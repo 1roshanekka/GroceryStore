@@ -8,11 +8,64 @@ Admin Panel - Sales
     <br><br>
     This is Sales Admin
     <br><br>
-    <div class="dashboard-flex-container">
+
+    <div class="canvas">
         {% for samaan in totalStocks %}
+            <div class="section" >
+                
+                <div class="section-item">
+                    <div class="itemName">
+                        {{samaan.itemName}}
+                    </div>
+                    <div class="section-toggle" id="clickable" onclick="section()">
+                        <img src="{{ url_for( 'static', filename='assets/dropdown.png')}}" alt="add button" height="15px" width="15px">
+                    </div> 
+                </div>
+
+                <div class="section-view" id="section-listID">
+                    {% for samaan in totalStocks %}
+                        <div class="dashboard-flex-items">
+                            <!-- {{loop.slno}} -->
+                            <!-- for looping the serial number-->
+                            <div class="insideContainer">
+                                
+                                {{samaan.itemName}}
+                                <button class="addStock" id="stock">
+                                    <div class="add" onclick="">
+                                        <img src="{{ url_for( 'static', filename='assets/add.png')}}" alt="add button" height="50px" width="50px">
+                                    </div>
+                                </button>
+                
+                                <div>
+                                    <button class="edit" id="clickable">
+                                        edit
+                                    </button>
+                    
+                                    <button class="delete" id="clickable">
+                                        delete
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- <button class="addItem" id="ass">
+                                <div class="s" onclick="">
+                                    <img src="{{ url_for( 'static', filename='assets/plus.png')}}" alt="add button" height="50px" width="50px">
+                                </div>
+                            </button>  -->
+                        </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+            
+        {% endfor %}
+    </div>
+
+    <br><br>
+    <div class="dashboard-flex-container">
+         <!-- {% for samaan in totalStocks %}
             <div class="dashboard-flex-items">
                 <!-- {{loop.slno}} -->
-                <!-- for looping the serial number -->
+                <!-- for looping the serial number
                 <div class="insideContainer">
                     
                     {{samaan.itemName}}
@@ -39,9 +92,9 @@ Admin Panel - Sales
                     <div class="s" onclick="">
                         <img src="{{ url_for( 'static', filename='assets/plus.png')}}" alt="add button" height="50px" width="50px">
                     </div>
-                </button> -->
+                </button> 
             </div>
-        {% endfor %}
+        {% endfor %}-->
     </div>
     
     <div class="dashboard">

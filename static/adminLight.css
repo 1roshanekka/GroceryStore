@@ -552,3 +552,72 @@ input[type=text]:focus {
 
 	align-items: center;
 }
+
+.canvas {
+	display: flex;
+	flex-direction: column;
+	row-gap: 20px	;
+}
+
+.section {
+	/* display: flex; */
+	/* flex-direction: row; */
+	/* justify-content: space-between; */
+
+
+
+	padding: 20px;
+	background-color: #419197 ;
+}
+
+.section-item {
+	display: flex;
+	flex-direction: row;
+
+	font-size: 1.2rem;
+
+	justify-content: space-between;
+	padding: 10px
+	align-items: center;
+
+
+	/* border: 2px solid black; */
+
+}
+
+.section-view {
+	display: none;
+	background-color: white;
+	/* padding: 50px; */
+	padding: auto;
+
+	font-size: 1.4rem;
+	font-weight: bolder;
+	flex-direction: row;
+	flex-wrap: wrap;
+	order: 3;
+
+	justify-content: center;
+	
+	height: auto;
+	
+	column-gap: 20px;
+	row-gap: 20px;
+}
+
+.section-view-hidden {
+	display: flex;
+	
+	/* padding: 50px; */
+
+}
+
+.section-toggle {
+	/* border: 2px solid red; */
+
+}
+
+.itemName {
+	/* border: 2px solid purple; */
+	/* padding: 10px; */
+}

@@ -55,9 +55,56 @@ document.addEventListener('DOMContentLoaded', function() {
 //     rotated = !rotated; // Toggle the rotation state
 // }
 
+// document.addEventListener('DOMContentLoaded', function() {
+//   var flipped = false;
+//   var flip = document.getElementById("section-listID");
+//   flip.onclick = function() {
+//     clasclassList.toggle("section-view-hidden");
+//     var change = document.querySelector(".section-toggle");
+//     change.style.transform = "rotate(180deg)";
+//     if (flipped) {
+//       change.style.transform = "rotate(0deg)";
+//     } else {
+//       change.style.transform = "rotate(180deg)";
+//     }
+//   }
+//   flipped = !flipped; // Toggle the rotation state
+  
+// });
 
-function navMenu_js() {
-    document.getElementById("dropdown-listID").classList.toggle("show");
+// document.addEventListener('DOMContentLoaded', function() {
+//   var flip = document.getElementById("section-listID");
+//   var change = document.querySelector(".section-toggle");
+
+  
+//   flip.onclick = function() {
+//     flip.classList.toggle("section-view-hidden");
+
+//     if (change.classList.contains("section-view-hidden")) {
+//       change.style.transform = "rotate(0deg)";
+//     } else {
+//       change.style.transform = "rotate(180deg)";
+//     }
+//   }
+// });
+
+// function section() {
+//   document.getElementById("section-listID").classList.toggle("section-view-hidden");
+//   var change = document.querySelector(".section-toggle");
+//   change.style.transform = "rotate(180deg)";
+// }
+
+function section() {
+  var element = document.getElementById("section-listID");
+  var change = document.querySelector(".section-toggle");
+
+  if (element.classList.contains("section-view-hidden")) {
+    element.classList.remove("section-view-hidden");
+    change.style.transform = "rotate(0deg)";
+  } else {
+    element.classList.add("section-view-hidden");
+    change.style.transform = "rotate(180deg)";
+  }
 }
 
 window.onclick = function(event) {
@@ -72,6 +119,10 @@ window.onclick = function(event) {
       }
     }
   }
+
+  function navMenu_js() {
+    document.getElementById("dropdown-listID").classList.toggle("show");
+}
 
   function appearanceDark() {
     document.getElementById("view").href="/static/adminDark.css"

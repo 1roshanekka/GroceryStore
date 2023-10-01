@@ -148,6 +148,12 @@ def summary_forAdmin():
     
 # -------------------------------
 
+@app.route
+
+
+
+
+
 
 # login_admin = LoginManager()
 @app.route("/admin", methods=['GET', 'POST']) # this targets the templates folder 
@@ -244,6 +250,17 @@ def khata():
 
     print("--rendering admin panel for Sales")
     return redirect('/updatedSales')
+
+
+# -------------------------------
+# @app.route("/addCategory", methods=['GET', 'POST'])
+
+# def section():
+#     if (request=="POST") :
+
+
+           
+
 
 
 # -------------------------------

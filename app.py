@@ -98,10 +98,10 @@ class registry(db.Model):
 # -------------------------------
 
 # we are defining our schema of sales item
-class stock(db.Model):
+class category(db.Model):
     __bind_key__ = 'store'
     id = db.Column(db.Integer, primary_key=True)
-    categoryName = db.Column(db.String(255), primary_key=True, nullable=False)
+    categoryName = db.Column(db.String(255), nullable=False)
     
     # itemName = db.Column(db.String(255), primary_key=False, nullable=True)
 
@@ -111,21 +111,21 @@ class stock(db.Model):
     # quantity = db.Column(db.Integer, nullable=True)
     # checkbox = db.Column(db.Integer, nullable=True)  
     #as we are declaring directly, we should remove unique as it will coflict in the database
-    item = relationship('product', backref='category', lazy=True)
 
-    def __repr__(item) -> str:
-        return f"{item.categoryName}"
+    # item = relationship('product', backref='category', lazy=True)
+
+    def __repr__(self) -> str:
+        return f"{self.categoryName}"
     
-# -------------------------------
 
 # -------------------------------
 # we are defining our schema of sales item
 class product(db.Model):
     __bind_key__ = 'item'
 
-    id = db.Column(db.Integer, primary_key=True)
-    itemName = db.Column(db.String(255), primary_key=False, nullable=True)
-    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
+    # id = db.Column(db.Integer, primary_key=True)
+    itemName = db.Column(db.String(255), primary_key=True, nullable=True)
+    
     # itemName = db.Column(db.String, primary_key=True)
     # unit = db.Column(db.Integer, nullable=True)
     # rate = db.Column(db.Integer, nullable=True)
@@ -133,8 +133,8 @@ class product(db.Model):
     # checkbox = db.Column(db.Integer, nullable=True)  
     #as we are declaring directly, we should remove unique as it will coflict in the database
       
-    def __repr__(item) -> str:
-        return f"{item.itemName}"
+    def __repr__(self) -> str:
+        return f"{self.itemName}"
 # -------------------------------
 
 # to get database
@@ -266,11 +266,12 @@ def khata():
 
         submittedCategory = request.form['categoryNameform']
         print(submittedCategory, '*****-----posted-----*****') 
-        newCategory = stock(categoryName=submittedCategory)
+
+        newCategory = category(categoryName=submittedCategory)
         db.session.add(newCategory)
         db.session.commit()
 
-        print(submittedCategory, "Category added successfully !")
+        print(submittedCategory, "category added successfully !")
     else:
         print('--loading back into sales--')
         return redirect('/updatedSales')
@@ -287,9 +288,10 @@ def samaan():
 
     if (request.method=='POST') :
 
-        submittedItem = request.form['itemNameform']
+        submittedItem = request.form['itemNameForm']
         print(submittedItem, '*****-----posted-----*****') 
-        newItem = stock(itemName=submittedItem)
+
+        newItem = product(itemName=submittedItem)
         db.session.add(newItem)
         db.session.commit()
 
@@ -319,13 +321,15 @@ def samaan():
 @app.route('/updatedSales')
 
 def salesNewList():
-    print('--loading new list from stock DB--')
+    print('--loading new list from category DB--')
 
-    allStocks = stock.query.all()
-    print(allStocks)
+    allCategory = category.query.all()
+    allItems = product.query.all()
+    print(allCategory)
+    print(allItems)
 
-    # return redirect('addItems', totalStocks=allStocks)
-    return render_template("saleAdmin.html", totalStocks=allStocks)
+    # return redirect('addItems', totalStocks=allCategory)
+    return render_template("saleAdmin.html", totalCategory=allCategory, totalItems=allItems)
 
 
 

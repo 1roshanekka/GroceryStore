@@ -10,7 +10,7 @@ Admin Panel - Sales
     <br><br>
 
     <div class="canvas">
-        {% for samaan in totalStocks %}
+        {% for samaan in totalCategory %}
             <div class="section" >
                 
                 <div class="section-item">
@@ -23,20 +23,30 @@ Admin Panel - Sales
                 </div>
 
                 <div class="section-view" id="section-listID">
-                    
+                        
                     <div class="dashboard-flex-items">
                         <!-- {{loop.slno}} -->
                         <!-- for looping the serial number-->
                         <div class="insideContainer">
                             
-                            Item Name
-                            <button class="addStock" id="stock">
-                                <div class="add" onclick="">
-                                    <img src="{{ url_for( 'static', filename='assets/add.png')}}" alt="add button" height="50px" width="50px">
-                                </div>
-                            </button>
-            
-                            <div>
+                            <form action="/addItems" method="POST">
+                                <!-- <div class="formContent">
+                                    <label for="item" class="modalForm">Category Name  : </label>  
+                                    <span class="placeholder">
+                                        <input type="text" name="categoryNameform" id="item" placeholder="item name">
+                                    </span>
+                                </div> -->
+                                <input type="text" name="itemNameForm" id="item" placeholder="item name">
+                                <br><br>
+                                <button class="addStock" id="stock">
+                                    <div class="add" onclick="">
+                                        <img src="{{ url_for( 'static', filename='assets/add.png')}}" alt="add button" height="50px" width="50px">
+                                    </div>
+                                </button>
+                            </form>
+                            
+                            
+                            <!-- <div>
                                 <button class="edit" id="clickable">
                                     edit
                                 </button>
@@ -44,22 +54,23 @@ Admin Panel - Sales
                                 <button class="delete" id="clickable">
                                     delete
                                 </button>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
 
-                    {% for samaan in totalStocks %}
+                    {% for samaan in totalItems %}
                         <div class="dashboard-flex-items">
                             <!-- {{loop.slno}} -->
                             <!-- for looping the serial number-->
                             <div class="insideContainer">
                                 
                                 {{samaan.itemName}}
-                                <button class="addStock" id="stock">
+
+                                <!-- <button class="addStock" id="stock">
                                     <div class="add" onclick="">
                                         <img src="{{ url_for( 'static', filename='assets/add.png')}}" alt="add button" height="50px" width="50px">
                                     </div>
-                                </button>
+                                </button> -->
                 
                                 <div>
                                     <button class="edit" id="clickable">
@@ -87,7 +98,7 @@ Admin Panel - Sales
 
     <br><br>
     <div class="dashboard-flex-container">
-         <!-- {% for samaan in totalStocks %}
+         <!-- {% for samaan in totalCategory %}
             <div class="dashboard-flex-items">
                 <!-- {{loop.slno}} -->
                 <!-- for looping the serial number
@@ -149,7 +160,7 @@ Admin Panel - Sales
                     <div class="formContent">
                         <label for="item" class="modalForm">Category Name  : </label>  
                         <span class="placeholder">
-                            <input type="text" name="categoryNameform" id="item" placeholder="item name">
+                            <input type="text" name="categoryNameform" id="item" placeholder="category name">
                         </span>
                     </div>
                     <br><br><br>

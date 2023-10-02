@@ -147,7 +147,7 @@ window.onclick = function(event) {
 }
 
 function appearanceLight() {
-    document.getElementById("view").href="/static/adminLight.css.css"
+    document.getElementById("view").href="/static/adminLight.css"
     // document.getElementById("view").href="{{ url_for ('static', filename='lightStyle.css') }}"
 
     document.getElementById("store").src="/static/assets/DownloadOnAppStoreDark.svg"

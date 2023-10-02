@@ -167,9 +167,9 @@
 
 .interface {
 	/* position: fixed; */
-	background-color: aqua;
+	/* background-color: aqua; */
 	/* padding-bottom: 2000px; */
-	padding: 200px;
+	/* padding: 200px; */
 	
 }
 .add {
@@ -521,6 +521,12 @@ a:visited{
 	padding: 2px 5px;
 	color: #006ee6;
 }
+.darkButton {
+	border: none;
+	/* background-color: #006ee6; */
+	border-radius: 20px;
+	/* padding: 2px 5px; */
+}
 
 
 input[type=text] {
@@ -620,4 +626,12 @@ input[type=text]:focus {
 .itemName {
 	/* border: 2px solid purple; */
 	/* padding: 10px; */
+}
+
+
+.tools {
+	margin: 0px 100px 0px 100px;
+	padding: 0px 0px 0px 0px;
+	display: flex;
+	justify-content: flex-end;
 }

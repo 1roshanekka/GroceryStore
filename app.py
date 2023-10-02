@@ -9,6 +9,7 @@ from flask import g
 from flask import url_for
 from flask import flash
 from flask_migrate import Migrate
+from sqlalchemy.orm import relationship
 
 # from flask import flask_login
 
@@ -43,6 +44,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///members.db"
 
 app.config['SQLALCHEMY_BINDS'] = {
     'store': "sqlite:///store.db",
+    'item' : "sqlite:///store.db",
 }
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -98,7 +100,32 @@ class registry(db.Model):
 # we are defining our schema of sales item
 class stock(db.Model):
     __bind_key__ = 'store'
-    itemName = db.Column(db.String(255), primary_key=True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True)
+    categoryName = db.Column(db.String(255), primary_key=True, nullable=False)
+    
+    # itemName = db.Column(db.String(255), primary_key=False, nullable=True)
+
+    # itemName = db.Column(db.String, primary_key=True)
+    # unit = db.Column(db.Integer, nullable=True)
+    # rate = db.Column(db.Integer, nullable=True)
+    # quantity = db.Column(db.Integer, nullable=True)
+    # checkbox = db.Column(db.Integer, nullable=True)  
+    #as we are declaring directly, we should remove unique as it will coflict in the database
+    item = relationship('product', backref='category', lazy=True)
+
+    def __repr__(item) -> str:
+        return f"{item.categoryName}"
+    
+# -------------------------------
+
+# -------------------------------
+# we are defining our schema of sales item
+class product(db.Model):
+    __bind_key__ = 'item'
+
+    id = db.Column(db.Integer, primary_key=True)
+    itemName = db.Column(db.String(255), primary_key=False, nullable=True)
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
     # itemName = db.Column(db.String, primary_key=True)
     # unit = db.Column(db.Integer, nullable=True)
     # rate = db.Column(db.Integer, nullable=True)
@@ -108,8 +135,8 @@ class stock(db.Model):
       
     def __repr__(item) -> str:
         return f"{item.itemName}"
-    
 # -------------------------------
+
 # to get database
 @app.route("/`admin`Cockpit", methods=['GET', 'POST'])
 
@@ -230,10 +257,33 @@ def admin():
 
 
 # -------------------------------
-# adds item to DATABASE which has binds to --store--
-@app.route("/addItems", methods=['GET', 'POST'])
+#!! adds category to DATABASE which has binds to --store--
+@app.route("/addCategory", methods=['GET', 'POST'])
 
 def khata():
+
+    if (request.method=='POST') :
+
+        submittedCategory = request.form['categoryNameform']
+        print(submittedCategory, '*****-----posted-----*****') 
+        newCategory = stock(categoryName=submittedCategory)
+        db.session.add(newCategory)
+        db.session.commit()
+
+        print(submittedCategory, "Category added successfully !")
+    else:
+        print('--loading back into sales--')
+        return redirect('/updatedSales')
+
+    print("--rendering admin panel for Sales")
+    return redirect('/updatedSales')
+
+
+# -------------------------------
+#!! adds item to DATABASE which has binds to --store--
+@app.route("/addItems", methods=['GET', 'POST'])
+
+def samaan():
 
     if (request.method=='POST') :
 
@@ -250,6 +300,7 @@ def khata():
 
     print("--rendering admin panel for Sales")
     return redirect('/updatedSales')
+
 
 
 # -------------------------------

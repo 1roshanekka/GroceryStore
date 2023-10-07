@@ -11,18 +11,19 @@ Admin Panel - Sales
 
     <div class="canvas">
         {% for samaan in totalCategory %}
-            <div class="section" >
+            <div class="section">
                 
                 <div class="section-item">
                     <div class="itemName">
                         {{samaan.categoryName}}
                     </div>
-                    <div class="section-toggle" id="clickable" onclick="section()">
+                    <div class="section-toggle" id="clickable" onclick="section('{{ samaan.categoryName }}')">
                         <img src="{{ url_for( 'static', filename='assets/dropdown.png')}}" alt="add button" height="15px" width="15px">
                     </div> 
                 </div>
-
-                <div class="section-view" id="section-listID">
+                
+                <!--! this gets shown and hidden -->
+                <div class="section-view" id="{{ samaan.categoryName }}">
                         
                     <div class="dashboard-flex-items">
                         <!-- {{loop.slno}} -->
@@ -58,6 +59,7 @@ Admin Panel - Sales
                         </div>
                     </div>
 
+                    <!-- ! isme shayad for saaman in categoryname karna hai -->
                     {% for samaan in totalItems %}
                         <div class="dashboard-flex-items">
                             <!-- {{loop.slno}} -->

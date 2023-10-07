@@ -94,9 +94,25 @@ document.addEventListener('DOMContentLoaded', function() {
 //   change.style.transform = "rotate(180deg)";
 // }
 
-function section() {
-  var element = document.getElementById("section-listID");
+// function section() {
+//   var element = document.getElementById("section-listID");
+//   var change = document.querySelector(".section-toggle");
+
+//   if (element.classList.contains("section-view-hidden")) {
+//     element.classList.remove("section-view-hidden");
+//     change.style.transform = "rotate(0deg)";
+//   } else {
+//     element.classList.add("section-view-hidden");
+//     change.style.transform = "rotate(180deg)";
+//   }
+// }
+function section(category) {
+  var element = document.getElementById(category);
+
+
   var change = document.querySelector(".section-toggle");
+  var itemList = document.getElementById(category);
+            // itemList.classList.toggle("active");
 
   if (element.classList.contains("section-view-hidden")) {
     element.classList.remove("section-view-hidden");

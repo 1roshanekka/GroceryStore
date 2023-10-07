@@ -138,7 +138,7 @@ class product(db.Model):
 # -------------------------------
 
 # to get database
-@app.route("/`admin`Cockpit", methods=['GET', 'POST'])
+@app.route("/adminCockpit", methods=['GET', 'POST'])
 
 def bossPanel():
 
@@ -304,7 +304,36 @@ def samaan():
     return redirect('/updatedSales')
 
 
+# -------------------------------
+#!! deletes item from DATABASE which has binds to --store--
+@app.route("/delete/<int:slno>")  # what if you want to pass username, should it be the primary key
 
+def deleteItem(slno): 
+    print("--deleting--")
+
+    # slno from the database must match with the serial_no that we pass to delete
+    particularUser = registry.query.filter_by(slno=slno).first()
+    db.session.delete(particularUser) 
+    db.session.commit() # do not forget to commit
+
+    updatedDB = registry.query.all()
+
+    print(particularUser)   
+
+    # this Flask's redirect function does not accept additional arguments like this. Instead, you should pass data using query parameters.
+    # return redirect("/users", fullDB = updatedDB) 
+
+    # this is working
+    # return redirect(f"/users?fullDB={updatedDB}")
+
+    return render_template("users.html", fullDB = updatedDB)  # fullDB is the variable taken by jinja template
+    
+    # to the console
+    return render_template("users.html", fullDB = updatedDB)  # fullDB is the variable taken by jinja template
+    return render_template("users.html", fullDB=allUsers) # when /users page is requested render the user page and also pass the database as fullDB
+
+
+# -------------------------------
 # -------------------------------
 # @app.route("/addCategory", methods=['GET', 'POST'])
 
@@ -567,5 +596,5 @@ def index() :
 
 if __name__ == "__main__":
     app.debug = True
-    app.run(port=9000)
+    app.run(port=8000)
     # app.run(debug=True)

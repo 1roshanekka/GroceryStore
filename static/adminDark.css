@@ -7,6 +7,7 @@
 
 .body {
 	background-color: #000000;
+	color: white;
 }
 
 .main-body {
@@ -35,7 +36,9 @@
 	backdrop-filter: blur(10px);
 	/* background-color: green;
 	opacity: 0.2; */
-	background-color: rgba(15, 28, 101, 0.5);
+
+	background-color: rgba(26, 28, 36, 0.5);
+	/* background-color: rgba(15, 28, 101, 0.5); */
 
 	z-index: -1;
 }
@@ -97,6 +100,7 @@
 .flexbox-adminpanel {
 	display: flex;
 	/* justify-content: space-around; */
+	background-color: ;
 	justify-content: center;
 
 	column-gap: 200px;
@@ -112,7 +116,8 @@
 	border: none;
 	border-radius: 20px;
 	/* border: 1px solid rebeccapurple; */
-	background-color: #419197;
+	background-color: rgba(26, 28, 36, 1);
+
 	padding: 50px;
 	font-size: 20px;
 	/* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
@@ -532,7 +537,8 @@ input[type=text]:focus {
 
 
 	padding: 20px;
-	background-color: #419197 ;
+	/* background-color: #419197 ; */
+	background-color: rgba(26, 28, 36, 0.5);
 }
 
 .section-item {

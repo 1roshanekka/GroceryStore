@@ -554,7 +554,7 @@ input[type=text]:focus {
 	flex-direction: column;
 
 	justify-content: space-around;
-	row-gap: 25px;
+	row-gap: 40px;
 
 	align-items: center;
 }
@@ -574,6 +574,7 @@ input[type=text]:focus {
 
 	padding: 20px;
 	background-color: #419197 ;
+	
 }
 
 .section-item {
@@ -613,7 +614,9 @@ input[type=text]:focus {
 
 .section-view-hidden {
 	display: flex;
-	
+	padding: 20px;
+	background-color: #419197;
+
 	/* padding: 50px; */
 
 }

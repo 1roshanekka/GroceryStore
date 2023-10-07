@@ -161,3 +161,8 @@ function appearanceLight() {
     
 }
 
+
+function deleteItem(itemId) {
+  // Use 'itemId' in your code to perform the deletion
+  window.location.href = `/deleteItem/${itemId}`;
+}

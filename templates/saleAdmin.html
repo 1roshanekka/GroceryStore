@@ -63,8 +63,10 @@ Admin Panel - Sales
                             <!-- {{loop.slno}} -->
                             <!-- for looping the serial number-->
                             <div class="insideContainer">
+                                <div class="insideContainer-1">
+                                    {{samaan.itemName}}
+                                </div>
                                 
-                                {{samaan.itemName}}
 
                                 <!-- <button class="addStock" id="stock">
                                     <div class="add" onclick="">
@@ -72,15 +74,22 @@ Admin Panel - Sales
                                     </div>
                                 </button> -->
                 
-                                <div>
-                                    <button class="edit" id="clickable">
+                                <div class="insideContainer-2">
+                                    <!-- <button class="edit" id="clickable">
                                         edit
-                                    </button>
-                    
-                                    <button class="delete" id="clickable">
-                                        delete
-                                    </button>
-                                    <a href="/delete/{{lists.slno}}" type="button" class="delete">Delete</button>
+                                    </button> -->
+                                    <!-- <button class="delete" id="clickable">
+                                        delete 
+                                        <!-- <a href="/deleteItem/{{samaan.id}}" type="button" class="delete">Delete</button>  -->
+                                        <!-- <a href="/deleteItem/{{samaan.id}}" type="button">delete this</button> 
+
+                                    </button> -->
+
+                                    <div class="edit" style="cursor: pointer;" onclick="deleteItem('{{ samaan.id }}')">edit</div>
+                                    <div class="delete" style="cursor: pointer;" onclick="deleteItem('{{ samaan.id }}')">delete</div>
+
+                                    <!-- <a href="/deleteItem/{{samaan.id}}" type="button" class="del">Delete</button> -->
+                                    
                                 </div>
                             </div>
                             <!-- <button class="addItem" id="ass">

@@ -123,8 +123,8 @@ class category(db.Model):
 class product(db.Model):
     __bind_key__ = 'item'
 
-    # id = db.Column(db.Integer, primary_key=True)
-    itemName = db.Column(db.String(255), primary_key=True, nullable=True)
+    id = db.Column(db.Integer, primary_key=True)
+    itemName = db.Column(db.String(255), primary_key=True, nullable=False)
     
     # itemName = db.Column(db.String, primary_key=True)
     # unit = db.Column(db.Integer, nullable=True)
@@ -306,25 +306,27 @@ def samaan():
 
 # -------------------------------
 #!! deletes item from DATABASE which has binds to --store--
-@app.route("/delete/<int:slno>")  # what if you want to pass username, should it be the primary key
+@app.route("/deleteItem/<int:id>")  # what if you want to pass username, should it be the primary key
 
-def deleteItem(slno): 
+def deleteItem(id): 
     print("--deleting--")
 
     # slno from the database must match with the serial_no that we pass to delete
-    particularUser = registry.query.filter_by(slno=slno).first()
-    db.session.delete(particularUser) 
+    particularItem = product.query.filter_by(id=id).first()
+    db.session.delete(particularItem) 
     db.session.commit() # do not forget to commit
 
     updatedDB = registry.query.all()
 
-    print(particularUser)   
+    print(particularItem)   
 
     # this Flask's redirect function does not accept additional arguments like this. Instead, you should pass data using query parameters.
     # return redirect("/users", fullDB = updatedDB) 
 
     # this is working
     # return redirect(f"/users?fullDB={updatedDB}")
+    return redirect('/updatedSales')
+
 
     return render_template("users.html", fullDB = updatedDB)  # fullDB is the variable taken by jinja template
     

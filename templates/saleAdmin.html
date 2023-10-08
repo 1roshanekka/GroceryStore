@@ -199,11 +199,13 @@ Admin Panel - Sales
                 <img src="{{ url_for( 'static', filename='assets/plus.png')}}" alt="add button" height="50px" width="50px">
             </div>
         </button>
+
+        <!-- ! this modal appears as block and none on toggle -->
         <div class="modal" id="mymodal">
 
             <div class="modal-content" id="ls">
 
-                <span class="close">&times;</span>
+                <div class="close"></div>
                 <br><br><br>
                 <form action="/addCategory" method="POST">
                     <div class="formContent">
@@ -215,14 +217,21 @@ Admin Panel - Sales
                     <br><br><br>
                     <!-- <input type="submit" class="login" value="Save"> -->
                     <!-- NOT NULL error -->
-                    <button class="login">
-                        Save
-                    </button>
+                    <div class="options">
+                        <button class="options-1" type="submit">
+                            Save
+                        </button>
+                        <button class="options-2" type="button">
+                            Cancel
+                        </button>
+                    </div>
                 </form>
+                
 
                 <br>
             </div>
         </div>
+
     </div>
 {% endblock %}
 

@@ -1,4 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 * {
+
+    font-family: 'Roboto', sans-serif;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-family: sans-serif;
     padding: 0px;
     margin: 0px;
@@ -226,7 +230,7 @@
 
 	/* z-index: 3000; */
 	/* transform: rotate(45deg); */
-	transition: transform 0.1s;
+	transition: transform 0.25s;
 }
 
 .getInside {
@@ -276,15 +280,58 @@
 	transition-duration: 10ms;
 	margin-left: 45%;
 	align-items: center;
-
-
-
 }
-
 .login:hover {
 	background-color: #006ee6;
 	opacity: 0.9;
 }
+
+
+.options {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	column-gap: 30px;
+
+}
+
+.options-1 {
+	background-color: #419197;
+	padding: 10px 30px;
+	/* border-radius: 10px; */
+	border: none;
+	border-radius: 20px;
+	color: white;
+	transition-duration: 10ms;
+	/* margin-left: 45%; */
+	align-items: center;
+
+}
+
+.options-1:hover{
+	background-color: #006ee6;
+	opacity: 0.9;
+}
+
+.options-2 {
+	background-color: #419197;
+	padding: 10px 30px;
+	/* border-radius: 10px; */
+	border: none;
+	border-radius: 20px;
+	color: white;
+	transition-duration: 10ms;
+	/* margin-left: 45%; */
+	align-items: center;
+
+}
+
+.options-2:hover{
+	background-color: #C70000;
+	opacity: 0.9;
+}
+
 .edit {
 	display: inline;
 
@@ -378,18 +425,20 @@
 }
 /* The Close Button */
 .close {
-color: #aaa;
-float: right;
-font-size: 28px;
-font-weight: bold;
+	background-color: red;
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-color: black;
-text-decoration: none;
-cursor: pointer;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
+
 .foot {
 	padding: 0.3%;
 	text-align: center;
@@ -468,6 +517,19 @@ a:visited{
 	color: white;
 	
 	
+}
+
+.dikhao {
+	display: block;
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 .list-div {
@@ -651,6 +713,8 @@ input[type=text]:focus {
 .itemName {
 	/* border: 2px solid purple; */
 	/* padding: 10px; */
+	letter-spacing: 0.100em;
+	font-weight: bold;
 }
 
 

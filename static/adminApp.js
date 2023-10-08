@@ -49,30 +49,58 @@ document.addEventListener('DOMContentLoaded', function() {
   var btn = document.getElementById("ass");
 
   // Get the <span> element that closes the modal
-  var span = document.getElementsByClassName("close")[0];
+  var cross = document.getElementsByClassName("options-2")[0];
+  
 
   // When the user clicks the button, open the modal 
-  btn.onclick = function() {
-    modal.style.display = "block";  
-    var change = document.querySelector(".ss");
-    change.style.transform = "rotate(45deg)";
-  }
+  
+  // btn.onclick = function() {
+  //   modal.style.display = "block";
+  //   console.log('opened modal');  
 
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
+  //   var change = document.querySelector(".ss");
+  //   change.style.transform = "rotate(45deg)";
+  // }
+  btn.addEventListener('click', function() {
+    // cross.onclick = function() {
+    console.log('opened Modall');
+    // modal.style.display = "block";
+    modal.classList.toggle("dikhao");
+    
+    console.log(modal);
+
     var change = document.querySelector(".ss");
     change.style.transform = "rotate(45deg)";
-  }
+  })
+  
+
+  // When the user clicks on <cross> (x), close the modal
+  cross.addEventListener('click', function() {
+  // cross.onclick = function() {
+    // var modal = document.getElementById("mymodal");
+    console.log('changed');
+    // modal.style.display = "none";
+    modal.classList.toggle("dikhao");
+
+    console.log(modal);
+
+    var change = document.querySelector(".ss");
+    change.style.transform = "rotate(0deg)";
+  })
 
   // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
+  window.addEventListener('click', function(event) {
     if (event.target == modal) {
-      modal.style.display = "none";
+      
+      console.log('closed modal'); 
+      // modal.style.display = "none";
+      modal.classList.toggle("dikhao");
+      console.log(modal);
+
       var change = document.querySelector(".ss");
-      change.style.transform = "rotate(45deg)";
+      change.style.transform = "rotate(0deg)";
     }
-  }
+  });
 });
 
 
@@ -246,6 +274,11 @@ function appearanceLight() {
     document.getElementById("cart").src="/static/assets/cart.png"
     // document.getElementById("cart").src="{{ url_for ('static', filename='assets/cart.png') }}"
     
+}
+
+function adminOptions() {
+  // Use 'itemId' in your code to perform the deletion
+  window.location.href = `/adminSecured`;
 }
 
 function editItem(itemId) {

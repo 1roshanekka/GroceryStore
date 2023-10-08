@@ -22,7 +22,7 @@ app = Flask(__name__)
 # (hard coded)
 # session is enrypted in server
 
-app.secretkey = "admin90"
+app.secret_key = "admin90"
 
 
 
@@ -146,7 +146,7 @@ def bossPanel():
         print("--loading DB--")
         return redirect('/usersDataBase')
     else:
-        return render_template("managerLogin.html")
+        return redirect("/manager")
 # -------------------------------
 # to get items on sale and panel
 @app.route("/adminCockpit_option1-sales", methods=['GET', 'POST'])
@@ -161,7 +161,7 @@ def sales_forAdmin():
         
         return redirect('/updatedSales')
     else:
-        return render_template("managerLogin.html")
+        return redirect("/manager")
 # -------------------------------
 @app.route("/adminCockpit_option2-summary", methods=['GET', 'POST'])
 
@@ -171,7 +171,7 @@ def summary_forAdmin():
         print("--loading DB--")
         return redirect('/summary')
     else:
-        return render_template("managerLogin.html")
+        return redirect("/manager")
     
 # -------------------------------
 
@@ -190,7 +190,7 @@ def admin():
 
         # if request=='POST' : will not work
         if (request.method=='POST') :
-            # session.pop('user', None) # drops the current session before you submit a request through POST
+            session.pop('user', None) # drops the current session before you submit a request through POST
 
             # fetch from the form present in manager login page
             owner = request.form['email']
@@ -198,13 +198,18 @@ def admin():
             print(owner, owner_passkey)
 
             if (owner == '1roshanekka@gmail.com' and owner_passkey == 'qwerty12345'):
-                # session.['user'] = request.form['username']
+                session['user'] = owner
                 # return redirect( url_for('showUsers') ) 
                 # or 
                 # flash("Login Successfull", 'info')
+                print("--gotcha homie--")
                 print("--Login Successfull--")
 
+                # if user in session
+
                 # if login is success
+                return redirect('/adminSecured')
+
                 return render_template('adminPanel.html', user = owner)
 
                 return redirect('/usersDataBase')
@@ -239,9 +244,11 @@ def admin():
             # return render_template('users.html') this will return empty DB as we dont pass DB with the render template
         # elif request=='GET':
         #     return render_template("/manager.html")
-
-        print('--access denied--')
-        return render_template("/managerLogin.html") # same as redirect('/manager')
+        else:
+            if "user" in session:
+                return redirect(url_for('adminLoggged'))
+            print('--access denied--')
+            return render_template("/managerLogin.html") # same as redirect('/manager')
 
     # return render_template("/")
     # or
@@ -254,7 +261,30 @@ def admin():
     # return render_template("/") for html link not route link
     # url_for is helper to find the route when the function name is passed 
     # but it has to be used with redirect
+# -------------------------------
 
+@app.route("/adminSecured", methods=['GET', 'POST']) 
+
+def adminLogged():
+    if "user" in session:
+        
+        user = session["user"]
+
+        print(user)
+
+        return render_template('adminPanel.html', user = user)
+
+        return f"<h1>{user}</h1>"
+    else:
+        return redirect("/manager")
+
+# -------------------------------
+
+@app.route("/adminRetired", methods=['GET', 'POST']) 
+
+def adminLoggedOut():
+    session.pop('user', None)
+    return redirect('/manager')
 
 # -------------------------------
 #!! adds category to DATABASE which has binds to --store--
@@ -352,6 +382,9 @@ def deleteItem(id):
 @app.route('/updatedSales')
 
 def salesNewList():
+
+    user = session.get('user')
+
     print('--loading new list from category DB--')
 
     allCategory = category.query.all()
@@ -360,7 +393,7 @@ def salesNewList():
     print(allItems)
 
     # return redirect('addItems', totalStocks=allCategory)
-    return render_template("saleAdmin.html", totalCategory=allCategory, totalItems=allItems)
+    return render_template("saleAdmin.html", totalCategory=allCategory, totalItems=allItems, user=user)
 
 
 
@@ -510,6 +543,8 @@ with app.app_context():
 @app.route("/usersDataBase") 
 
 def showUsers():
+    user = session.get('user')
+
     print("--Rendering DataBase")
 
 
@@ -517,7 +552,7 @@ def showUsers():
     print(allUsers)   
     # to the console
 
-    return render_template("users.html", fullDB=allUsers) # when /users page is requested render the user page and also pass the database as fullDB
+    return render_template("users.html", fullDB=allUsers, user=user) # when /users page is requested render the user page and also pass the database as fullDB
 
 # -------------------------------
 # Creating a CRUD Operation
@@ -576,7 +611,8 @@ def getSalesforAdmin() :
 # -------------------------------
 @app.route('/summary')
 def getSummaryforAdmin() :
-    return render_template('summaryAdmin.html')
+    user = session.get('user')
+    return render_template('summaryAdmin.html', user=user)
 
 # -------------------------------
 

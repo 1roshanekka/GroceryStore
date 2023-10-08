@@ -46,11 +46,20 @@ input[type=search] {
 .body {
 	background-image: url(/static/assets/1.jpg);
 	/* background-image: url(/static/assets/2.jpeg); */
-	background-size: 120% auto;
+	background-size: 100% ;
 	background-repeat: no-repeat;
 	background-color: #210012;
 
 }
+.override-background {
+    background-image: url(/static/assets/doc1.jpg);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+	background-color: #022335;
+
+}
+
+
 #body {
 	background-image: url(/static/assets/3.jpg);
 	background-size: 120% auto;
@@ -173,6 +182,10 @@ h1 {
 	text-align: center;
 }
 */
+
+.main-body{
+	color: white;
+}
 
 .profileIcon {
 	padding: 10px;

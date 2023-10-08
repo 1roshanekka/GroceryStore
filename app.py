@@ -615,7 +615,36 @@ def getSummaryforAdmin() :
     return render_template('summaryAdmin.html', user=user)
 
 # -------------------------------
-
+@app.route('/agreements')
+def getAgreements() :
+    # user = session.get('user')
+    return render_template('agreements.html')
+# -------------------------------
+@app.route('/privacy')
+def getPrivacy() :
+    # user = session.get('user')
+    return render_template('privacy.html')
+# -------------------------------
+@app.route('/return')
+def getReturn() :
+    # user = session.get('user')
+    return render_template('return.html')
+# -------------------------------
+@app.route('/warranty')
+def getWarranty() :
+    # user = session.get('user')
+    return render_template('warranty.html')
+# -------------------------------
+@app.route('/help')
+def getHelp() :
+    # user = session.get('user')
+    return render_template('help.html')
+# -------------------------------
+@app.route('/terms')
+def getTerms() :
+    # user = session.get('user')
+    return render_template('terms.html')
+# -------------------------------
 
 # -------------------------------
 

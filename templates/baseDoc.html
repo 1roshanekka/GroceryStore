@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel=”stylesheet” href="style.css"> -->
+
+    <!-- <link href="lightStyle.css" rel="stylesheet" id="view"> -->
+    <link href="{{ url_for ('static', filename='lightStyle.css') }}" rel="stylesheet" id="view">
+
+    <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
+    <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
+
+    <title> {% block title %} {% endblock %} </title>
+    <style>
+        body {
+            background-image: url(/static/assets/doc.jpg);
+            background-repeat: repeat;
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        h2 {
+
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+
+        }
+        .section ul {
+            padding: 0px 20px;
+        }
+        .section ol {
+            padding: 0px 20px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .main-body{
+
+            margin: 20px 100px;
+
+        }
+        .back-button a {
+            text-decoration: none;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        .back-button a:hover {
+            background-color: #0056b3;
+        }
+        .mail > a:link{ 
+            color: orange;
+            text-decoration: none;
+        }
+        /* link which user has visited */
+        .mail > a:visited{
+            color: gray;
+            text-decoration: none;
+        }
+    </style>
+    <!-- <style>{% block style %} {% endblock %}</style> -->
+</head>
+
+<body class = "override-background">
+  <!-- <script src="app.js"></script> -->
+  
+  <script src="{{ url_for ('static', filename='app.js') }}"></script>
+
+    <div class="nav">
+        <a href="/manager">
+        <span class="imageLogo">
+            <!-- <img src="assets/google.png" alt="logo" width="35px">  -->
+            <!-- <img src="{{ url_for ('static', filename='assets/google.png') }}" alt="logo" width="35px"> -->
+            <img src="{{ url_for ('static', filename='assets/akatsuki.png') }}" alt="logo" width="100px">
+        </span>
+        </a>
+        
+        <div class="name">
+        <h2>Grocery Store</h2>
+        </div>
+        <div class="empty">
+        
+        </div>
+    </div>
+    <!-- <input type="search" class="searchBar"> -->
+    <!-- <span class="menuIcons">
+      <img src="assets/cart.png" alt="cart image" width="35px" height="35px" id="cart"> 
+    </span> -->
+    <div class="main-body">
+
+        {% block body %}
+            
+        {% endblock %}
+
+    </div>
+    <div class="baseDoc">
+
+    </div>
+
+    <div class="space">
+        
+    </div>
+
+    <div class="black">
+        <div class="store" id="sep">
+        <!-- <img src="assets/DownloadOnAppStoreDark.svg" alt="appstore" id="store"> -->
+        <img src="{{ url_for ('static', filename='assets/DownloadOnAppStoreDark.svg') }}" alt="appstore" id="store">
+        </div>
+        
+        <div class="tools">
+        <!-- <img src="assets/getItOnPlayStore.png" alt="playstore" width="250px" height="120px"> -->
+        <div class="appearance">
+            <div class="light" onclick="appearanceLight()" id="clickable">
+            <!-- <button class="light" onclick="appearanceLight()">
+                Light
+            </button> -->
+            Light
+            </div>
+            <div class="dark" onclick="appearanceDark()" id="clickable">
+            <!-- <button class="dark" onclick="appearanceDark()">
+                Dark
+            </button> -->
+            Dark
+            </div>
+        </div>
+        </div>
+
+
+    <div class="footSeparator" id="sep">
+  
+      <hr>
+      
+      <br>
+      <div class="quickLinks">
+        <table class="links">
+          <tr>
+            <th>
+            <!-- Quick Links -->
+            </th>
+          </tr>
+          
+          <tr>
+            <td><a href="/">Home</a></td>
+            <td><a href="/help">Help Center</a></td>
+            <td><a href="/terms">Terms & Condition</a></td>
+            
+            <td><a href="/manager">Manager Login</a></td>
+  
+          </tr>
+  
+          <tr>
+            <td><a href="/account">Account</a></td>
+            <td><a href="/return">Return Policy</a></td>
+            <td><a href="/privacy">Privacy Policy</a></td>
+  
+            <td><a href="/UserLogin">User Login</a></td>
+  
+          </tr>
+  
+          <tr>
+            <td></td>
+            <td><a href="/warranty">Warranty</a></td>
+            <td><a href="/agreements">Agreements & Guidelines</a></td>
+  
+            <td><a href="/usersDataBase">User DataBase</a></td>
+  
+          </tr>
+  
+        </table>
+      </div>  
+    </div>
+    <br><br>
+  
+  </div>
+  
+    <footer class = "butt">
+    <div class="foot">
+        Copyright &copy TheBrokenStudios Private Limited. 2023 &nbsp &nbsp All Rights Reserved.
+    </div>
+    </footer>
+</body>
+</html>

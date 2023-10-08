@@ -1,0 +1,40 @@
+{% extends "baseDoc.html" %}
+
+{% block title %} 
+Help Center - Grocery
+{% endblock %}
+
+
+{% block body %}
+
+        <script>
+            var passedParams = '{{ params }}'
+            console.log(passedParams)
+
+            if (passedParams === '0') {
+                alert('Wrong Username')
+            }
+            else if (passedParams === '1') {
+                alert('Wrong Password')
+            }
+            else if (passedParams === '2') {
+                alert('Wrong Credentials')
+            }
+        </script>
+
+
+<h1>Page Under Construction</h1>
+<img src="{{ url_for( 'static', filename='assets/404.jpeg')}}" alt="under construction image" height="auto" width="auto">
+<!-- <img src="construction_image.jpg" alt="Under Construction" /> -->
+<p>We are working on something awesome! Please check back soon.</p>
+    <br>
+    <div class="back-button">
+        <a href="/">Back to Home</a>
+    </div>
+        <!-- <script>
+        document.write(passedParams);
+    </script> -->
+
+{% endblock %}
+
+

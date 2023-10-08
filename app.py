@@ -383,7 +383,7 @@ def deleteItem(id):
 
 def salesNewList():
 
-    user = session.get('user')
+        
 
     print('--loading new list from category DB--')
 

@@ -443,10 +443,14 @@ th, td {
 }
 
 .empty {
-	padding: 200px;
+	padding: 0px 60px;
 }
 
 .black {
 	/* color: black; */
 	/* background-color: #B2916C; */
+}
+
+.space {
+	padding: 100px;
 }

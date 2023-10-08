@@ -10,20 +10,20 @@ Admin Panel - Sales
     <br><br>
 
     <div class="canvas">
-        {% for samaan in totalCategory %}
+        {% for cat in totalCategory %}
             <div class="section">
                 
                 <div class="section-item">
                     <div class="itemName">
-                        {{samaan.categoryName}}
+                        {{cat.categoryName}}
                     </div>
-                    <div class="section-toggle" id="clickable" onclick="section('{{ samaan.categoryName }}')">
+                    <div class="section-toggle" id="clickable" onclick="section('{{ cat.categoryName }}')">
                         <img src="{{ url_for( 'static', filename='assets/dropdown.png')}}" alt="add button" height="15px" width="15px">
                     </div> 
                 </div>
                 
                 <!--! this gets shown and hidden -->
-                <div class="section-view" id="{{ samaan.categoryName }}">
+                <div class="section-view" id="{{ cat.categoryName }}">
                         
                     <div class="dashboard-flex-items">
                         <!-- {{loop.slno}} -->
@@ -37,6 +37,10 @@ Admin Panel - Sales
                                         <input type="text" name="categoryNameform" id="item" placeholder="item name">
                                     </span>
                                 </div> -->
+                                <!-- ! this is changed -->
+                                <input type="hidden" name="category_id" value="{{ cat.id }}">
+                                <!-- ! should it be cat.id?? YES-->
+
                                 <input type="text" name="itemNameForm" id="item" placeholder="item name">
                                 <br><br>
                                 <button class="addStock" id="stock">
@@ -44,6 +48,7 @@ Admin Panel - Sales
                                         <img src="{{ url_for( 'static', filename='assets/add.png')}}" alt="add button" height="50px" width="50px">
                                     </div>
                                 </button>
+
                             </form>
                             
                             
@@ -60,7 +65,8 @@ Admin Panel - Sales
                     </div>
 
                     <!-- ! isme shayad for saaman in categoryname karna hai -->
-                    {% for samaan in totalItems %}
+                    
+                    {% for samaan in totalItems if samaan.category_id == cat.id %}
                         <div class="dashboard-flex-items">
                             <!-- {{loop.slno}} -->
                             <!-- for looping the serial number-->
@@ -86,11 +92,11 @@ Admin Panel - Sales
                                         <!-- <a href="/deleteItem/{{samaan.id}}" type="button">delete this</button> 
 
                                     </button> -->
-
+                                    
                                     <div class="edit" style="cursor: pointer;" onclick="deleteItem('{{ samaan.id }}')">edit</div>
                                     <div class="delete" style="cursor: pointer;" onclick="deleteItem('{{ samaan.id }}')">delete</div>
 
-                                    <!-- <a href="/deleteItem/{{samaan.id}}" type="button" class="del">Delete</button> -->
+                                    <!-- <a href="/deleteItem/{{cat.id}}" type="button" class="del">Delete</button> -->
                                     
                                 </div>
                             </div>
@@ -110,13 +116,13 @@ Admin Panel - Sales
 
     <br><br>
     <div class="dashboard-flex-container">
-         <!-- {% for samaan in totalCategory %}
+         <!-- {% for cat in totalCategory %}
             <div class="dashboard-flex-items">
                 <!-- {{loop.slno}} -->
                 <!-- for looping the serial number
                 <div class="insideContainer">
                     
-                    {{samaan.itemName}}
+                    {{cat.itemName}}
 
                     <button class="addStock" id="stock">
                         <div class="add" onclick="">

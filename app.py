@@ -101,8 +101,10 @@ class registry(db.Model):
 class category(db.Model):
     __bind_key__ = 'store'
     id = db.Column(db.Integer, primary_key=True)
-    categoryName = db.Column(db.String(255), nullable=False)
-    
+    categoryName = db.Column(db.String(50), nullable=False)
+
+    # products = db.relationship('product', backref='Category', lazy=True)
+
     # itemName = db.Column(db.String(255), primary_key=False, nullable=True)
 
     # itemName = db.Column(db.String, primary_key=True)
@@ -115,17 +117,22 @@ class category(db.Model):
     # item = relationship('product', backref='category', lazy=True)
 
     def __repr__(self) -> str:
+        return f"Category('{self.categoryName}')"
         return f"{self.categoryName}"
+        
     
 
 # -------------------------------
 # we are defining our schema of sales item
 class product(db.Model):
-    __bind_key__ = 'item'
+    __bind_key__ = 'store'
 
     id = db.Column(db.Integer, primary_key=True)
-    itemName = db.Column(db.String(255), primary_key=True, nullable=False)
+    itemName = db.Column(db.String(50), nullable=False)
     
+    category_id = db.Column(db.Integer, db.ForeignKey('category.id'), nullable=False)
+    # category = db.relationship('Category', backref=db.backref('products', lazy=True))
+    # category = db.relationship('Category', backref=db.backref('items', lazy=True))
     # itemName = db.Column(db.String, primary_key=True)
     # unit = db.Column(db.Integer, nullable=True)
     # rate = db.Column(db.Integer, nullable=True)
@@ -134,6 +141,7 @@ class product(db.Model):
     #as we are declaring directly, we should remove unique as it will coflict in the database
       
     def __repr__(self) -> str:
+        return f"Product('{self.itemName}')"
         return f"{self.itemName}"
 # -------------------------------
 
@@ -297,6 +305,7 @@ def khata():
         submittedCategory = request.form['categoryNameform']
         print(submittedCategory, '*****-----posted-----*****') 
 
+        # ! here categoryName from category class is targetted
         newCategory = category(categoryName=submittedCategory)
         db.session.add(newCategory)
         db.session.commit()
@@ -321,7 +330,10 @@ def samaan():
         submittedItem = request.form['itemNameForm']
         print(submittedItem, '*****-----posted-----*****') 
 
-        newItem = product(itemName=submittedItem)
+        # ! here itemName from product class is targetted
+        category_id = request.form['category_id']
+        
+        newItem = product(itemName=submittedItem, category_id=category_id)
         db.session.add(newItem)
         db.session.commit()
 
@@ -383,7 +395,7 @@ def deleteItem(id):
 
 def salesNewList():
 
-        
+    user = session["user"]
 
     print('--loading new list from category DB--')
 

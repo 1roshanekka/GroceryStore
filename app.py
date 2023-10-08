@@ -332,7 +332,7 @@ def samaan():
 
         # ! here itemName from product class is targetted
         category_id = request.form['category_id']
-        
+
         newItem = product(itemName=submittedItem, category_id=category_id)
         db.session.add(newItem)
         db.session.commit()
@@ -378,6 +378,34 @@ def deleteItem(id):
 
 
 # -------------------------------
+
+@app.route("/editItem/<int:id>")  # what if you want to pass username, should it be the primary key
+
+def editItem(id): 
+    print("--editing Item--")
+
+    # display modal
+
+    
+    return redirect('/updatedSales')
+
+# -------------------------------
+
+@app.route("/deleteCategory/<int:id>")  # what if you want to pass username, should it be the primary key
+
+def deleteCategory(id): 
+    print("--deleting Category--")
+
+    # slno from the database must match with the serial_no that we pass to delete
+    particularCategory = category.query.filter_by(id=id).first()
+    db.session.delete(particularCategory) 
+    db.session.commit() # do not forget to commit
+
+    updatedDB = registry.query.all()
+
+    print(particularCategory)  
+    return redirect('/updatedSales')
+
 # -------------------------------
 # @app.route("/addCategory", methods=['GET', 'POST'])
 

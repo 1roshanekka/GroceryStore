@@ -17,9 +17,15 @@ Admin Panel - Sales
                     <div class="itemName">
                         {{cat.categoryName}}
                     </div>
-                    <div class="section-toggle" id="clickable" onclick="section('{{ cat.categoryName }}')">
-                        <img src="{{ url_for( 'static', filename='assets/dropdown.png')}}" alt="add button" height="15px" width="15px">
-                    </div> 
+                    <div class="functions">
+                        <div class="section-toogle-none" id="clickable" onclick="deleteCategory('{{ cat.id }}')">
+                            <img src="{{ url_for( 'static', filename='assets/delete.png')}}" alt="add button" height="25px" width="25px">
+                        </div> 
+                        <div class="section-toggle" id="Category_{{ cat.categoryName }}" onclick="section('{{ cat.categoryName }}')">
+                            <img src="{{ url_for( 'static', filename='assets/dropdown.png')}}" alt="add button" height="15px" width="15px">
+                        </div> 
+                    </div>
+                    
                 </div>
                 
                 <!--! this gets shown and hidden -->
@@ -93,7 +99,32 @@ Admin Panel - Sales
 
                                     </button> -->
                                     
-                                    <div class="edit" style="cursor: pointer;" onclick="deleteItem('{{ samaan.id }}')">edit</div>
+                                    <div class="edit" style="cursor: pointer;" id="editButton", onclick="editItem('{{ samaan.id }}')">edit</div>
+                                    <div class="modal" id="editWalaModal">
+
+                                        <div class="modal-content" id="ls">
+                            
+                                            <span class="close">&times;</span>
+                                            <br><br><br>
+                                            <form action="/addCategory" method="POST">
+                                                <div class="formContent">
+                                                    <label for="item" class="modalForm">Category Name  : </label>  
+                                                    <span class="placeholder">
+                                                        <input type="text" name="categoryNameform" id="item" placeholder="category name">
+                                                    </span>
+                                                </div>
+                                                <br><br><br>
+                                                <!-- <input type="submit" class="login" value="Save"> -->
+                                                <!-- NOT NULL error -->
+                                                <button class="login">
+                                                    Save
+                                                </button>
+                                            </form>
+                            
+                                            <br>
+                                        </div>
+                                    </div>
+
                                     <div class="delete" style="cursor: pointer;" onclick="deleteItem('{{ samaan.id }}')">delete</div>
 
                                     <!-- <a href="/deleteItem/{{cat.id}}" type="button" class="del">Delete</button> -->
@@ -164,7 +195,7 @@ Admin Panel - Sales
             </div> 
         </button> -->
         <button class="addItem" id="ass">
-            <div class="ss" id="rotateThis" onclick="rotate()">
+            <div class="ss" id="rotateThis">
                 <img src="{{ url_for( 'static', filename='assets/plus.png')}}" alt="add button" height="50px" width="50px">
             </div>
         </button>

@@ -4,9 +4,45 @@
 //     change.style.transform = "rotate(45deg)";
 // }
 
+// document.addEventListener('DOMContentLoaded', function() {
+//     // Your JavaScript code here
+//     // Get the modal
+//   var modal = document.getElementById("mymodal");
+
+//   // Get the button that opens the modal
+//   var btn = document.getElementById("ass");
+
+//   // Get the <span> element that closes the modal
+//   var span = document.getElementsByClassName("close")[0];
+
+//   // When the user clicks the button, open the modal 
+//   btn.onclick = function() {
+//     modal.style.display = "block";  
+//     var change = document.querySelector(".ss");
+//     change.style.transform = "rotate(45deg)";
+//   }
+
+
+//   // When the user clicks on <span> (x), close the modal
+//   span.onclick = function() {
+//     modal.style.display = "none";
+//     var change = document.querySelector(".ss");
+//     change.style.transform = "rotate(45deg)";
+//   }
+
+//   // When the user clicks anywhere outside of the modal, close it
+//   window.onclick = function(event) {
+//     if (event.target == modal) {
+//       modal.style.display = "none";
+//       var change = document.querySelector(".ss");
+//       change.style.transform = "rotate(45deg)";
+//     }
+//   }
+// });
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Your JavaScript code here
-    // Get the modal
+  // Your JavaScript code here
+  // Get the modal
   var modal = document.getElementById("mymodal");
 
   // Get the button that opens the modal
@@ -21,7 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var change = document.querySelector(".ss");
     change.style.transform = "rotate(45deg)";
   }
-
 
   // When the user clicks on <span> (x), close the modal
   span.onclick = function() {
@@ -39,6 +74,41 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 });
+
+
+
+// document.addEventListener('DOMContentLoaded', function() {
+//   // Your JavaScript code here
+//   // Get the modal
+//   var modalEdit = document.getElementById("editWalaModal");
+
+//   // Get the button that opens the modalEdit
+//   // var div = document.getElementById("edit");
+//   // var div = document.getElementById("editButton");
+//   var div = document.getElementsByClassName("edit");
+
+//   // Get the <span> element that closes the modalEdit
+//   var span = document.getElementsByClassName("close")[0];
+
+//   // When the user clicks the button, open the modalEdit 
+//   div.onclick = function() {
+//     console.log('showed');
+//     modalEdit.style.display = "block";  
+//   }
+
+
+//   // When the user clicks on <span> (x), close the modalEdit
+//   span.onclick = function() {
+//     modalEdit.style.display = "none";
+//   }
+
+//   // When the user clicks anywhere outside of the modalEdit, close it
+//   window.onclick = function(event) {
+//     if (event.target == modalEdit) {
+//       modalEdit.style.display = "none";
+//     }
+//   }
+// });
 
 
 // var rotated = false;
@@ -108,10 +178,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // }
 function section(category) {
   var element = document.getElementById(category);
+  var fix = "Category_" + category;
 
-
-  var change = document.querySelector(".section-toggle");
-  var itemList = document.getElementById(category);
+  // var change = document.querySelector(".section-toggle");
+  // var change = document.querySelector(".section-toggle");
+  var change = document.getElementById(fix);
             // itemList.classList.toggle("active");
 
   if (element.classList.contains("section-view-hidden")) {
@@ -177,8 +248,25 @@ function appearanceLight() {
     
 }
 
+function editItem(itemId) {
+  // Use 'itemId' in your code to perform the deletion
+  window.location.href = `/editItem/${itemId}`;
+}
 
 function deleteItem(itemId) {
   // Use 'itemId' in your code to perform the deletion
   window.location.href = `/deleteItem/${itemId}`;
+}
+
+
+function deleteCategory(categoryId) {
+  // Use 'itemId' in your code to perform the deletion
+  var flag = confirm("Are you sure to delete this category?")
+
+  if(flag){
+    window.location.href = `/deleteCategory/${categoryId}`;
+  }
+  else{
+    console.log('cancelled')
+  }
 }

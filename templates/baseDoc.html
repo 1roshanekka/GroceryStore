@@ -10,15 +10,18 @@
 
     <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
     <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
 
     <title> {% block title %} {% endblock %} </title>
     <style>
         body {
-            background-image: url(/static/assets/doc.jpg);
+            background-image: url(/static/assets/doc2.jpg);
             background-repeat: repeat;
         }
         h1 {
-            color: white;
+            color: black;
             text-align: center;
         }
 
@@ -42,7 +45,7 @@
             padding: 0px 20px;
         }
         .section h2 {
-            border-bottom: 2px solid #ccc;
+            border-bottom: 2px solid black;
             padding-bottom: 5px;
             margin-bottom: 10px;
         }
@@ -63,13 +66,25 @@
         .back-button a:hover {
             background-color: #0056b3;
         }
-        .mail > a:link{ 
-            color: orange;
+        .section > p > a:link{ 
+            font-weight: 800;
+            color: #1F4172;
+            text-decoration: none;
+        }
+        .section > p > a:link{ 
+            font-weight: 800;
+            color: #1F4172;
             text-decoration: none;
         }
         /* link which user has visited */
+        .mail > a:link{
+            font-weight: 800;
+            color: #0802A3;
+            text-decoration: none;
+        }
         .mail > a:visited{
-            color: gray;
+            font-weight: 800;
+            color: #0802A3;
             text-decoration: none;
         }
     </style>
@@ -93,8 +108,8 @@
         <div class="name">
         <h2>Grocery Store</h2>
         </div>
-        <div class="empty">
-        
+        <div id="empty1">
+
         </div>
     </div>
     <!-- <input type="search" class="searchBar"> -->

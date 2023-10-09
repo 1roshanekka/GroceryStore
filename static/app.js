@@ -79,3 +79,12 @@ if (fontLoaded) {
 } else {
     console.log('Font is not loaded!');
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        var fadeInText = document.getElementById('fadeInText');
+        fadeInText.classList.remove('hidden');
+    }, 2000); 
+})
+

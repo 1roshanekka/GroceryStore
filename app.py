@@ -680,6 +680,11 @@ def getHelp() :
     # user = session.get('user')
     return render_template('help.html')
 # -------------------------------
+@app.route('/account')
+def getAccount() :
+    # user = session.get('user')
+    return render_template('account.html')
+# -------------------------------
 @app.route('/terms')
 def getTerms() :
     # user = session.get('user')

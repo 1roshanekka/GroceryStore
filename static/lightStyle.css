@@ -53,7 +53,7 @@ input[type=search] {
 
 }
 .override-background {
-    background-image: url(/static/assets/doc1.jpg);
+    background-image: url(/static/assets/doc8.jpg);
 	background-size: 100% auto;
 	background-repeat: no-repeat;
 	background-color: #022335;
@@ -246,7 +246,7 @@ h1 {
 */
 
 .main-body{
-	color: white;
+	/* color: white; */
 }
 
 .profileIcon {
@@ -529,8 +529,8 @@ th, td {
 	column-gap: 10px;
 }
 
-.empty {
-	padding: 0px 60px;
+#empty1 {
+	width: 100px;
 }
 .ref {
 	display: flex;
@@ -578,4 +578,18 @@ th, td {
 .bodyinside {
 	/* font-family: sans-serif; */
 	font-family: 'San Francisco';
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hidden {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out;
 }

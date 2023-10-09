@@ -690,7 +690,10 @@ def getTerms() :
     # user = session.get('user')
     return render_template('terms.html')
 # -------------------------------
-
+@app.route('/about')
+def getAbout() :
+    # user = session.get('user')
+    return render_template('about.html')
 # -------------------------------
 
 @app.route('/')

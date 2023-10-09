@@ -1,0 +1,55 @@
+{% extends "baseDoc.html" %}
+
+{% block title %} 
+About us - Grocery
+{% endblock %}
+
+
+{% block body %}
+
+    <script>
+        var passedParams = '{{ params }}'
+        console.log(passedParams)
+
+        if (passedParams === '0') {
+            alert('Wrong Username')
+        }
+        else if (passedParams === '1') {
+            alert('Wrong Password')
+        }
+        else if (passedParams === '2') {
+            alert('Wrong Credentials')
+        }
+    </script>
+
+    <div class="section">
+        <h1>Welcome to Our Grocery App</h1>
+        <br><br>
+        <p>Your one-stop destination for fresh and quality groceries.</p>
+    </div>
+
+    <div class="section">
+        <h2>About Us</h2>
+        <p>We are passionate about providing our customers with the best quality groceries sourced from trusted suppliers. Our mission is to make grocery shopping convenient, easy, and enjoyable for you and your family.</p>
+
+        <h2>Our Values</h2>
+        <ul>
+            <li>Quality Assurance: We ensure that all our products meet the highest quality standards.</li>
+            <li>Customer Satisfaction: Your satisfaction is our top priority. We value your feedback and strive to improve our services.</li>
+            <li>Convenience: We offer a user-friendly app for seamless online shopping and timely deliveries.</li>
+            <li>Community Focus: We support local farmers and businesses, contributing to the growth of our community.</li>
+        </ul>
+    </div>
+
+
+    <br>
+    <div class="back-button">
+        <a href="/">Back to Home</a>
+    </div>
+        <!-- <script>
+        document.write(passedParams);
+    </script> -->
+
+{% endblock %}
+
+

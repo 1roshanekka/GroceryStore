@@ -5,7 +5,7 @@ All Users Database
 {% endblock %}
 
 {% block body %}
-    <h4>"This is All Users Page"</h4>
+    <h4>"This is User DataBase Page"</h4>
     
     <div class="login1">
         <h1>
@@ -47,11 +47,23 @@ All Users Database
                     <!-- row created everytime the loop executes-->
                     <tr>
                         <td  id="actions" class="submit">
-                            <a href="/update/{{lists.slno}}" type="button" class="update">Update</button>
+                            <!-- <div class="update">
+                                <a href="/update/{{lists.slno}}" type="button">Update</button>
+                            </div> -->
+
+                            <!-- <div class="delete">
+                                <a href="/delete/{{lists.slno}}" type="button">Delete</button>
+                            </div> -->
+
+                            <div class="update" onclick="updateID('{{ lists.slno }}')">Update</div>
+                            <div class="delete" onclick="deleteID('{{ lists.slno }}')">Delete</div>
+
+                            
                             <!-- <button class="update">
                                 Update
                             </button> -->
-                            <a href="/delete/{{lists.slno}}" type="button" class="delete">Delete</button>
+                            
+                            
                             <!-- <button class="delete">
                                 Delete
                             </button> -->

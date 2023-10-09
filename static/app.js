@@ -88,3 +88,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 2000); 
 })
 
+function updateID(userID) {
+    // Use 'itemId' in your code to perform the deletion
+    window.location.href = `/update/${userID}`;
+  }
+function deleteID(userID) {
+    // Use 'itemId' in your code to perform the deletion
+    window.location.href = `/delete/${userID}`;
+}

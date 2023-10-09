@@ -69,6 +69,8 @@ input[type=search] {
 	background-repeat: no-repeat;
 	background-color: #210012;
 	
+
+	font-size: 16px;
 }
 
 .parent {
@@ -376,6 +378,52 @@ h1 {
 	column-gap: 20px;
 }
 
+.update{
+	cursor: pointer;
+	background-color: white;
+	color: #006ee6;
+	border: none;
+	border-radius: 10px;
+	padding: 5px;
+}
+.delete{
+	cursor: pointer;
+	background-color: white;
+	color: red;
+	border: none;
+	border-radius: 10px;
+	padding: 5px;
+}
+.update:hover{
+	background-color: #006ee6;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	padding: 5px;
+}
+.delete:hover{
+	background-color: red;
+	color: white;
+	border: none;
+	border-radius: 10px;
+	padding: 5px;
+}
+
+/* .update > a:link {
+	color: black;
+}
+.update > a:hover {
+	color: white;
+}
+
+.delete > a:link {
+	color: black;
+}
+.delete > a:hover {
+	color: white;
+} */
+
+
 
 .tools {
 	margin: 0px 100px 0px 100px;
@@ -593,3 +641,4 @@ th, td {
     opacity: 0;
     animation: fadeIn 2s ease-in-out;
 }
+

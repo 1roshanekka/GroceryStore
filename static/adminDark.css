@@ -1,18 +1,19 @@
+
 * {
-    font-family: sans-serif;
     padding: 0px;
     margin: 0px;
 	
 }
 
 .body {
-	background-color: #000000;
+	background-color: #121212;
 	color: white;
 }
 
 .main-body {
 	margin: 0px 40px;
 }
+
 
 .navigation:before {
 	height: 60px;
@@ -36,9 +37,8 @@
 	backdrop-filter: blur(10px);
 	/* background-color: green;
 	opacity: 0.2; */
-
 	background-color: rgba(26, 28, 36, 0.5);
-	/* background-color: rgba(15, 28, 101, 0.5); */
+	/* background-color: rgba(215, 192, 174, 0.5); */
 
 	z-index: -1;
 }
@@ -81,7 +81,6 @@
 .bar {
 	margin-left: 20px;
 	font-weight: 700;
-	color: white;
 	/* !! adds bold */
 }
 
@@ -100,7 +99,6 @@
 .flexbox-adminpanel {
 	display: flex;
 	/* justify-content: space-around; */
-	background-color: ;
 	justify-content: center;
 
 	column-gap: 200px;
@@ -116,8 +114,8 @@
 	border: none;
 	border-radius: 20px;
 	/* border: 1px solid rebeccapurple; */
+	/* background-color: #419197; */
 	background-color: rgba(26, 28, 36, 1);
-
 	padding: 50px;
 	font-size: 20px;
 	/* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
@@ -128,12 +126,15 @@
 	padding: 400px;
 }
 .dashboard-flex-container {
+
+	font-size: 1.4rem;
+	font-weight: bolder;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	order: 3;
 
-	justify-content: flex;
+	justify-content: center;
 	
 	height: auto;
 	
@@ -146,8 +147,8 @@
 	padding: 20px;
 
 	width: auto;
-	height: 100px;
-	margin: 5px;
+	/* height: 200px; */
+	/* margin: 5px; */
 	text-align: center;
 	/* align-self: center; */
 
@@ -163,7 +164,7 @@
 	background-color: antiquewhite;
 	border: 2px solid rebeccapurple;
 	border-radius: 15px;
-	align-items: end;
+	align-items: center;
 	justify-content: center;
 }
 
@@ -173,6 +174,19 @@
 	/* padding-bottom: 2000px; */
 	/* padding: 200px; */
 	
+}
+.add {
+	display: flex;  
+	/* div was taking 50x53 which was leaking out , flex solved it */
+	/* text-align: center;
+	align-content: center; */
+	/* border-radius: 30%; */
+	border: none;
+	border-radius: 50%;
+	/* background-color: #419197; */
+	
+	cursor: pointer;
+
 }
 .addStock {
 	
@@ -215,8 +229,9 @@
 
 	/* z-index: 3000; */
 	/* transform: rotate(45deg); */
-	transition: transform 0.1s;
+	transition: transform 0.25s;
 }
+
 .getInside {
 	/* color: black; */
 	/* top: 50%;
@@ -235,7 +250,7 @@
 /* --------------------------------------------------------------- */
 .butt {
 	align-content: center;
-	background-color: #FFBFBF;
+	background-color: #79AC78;
 	/* margin: 10px 50px 0px 50px;  */
 	/* pasted code */
 	
@@ -253,6 +268,7 @@
 .CRUDbuttons {
 	letter-spacing: 0.100em;
 }
+
 .login {
 	background-color: #006ee6;
 	padding: 10px 30px;
@@ -263,22 +279,65 @@
 	transition-duration: 10ms;
 	margin-left: 45%;
 	align-items: center;
-
-
-
 }
-
 .login:hover {
 	background-color: #006ee6;
 	opacity: 0.9;
 }
+
+
+.options {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+
+	column-gap: 30px;
+
+}
+
+.options-1 {
+	background-color: #419197;
+	padding: 10px 30px;
+	/* border-radius: 10px; */
+	border: none;
+	border-radius: 20px;
+	color: white;
+	transition-duration: 10ms;
+	/* margin-left: 45%; */
+	align-items: center;
+
+}
+
+.options-1:hover{
+	background-color: #006ee6;
+	opacity: 0.9;
+}
+
+.options-2 {
+	background-color: #419197;
+	padding: 10px 30px;
+	/* border-radius: 10px; */
+	border: none;
+	border-radius: 20px;
+	color: white;
+	transition-duration: 10ms;
+	/* margin-left: 45%; */
+	align-items: center;
+
+}
+
+.options-2:hover{
+	background-color: #C70000;
+	opacity: 0.9;
+}
+
 .edit {
 	display: inline;
 
 	letter-spacing: 0.100em;
 	background-color: #419197;
 	
-	padding: 10px 30px;
+	padding: 0.438rem 1.25rem;
 	border-radius: 50px;
 	border: none;
 
@@ -304,7 +363,7 @@
 
 	letter-spacing: 0.100em;
 	background-color: #419197;
-	padding: 10px 30px;
+	padding: 0.438rem 1.25rem;
 	/* border-radius: 10px; */
 
 	border-radius: 50px;
@@ -314,7 +373,7 @@
 	color: white;
 	transition-duration: 10ms;
 
-	margin-left: 20px;
+
 	align-items: center;
 
 
@@ -325,6 +384,8 @@
 	background-color: #C70000;
 	opacity: 0.9;
 }
+
+
 .placeholder {
 	margin-left: 5px;
 }
@@ -363,22 +424,23 @@
 }
 /* The Close Button */
 .close {
-color: #aaa;
-float: right;
-font-size: 28px;
-font-weight: bold;
+	background-color: red;
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-color: black;
-text-decoration: none;
-cursor: pointer;
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
 }
+
 .foot {
 	padding: 0.3%;
 	text-align: center;
-	color: #000000;
 	/* margin: 0px 0px 0px 10px; */
 }
 
@@ -398,16 +460,17 @@ cursor: pointer;
 
 /* link which user has not visited */
 a:link{ 
-	color: gray;
+	color: white;
 	text-decoration: none;
 }
 /* link which user has visited */
 a:visited{
-	color: gray;
+	color: white;
 	text-decoration: none;
 }
 .drop-button {
 	border: none;
+	cursor: pointer;
 	/* border: 3px solid green; */
 	/* padding: 10px; */
 	/* background-color: red; */
@@ -415,41 +478,75 @@ a:visited{
 }
 
 .dropdown-list {
-	
+
+	margin-top: 10px;
+	margin-right: 40px;
+
 	align-items: end;
 	/* visibility: hidden; */
 	display: none;
-	position: relative;
-	background-color: blueviolet;
-	z-index: 1;
+	position: fixed;
 
-	border: 4px solid black;
+	right: 0;
+	background-color: #D988B9;
+	z-index: 1;
+	border-radius: 10px 0px 10px 10px;
+
+	border: 2px solid black;
 }
 .dropdown-list.ul {
-	display: block;
-	
+	color: white;
 }
 
 .dropdown-list.a {
 	background-color: aqua;
 	display: block;
 	width: 50%;
+
 }
 
 .show {
 	/* visibility: visible; */
-	display: block;
-	padding: 30px;
-	float: left;
+	display: flex;
+	flex-direction: column;
 
+	justify-content: start;
+	align-items: start;
+	row-gap: 10px;
+	padding: 15px 0px 15px 0px;
+	color: white;
+	
 	
 }
 
-.list-div {
-	border: 2px solid red;
-	width: 50%;
-	padding: auto;
+.dikhao {
+	display: block;
+	position: fixed; /* Stay in place */
+	z-index: 1; /* Sit on top */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
+
+.list-div {
+	font-size: 18px;
+	
+	color: #006ee6;
+	/* border: 2px solid black; */
+	width: 100%;
+	/* padding: 0px 10px 0px 10px; */
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.list-div.a:link {
+	color: rebeccapurple;
+}
+
 
 .space {
 	padding: 70px;
@@ -476,7 +573,7 @@ a:visited{
 	border-radius: 20px;
 	padding: 2px 7px;
 	border-width: 100%;
-	color: white;
+	color: #006ee6;
 }
 .dark {
 	/* padding: 2px; */
@@ -519,11 +616,26 @@ input[type=text]:focus {
 	flex-direction: column;
 
 	justify-content: space-around;
-	row-gap: 25px;
-
 	align-items: center;
-}
+	row-gap: 40px;
 
+	/* align-items: center; */
+}
+.insideContainer-1 {
+	font-size: 1.475rem;
+	font-weight: bold;
+
+	/* align-items: center; */
+}
+.insideContainer-2 {
+	display: flex;
+	flex-direction: row;
+
+	justify-content: center;
+	column-gap: 40px;
+
+	/* align-items: center; */
+}
 .canvas {
 	display: flex;
 	flex-direction: column;
@@ -537,9 +649,9 @@ input[type=text]:focus {
 
 
 
-	padding: 20px;
-	/* background-color: #419197 ; */
-	background-color: rgba(26, 28, 36, 0.5);
+	padding: 10px 20px;
+	background-color: #333333 ;
+	
 }
 
 .section-item {
@@ -549,12 +661,18 @@ input[type=text]:focus {
 	font-size: 1.2rem;
 
 	justify-content: space-between;
-	padding: 10px
+	padding: 10px;
 	align-items: center;
 
 
 	/* border: 2px solid black; */
 
+}
+.functions {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	column-gap: 20px;
 }
 
 .section-view {
@@ -563,15 +681,16 @@ input[type=text]:focus {
 	/* padding: 50px; */
 	padding: auto;
 
-	font-size: 1.4rem;
-	font-weight: bolder;
+	/* font-size: 1.4rem; */
+	/* font-weight: bolder; */
+	
 	flex-direction: row;
 	flex-wrap: wrap;
 	order: 3;
 
 	justify-content: center;
 	
-	height: auto;
+	/* height: auto; */
 	
 	column-gap: 20px;
 	row-gap: 20px;
@@ -579,7 +698,9 @@ input[type=text]:focus {
 
 .section-view-hidden {
 	display: flex;
-	
+	/* padding: 20px; */
+	background-color: #419197;
+
 	/* padding: 50px; */
 
 }
@@ -592,6 +713,8 @@ input[type=text]:focus {
 .itemName {
 	/* border: 2px solid purple; */
 	/* padding: 10px; */
+	letter-spacing: 0.100em;
+	font-weight: bold;
 }
 
 

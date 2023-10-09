@@ -22,7 +22,7 @@ User-Login
         </div>
         <br>
 
-        <form action="/UserLogin" method="POST">
+        <form action="/UserLogin" method="POST" onsubmit="return alert('You have been registered!');" >
 
             <div class="l1">
                 <span class = "stick">
@@ -50,10 +50,10 @@ User-Login
     
             <br><br>
             <div class="submit">
-                <button class="login"> 
+                <button class="login" type="button"> 
                     Login
                 </button>
-                <button class="login">
+                <button class="login" type="submit" id="register">
                     Register
                 </button>
             </div>

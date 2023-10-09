@@ -47,33 +47,33 @@ function rotateAnimation() {
     document.getElementById("rotate")
 }
 
-// Create an element to test the font
+
 var testElement = document.createElement('div');
 
-// Set the font family to the one you want to check
-testElement.style.fontFamily = 'Young Serif, sans-serif'; // Replace 'Young Serif' with the actual font name
 
-// Set some text content to see if the font affects it
+testElement.style.fontFamily = 'Young Serif, sans-serif'; 
+
+
 testElement.textContent = 'Testing Font Loading';
 
-// Set the position to off-screen
+
 testElement.style.position = 'absolute';
 testElement.style.left = '-9999px';
 testElement.style.top = '-9999px';
 
-// Append the element to the document body
+
 document.body.appendChild(testElement);
 
-// Check if the computed font family matches the one you set
+
 var computedFontFamily = window.getComputedStyle(testElement).fontFamily;
 
-// Check if the computed font family contains the font name you set
+
 var fontLoaded = computedFontFamily.includes('Young Serif');
 
-// Clean up: Remove the test element from the document
+
 document.body.removeChild(testElement);
 
-// Now 'fontLoaded' will be true if the font is loaded, and false otherwise
+
 if (fontLoaded) {
     console.log('Font is loaded!');
 } else {
@@ -89,10 +89,29 @@ document.addEventListener('DOMContentLoaded', function() {
 })
 
 function updateID(userID) {
-    // Use 'itemId' in your code to perform the deletion
+
     window.location.href = `/update/${userID}`;
   }
 function deleteID(userID) {
-    // Use 'itemId' in your code to perform the deletion
     window.location.href = `/delete/${userID}`;
 }
+
+// function register() {
+//     confirm("You have been registered")
+
+//     if(flag){
+//         window.location.href = `/deleteCategory/${categoryId}`;
+//       }
+//       else{
+//         console.log('cancelled')
+
+//       }
+//   }
+
+
+
+// var reg = document.getElementById('register');
+// reg.addEventListener('click', function(event) {
+//     event.preventDefault(); 
+//     alert('Registration successful!')
+// });

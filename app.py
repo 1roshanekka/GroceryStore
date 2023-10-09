@@ -514,10 +514,12 @@ def registerUser():
         print("now reloading userLogin.html")
 
     elif(request.method == "GET"):
-        session['user_info'] = {'email': request.form['email'], 'password': request.form['passkey']}
+        # session['user_info'] = {'email': request.form['email'], 'password': request.form['passkey']}
 
-        thisSessionEmail = session['user_info']['email']
-        thisSessionPassword = session['user_info']['password']
+        # thisSessionEmail = session['user_info']['email']
+        # thisSessionPassword = session['user_info']['password']
+
+        return render_template("userLogin.html")
 
 
 

@@ -1,9 +1,172 @@
-{% extends "baseManagerUser.html" %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% block title %} 
-Grocery Store
-{% endblock %}
+    <!-- <link rel=”stylesheet” href="style.css"> -->
 
-{% block body %} 
-<h1>Grocery Store Index Page</h1>
-{% endblock %}
+    <!-- <link href="lightStyle.css" rel="stylesheet" id="view"> -->
+    
+    <link href="{{ url_for ('static', filename='lightStyle.css') }}" rel="stylesheet" id="view">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+
+    <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
+    <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
+    
+    <title> Grocery </title>
+    <!-- <style>{% block style %} {% endblock %}</style> -->
+</head>
+
+<body class = "body" id="index">
+  <!-- <script src="app.js"></script> -->
+  
+  <script src="{{ url_for ('static', filename='app.js') }}"></script>
+  
+  <div class="nav">
+        <div>
+            <a href="/manager">
+                <div class="imageLogo">
+                    <!-- <img src="assets/google.png" alt="logo" width="35px">  -->
+                    <!-- <img src="{{ url_for ('static', filename='assets/google.png') }}" alt="logo" width="35px"> -->
+                    <img src="{{ url_for ('static', filename='assets/transformer.png') }}" alt="logo" width="100px">
+                </div>
+            </a>
+        </div>
+        
+        
+        <div class="name">
+        <!-- <h2>Grocery Store</h2> -->
+        </div>  
+        
+        <div class="empty">
+        <!-- -- -->
+            <div class="ref">
+                <div class="ref-1" id="clickable">
+                    <a href="/manager">
+                        Login
+                    </a>
+                </div>
+                <div class="ref-2" id="clickable">
+                    <a href="/about">
+                        About us
+                    </a>
+                </div>
+            </div>
+           
+        </div>
+        <!-- <input type="search" class="searchBar"> -->
+        <!-- <span class="menuIcons">
+        <img src="assets/cart.png" alt="cart image" width="35px" height="35px" id="cart"> 
+        </span> -->
+  </div>
+
+  <div class="filler">
+    <!-- a -->
+    
+  </div>
+  <div class="intro">
+    Experience a world of fresh, handpicked essentials delivered to your doorstep. From farm-fresh produce to pantry staples, we're your one-stop shop for quality groceries. Elevate your shopping experience with us today!
+    </div>
+
+    <!-- <div class="parent">
+        
+        <div class="top1">
+        <div class="middle">
+        </div>
+
+        <br><br>
+        <br><br>
+        </div>
+
+        <div class = "separator">
+        or
+        </div>
+
+        <div class="oauth-flex">
+            <button class="google">
+                <img src= "{{ url_for ('static', filename='assets/google.png') }}" alt="google icon" width="25px" height="25px">
+            </button>
+            <button class="microsoft">
+                <img src= "{{ url_for ('static', filename='assets/microsoft.png') }}" alt="microsoft icon" width="25px" height="25px">
+            </button>
+            <button class="apple">
+                <img src="{{ url_for ('static', filename='assets/apple.png') }}" alt="apple icon" width="25px" height="25px">
+            </button>
+        </div>
+  </div> -->
+
+    <!-- <div class="intro">
+        Experience a world of fresh, handpicked essentials delivered to your doorstep. From farm-fresh produce to pantry staples, we're your one-stop shop for quality groceries. Elevate your shopping experience with us today!
+    </div> -->
+  <div class="content">
+    <img src="{{ url_for ('static', filename='assets/1.jpg') }}" alt="bgimage" width="100%">
+  </div>
+  <!-- <div class="space">
+        
+  </div> -->
+  <div class="black">
+    <div class="store" id="sep">
+      <!-- <img src="assets/DownloadOnAppStoreDark.svg" alt="appstore" id="store"> -->
+      <img src="{{ url_for ('static', filename='assets/DownloadOnAppStoreDark.svg') }}" alt="appstore" id="store">
+    </div>
+
+
+
+    <div class="footSeparator" id="sep">
+  
+      <hr>
+      
+      <br>
+      <div class="quickLinks">
+        <table class="links">
+          <tr>
+            <th>
+            <!-- Quick Links -->
+            </th>
+          </tr>
+          
+          <tr>
+            <td><a href="/">Home</a></td>
+            <td><a href="/help">Help Center</a></td>
+            <td><a href="/terms">Terms & Condition</a></td>
+            
+            <td><a href="/manager">Manager Login</a></td>
+  
+          </tr>
+  
+          <tr>
+            <td><a href="/account">Account</a></td>
+            <td><a href="/return">Return Policy</a></td>
+            <td><a href="/privacy">Privacy Policy</a></td>
+  
+            <td><a href="/UserLogin">User Login</a></td>
+  
+          </tr>
+  
+          <tr>
+            <td></td>
+            <td><a href="/warranty">Warranty</a></td>
+            <td><a href="/agreements">Agreements & Guidelines</a></td>
+  
+            <td><a href="/usersDataBase">User DataBase</a></td>
+  
+          </tr>
+  
+        </table>
+      </div>  
+    </div>
+    <br><br>
+  
+  </div>
+  
+    <footer class = "butt">
+    <div class="foot">
+        Copyright &copy TheBrokenStudios Private Limited. 2023 &nbsp &nbsp All Rights Reserved.
+    </div>
+    </footer>
+</body>
+</html>

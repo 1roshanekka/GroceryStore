@@ -3,6 +3,13 @@
 {% block title %} 
 Manager-Login
 {% endblock %}
+{% block foo %}
+<!-- <style>
+    *{
+        font-family: sans-serif;
+    }
+</style> -->
+{% endblock %}
 
 
 {% block body %}
@@ -21,63 +28,65 @@ Manager-Login
                 alert('Wrong Credentials')
             }
         </script>
+    <div class="bodyinside">
+        <h4>"This is Manager Login Page"</h4>
+        <!-- <script>
+            document.write(passedParams);
+        </script> -->
 
-    <h4>"This is Manager Login Page"</h4>
-    <!-- <script>
-        document.write(passedParams);
-    </script> -->
+        <div class="login1">
+            <h1>
+            Manager Login Panel
+            </h1>
+        </div>
+        
+        <br>
+        <div class = "main">
 
-    <div class="login1">
-        <h1>
-        Manager Login Panel
-        </h1>
+            <div class="profileIcon">
+                <!-- <img src="assets/profileIcon.png" alt="profile icon" width="40px" height="40px" id="profileIcon"> -->
+                <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
+            </div>
+            <br>
+
+            <form action="/admin" method="POST"> 
+                <!-- will send it to adminRoute and render the template after submit is clicked -->
+
+                <div class="l1">
+                    <span class = "stick">
+                    <label for="exampleFormControlInput1" class="username-label">Username</label>
+                    </span>
+                    <!-- <br> -->
+                    <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+
+                <br><br>
+
+                <div class="l2">
+                    <span class="stick">
+                    <label for="inputPassword6" class="col-form-label">Password</label>
+                    </span>
+                    <input type="password" name="passkey" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    <br><br>
+                    <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text">
+                        Must be 8-20 characters long.
+                    </span>
+                    </div>
+                    <br><br>
+                </div>
+
+                <div class="submit">
+                    <button class="login">
+                        Login
+                    </button>
+                </div>
+
+            </form>
+            
+        </div>
     </div>
     
-    <br>
-    <div class = "main">
-
-        <div class="profileIcon">
-            <!-- <img src="assets/profileIcon.png" alt="profile icon" width="40px" height="40px" id="profileIcon"> -->
-            <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
-        </div>
-        <br>
-
-        <form action="/admin" method="POST"> 
-            <!-- will send it to adminRoute and render the template after submit is clicked -->
-
-            <div class="l1">
-                <span class = "stick">
-                <label for="exampleFormControlInput1" class="username-label">Username</label>
-                </span>
-                <!-- <br> -->
-                <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-
-            <br><br>
-
-            <div class="l2">
-                <span class="stick">
-                <label for="inputPassword6" class="col-form-label">Password</label>
-                </span>
-                <input type="password" name="passkey" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                <br><br>
-                <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                    Must be 8-20 characters long.
-                </span>
-                </div>
-                <br><br>
-            </div>
-
-            <div class="submit">
-                <button class="login">
-                    Login
-                </button>
-            </div>
-
-        </form>
-        
-    </div>
     
 {% endblock %}
 

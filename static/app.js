@@ -46,3 +46,36 @@ function storeImageLight() {
 function rotateAnimation() {
     document.getElementById("rotate")
 }
+
+// Create an element to test the font
+var testElement = document.createElement('div');
+
+// Set the font family to the one you want to check
+testElement.style.fontFamily = 'Young Serif, sans-serif'; // Replace 'Young Serif' with the actual font name
+
+// Set some text content to see if the font affects it
+testElement.textContent = 'Testing Font Loading';
+
+// Set the position to off-screen
+testElement.style.position = 'absolute';
+testElement.style.left = '-9999px';
+testElement.style.top = '-9999px';
+
+// Append the element to the document body
+document.body.appendChild(testElement);
+
+// Check if the computed font family matches the one you set
+var computedFontFamily = window.getComputedStyle(testElement).fontFamily;
+
+// Check if the computed font family contains the font name you set
+var fontLoaded = computedFontFamily.includes('Young Serif');
+
+// Clean up: Remove the test element from the document
+document.body.removeChild(testElement);
+
+// Now 'fontLoaded' will be true if the font is loaded, and false otherwise
+if (fontLoaded) {
+    console.log('Font is loaded!');
+} else {
+    console.log('Font is not loaded!');
+}

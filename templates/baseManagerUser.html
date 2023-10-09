@@ -10,8 +10,11 @@
 
     <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
     <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
     <title> {% block title %} {% endblock %} </title>
+    {% block foo %} {% endblock %}
     <!-- <style>{% block style %} {% endblock %}</style> -->
 </head>
 
@@ -21,19 +24,20 @@
   <script src="{{ url_for ('static', filename='app.js') }}"></script>
 
   <div class="nav">
-    <a href="/manager">
-      <span class="imageLogo">
-        <!-- <img src="assets/google.png" alt="logo" width="35px">  -->
-        <!-- <img src="{{ url_for ('static', filename='assets/google.png') }}" alt="logo" width="35px"> -->
-        <img src="{{ url_for ('static', filename='assets/akatsuki.png') }}" alt="logo" width="100px">
-      </span>
-    </a>
+      <div class="logo">
+        <a href="/manager">
+          <img src="{{ url_for ('static', filename='assets/akatsuki.png') }}" alt="logo" width="100px">
+          <!-- <img src="assets/google.png" alt="logo" width="35px">  -->
+          <!-- <img src="{{ url_for ('static', filename='assets/google.png') }}" alt="logo" width="35px"> -->
+        </a>
+      </div>
+    
+    
     
     <div class="name">
       <h2>Grocery Store</h2>
     </div>
     <div class="empty">
-      
     </div>
     <!-- <input type="search" class="searchBar"> -->
     <!-- <span class="menuIcons">
@@ -113,41 +117,44 @@
       
       <br>
       <div class="quickLinks">
-        <table class="links">
-          <tr>
-            <th>
-            <!-- Quick Links -->
-            </th>
-          </tr>
-          
-          <tr>
-            <td><a href="/">Home</a></td>
-            <td><a href="/help">Help Center</a></td>
-            <td><a href="/terms">Terms & Condition</a></td>
+        <div class="quicklinks-1">
+          <table class="links">
+            <tr>
+              <th>
+              <!-- Quick Links -->
+              </th>
+            </tr>
             
-            <td><a href="/manager">Manager Login</a></td>
-  
-          </tr>
-  
-          <tr>
-            <td><a href="/account">Account</a></td>
-            <td><a href="/return">Return Policy</a></td>
-            <td><a href="/privacy">Privacy Policy</a></td>
-  
-            <td><a href="/UserLogin">User Login</a></td>
-  
-          </tr>
-  
-          <tr>
-            <td></td>
-            <td><a href="/warranty">Warranty</a></td>
-            <td><a href="/agreements">Agreements & Guidelines</a></td>
-  
-            <td><a href="/usersDataBase">User DataBase</a></td>
-  
-          </tr>
-  
-        </table>
+            <tr>
+              <td><a href="/">Home</a></td>
+              <td><a href="/help">Help Center</a></td>
+              <td><a href="/terms">Terms & Condition</a></td>
+              
+              <td><a href="/manager">Manager Login</a></td>
+    
+            </tr>
+    
+            <tr>
+              <td><a href="/account">Account</a></td>
+              <td><a href="/return">Return Policy</a></td>
+              <td><a href="/privacy">Privacy Policy</a></td>
+    
+              <td><a href="/UserLogin">User Login</a></td>
+    
+            </tr>
+    
+            <tr>
+              <td></td>
+              <td><a href="/warranty">Warranty</a></td>
+              <td><a href="/agreements">Agreements & Guidelines</a></td>
+    
+              <td><a href="/usersDataBase">User DataBase</a></td>
+    
+            </tr>
+    
+          </table>
+        </div>
+        
       </div>  
     </div>
     <br><br>

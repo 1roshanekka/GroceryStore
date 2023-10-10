@@ -1,5 +1,8 @@
 function appearanceDark() {
     document.getElementById("view").href="/static/darkStyle.css"
+    
+    // document.getElementById("logo").src="/static/assets/transformerDark.png"
+
     // document.getElementById("view").href="{{ url_for ('static', filename='darkStyle.css') }}"
     
     // this templating is only done in jinja within HTML File
@@ -22,6 +25,9 @@ function appearanceDark() {
 
 function appearanceLight() {
     document.getElementById("view").href="/static/lightStyle.css"
+
+    // document.getElementById("logo").src="/static/assets/transformerLight.png"
+
     // document.getElementById("view").href="{{ url_for ('static', filename='lightStyle.css') }}"
 
     document.getElementById("store").src="/static/assets/DownloadOnAppStoreDark.svg"

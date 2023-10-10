@@ -5,86 +5,90 @@ All Users Database
 {% endblock %}
 
 {% block body %}
-    <h4>"This is User DataBase Page"</h4>
-    
-    <div class="login1">
-        <h1>
-            Database
-        </h1>
-    </div>
-    
-    <br>
-    <div class = "main">
 
-        <div class="profileIcon">
-            <!-- <img src="assets/profileIcon.png" alt="profile icon" width="40px" height="40px" id="profileIcon"> -->
-            <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
+    <div class="bodyinside">
+        <h4>"This is User DataBase Page"</h4>
+    
+        <div class="login1">
+            <h1>
+                Database
+            </h1>
         </div>
+        
         <br>
+        <div class = "main">
+
+            <div class="profileIcon">
+                <!-- <img src="assets/profileIcon.png" alt="profile icon" width="40px" height="40px" id="profileIcon"> -->
+                <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
+            </div>
+            <br>
+        </div>
+
+        <div class = "data">
+            <table class="table-1">
+                <tr>
+                    <th>
+                        Actions
+                    </th>
+                    <th>
+                        Serial Number
+                    </th>
+                    <th>
+                        Email Address
+                    </th>
+                    <th>
+                        Password
+                    </th>
+                    <th>
+                        Date Created
+                    </th>
+                </tr>
+                <tbody>
+                    {% for lists in fullDB %}
+                        <!-- row created everytime the loop executes-->
+                        <tr>
+                            <td  id="actions" class="submit">
+                                <!-- <div class="update">
+                                    <a href="/update/{{lists.slno}}" type="button">Update</button>
+                                </div> -->
+
+                                <!-- <div class="delete">
+                                    <a href="/delete/{{lists.slno}}" type="button">Delete</button>
+                                </div> -->
+
+                                <div class="update" onclick="updateID('{{ lists.slno }}')">Update</div>
+                                <div class="delete" onclick="deleteID('{{ lists.slno }}')">Delete</div>
+
+                                
+                                <!-- <button class="update">
+                                    Update
+                                </button> -->
+                                
+                                
+                                <!-- <button class="delete">
+                                    Delete
+                                </button> -->
+                            </td>
+                            <td>
+                                {{loop.index}}
+                            </td>
+                            <td>
+                                
+                                {{lists.username}}
+                            </td>
+                            <td>
+                                {{lists.password}}
+                            </td>
+                            <td>
+                                {{lists.dateCreated}}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
-
-    <div class = "data">
-        <table class="table-1">
-            <tr>
-                <th>
-                    Actions
-                </th>
-                <th>
-                    Serial Number
-                </th>
-                <th>
-                    Email Address
-                </th>
-                <th>
-                    Password
-                </th>
-                <th>
-                    Date Created
-                </th>
-            </tr>
-            <tbody>
-                {% for lists in fullDB %}
-                    <!-- row created everytime the loop executes-->
-                    <tr>
-                        <td  id="actions" class="submit">
-                            <!-- <div class="update">
-                                <a href="/update/{{lists.slno}}" type="button">Update</button>
-                            </div> -->
-
-                            <!-- <div class="delete">
-                                <a href="/delete/{{lists.slno}}" type="button">Delete</button>
-                            </div> -->
-
-                            <div class="update" onclick="updateID('{{ lists.slno }}')">Update</div>
-                            <div class="delete" onclick="deleteID('{{ lists.slno }}')">Delete</div>
-
-                            
-                            <!-- <button class="update">
-                                Update
-                            </button> -->
-                            
-                            
-                            <!-- <button class="delete">
-                                Delete
-                            </button> -->
-                        </td>
-                        <td>
-                            {{loop.index}}
-                        </td>
-                        <td>
-                            
-                            {{lists.username}}
-                        </td>
-                        <td>
-                            {{lists.password}}
-                        </td>
-                        <td>
-                            {{lists.dateCreated}}
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
+    
     
 {% endblock %}

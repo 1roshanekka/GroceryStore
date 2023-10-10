@@ -161,8 +161,8 @@
 	flex-shrink: 1;
 	flex-basis: auto; */
 	
-	background-color: antiquewhite;
-	border: 2px solid rebeccapurple;
+	background-color: black;
+	/* border: 2px solid rebeccapurple; */
 	border-radius: 15px;
 	align-items: center;
 	justify-content: center;
@@ -193,7 +193,7 @@
 	/* align-items: center; */
 	/* align-content: center; */
 	/* background-color: white; */
-	background-color: antiquewhite;
+	background-color: black;
 	border: none;
 	/* background-color: #006ee6; */
 	border-radius: 50%;
@@ -699,7 +699,7 @@ input[type=text]:focus {
 .section-view-hidden {
 	display: flex;
 	/* padding: 20px; */
-	background-color: #419197;
+	background-color: #333333;
 
 	/* padding: 50px; */
 

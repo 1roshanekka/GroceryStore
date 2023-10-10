@@ -64,9 +64,9 @@ input[type=search] {
 }
 
 #body {
-	background-image: url(/static/assets/3.jpg);
+	background-image: url(/static/assets/a.jpg);
 	background-size: 120% auto;
-	background-repeat: no-repeat;
+	background-repeat: repeat;
 	background-color: #210012;
 	
 
@@ -217,6 +217,13 @@ input[type=search] {
 h1 {
 	color: black;
 	align-content: center;
+}
+h2 {
+	color: white;
+	align-content: center;
+}
+h4{
+	color: white;
 }
 
 .login1 {
@@ -460,6 +467,8 @@ h1 {
 	color: white;
 }
 .data {
+	display: flex;
+	justify-content: center;
 	align-content: center;
 }
 table.table-1 tr,td,th {
@@ -624,8 +633,12 @@ th, td {
 	font-family: 'Young Serif', sans-serif;
 }
 .bodyinside {
-	/* font-family: sans-serif; */
-	font-family: 'San Francisco';
+	font-family: sans-serif;
+	padding-bottom: 30px;
+	/* font-family: 'San Francisco'; */
+}
+#bodyinside {
+	background-color: #79AC78;
 }
 
 @keyframes fadeIn {

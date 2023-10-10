@@ -248,7 +248,7 @@ window.onclick = function(event) {
     document.getElementById("store").src="/static/assets/DownloadOnAppStoreLight.svg"
     // document.getElementById("store").src="{{ url_for ('static', filename='assets/DownloadOnAppStoreLight.svg') }}"
 
-    document.getElementById("profileIcon").src="{{ url_for ('static', filename='assets/profileIconDark.png') }}"
+    document.getElementById("profileIcon").src="/static/assets/profileIconDark.png"
     // document.getElementById("profileIcon").src="{{ url_for ('static', filename='assets/profileIconDark.png') }}"
 
     document.getElementById("cart").src="/static/assets/cartDark.png"
@@ -268,7 +268,7 @@ function appearanceLight() {
     document.getElementById("store").src="/static/assets/DownloadOnAppStoreDark.svg"
     // document.getElementById("store").src="{{ url_for ('static', filename='assets/DownloadOnAppStoreDark.svg') }}"
 
-    document.getElementById("profileIcon").src="{{ url_for ('static', filename='assets/profileIcon.png') }}"
+    document.getElementById("profileIcon").src="/static/assets/profileIcon.png"
     // document.getElementById("profileIcon").src="{{ url_for ('static', filename='assets/profileIcon.png') }}"
 
     document.getElementById("cart").src="/static/assets/cart.png"

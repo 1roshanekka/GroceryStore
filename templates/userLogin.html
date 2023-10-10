@@ -5,61 +5,64 @@ User-Login
 {% endblock %}
 
 {% block body %}
-    <h4>"This is User Login Page"</h4>
+    <!-- <h4>"This is User Login Page"</h4> -->
     
-    <div class="login1">
-        <h1>
-        User Login Panel
-        </h1>
-    </div>
-    
-    <br>
-    <div class = "main">
-
-        <div class="profileIcon">
-            <!-- <img src="assets/profileIcon.png" alt="profile icon" width="40px" height="40px" id="profileIcon"> -->
-            <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
+    <div class="bodyinside" id="bodyinside">
+        <div class="login1">
+            <h1>
+            User Login Panel
+            </h1>
         </div>
-        <br>
-
-        <form action="/UserLogin" method="POST" onsubmit="return alert('You have been registered!');" >
-
-            <div class="l1">
-                <span class = "stick">
-                <label for="exampleFormControlInput1" class="username-label">Username</label>
-                </span>
-                <!-- <br> -->
-                <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
-            </div>
-    
-            <br><br>
-    
-            <div class="l2">
-                <span class="stick">
-                <label for="inputPassword6" class="col-form-label">Password</label>
-                </span>
-                <input type="password" name="passkey" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-                <br><br>
-                <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                    Must be 8-20 characters long.
-                </span>
-                </div>
-                
-            </div>
-    
-            <br><br>
-            <div class="submit">
-                <button class="login" type="button"> 
-                    Login
-                </button>
-                <button class="login" type="submit" id="register">
-                    Register
-                </button>
-            </div>
-
-        </form>
         
+        <br>
+        <div class = "main">
+    
+            <div class="profileIcon">
+                <!-- <img src="assets/profileIcon.png" alt="profile icon" width="40px" height="40px" id="profileIcon"> -->
+                <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
+            </div>
+            <br>
+    
+            <!-- <form action="/login" method="POST" onsubmit="return alert('You have been registered!');" > -->
+            <form action="/userlogin" method="POST" >
+    
+                <div class="l1">
+                    <span class = "stick">
+                    <label for="exampleFormControlInput1" class="username-label">Username</label>
+                    </span>
+                    <!-- <br> -->
+                    <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+        
+                <br><br>
+        
+                <div class="l2">
+                    <span class="stick">
+                    <label for="inputPassword6" class="col-form-label">Password</label>
+                    </span>
+                    <input type="password" name="passkey" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                    <br><br>
+                    <div class="col-auto">
+                    <span id="passwordHelpInline" class="form-text">
+                        Must be 8-20 characters long.
+                    </span>
+                    </div>
+                    
+                </div>
+        
+                <br><br>
+                <div class="submit">
+                    <button class="login" type="submit"> 
+                        Login
+                    </button>
+                    <!-- <button class="login" type="submit" id="register">
+                        Register
+                    </button> -->
+                </div>
+    
+            </form>
+            
+        </div>
     </div>
     
 {% endblock %}

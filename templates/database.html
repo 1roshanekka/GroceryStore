@@ -10,8 +10,23 @@
 
     <!-- <link href="assets/favicon.ico" rel="icon" type="image/x-icon"> -->
     <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
 
     <title> {% block title %} {% endblock %} </title>
+
+    <style>
+      a:link{ 
+        color: white;
+        text-decoration: none;
+      }
+      /* link which user has visited */
+      a:visited{
+        color: white;
+        text-decoration: none;
+      }
+    </style>
 </head>
 
 <body class = "body" id="body">
@@ -25,7 +40,7 @@
         <!-- <img src="assets/google.png" alt="logo" width="35px">  -->
         <!-- <img src="{{ url_for ('static', filename='assets/google.png') }}" alt="logo" width="35px"> -->
         <!-- <img src="{{ url_for ('static', filename='assets/akatsuki.png') }}" alt="logo" width="100px"> -->
-        <img src="{{ url_for ('static', filename='assets/transformer.png') }}" alt="logo" width="100px">
+        <img src="{{ url_for ('static', filename='assets/transformerDark.png') }}" alt="logo" width="100px" id="logo">
       </span>
     </a>
     <div class="name">
@@ -139,7 +154,7 @@
           <td><a href="/return">Return Policy</a></td>
           <td><a href="/privacy">Privacy Policy</a></td>
 
-          <td><a href="/UserLogin">User Login</a></td>
+          <td><a href="/user">User Login</a></td>
 
         </tr>
 

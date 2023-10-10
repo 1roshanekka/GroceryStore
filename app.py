@@ -284,6 +284,7 @@ def adminLogged():
 
         return f"<h1>{user}</h1>"
     else:
+        print('--admin not in session babu --')
         return redirect("/manager")
 
 # -------------------------------
@@ -292,6 +293,7 @@ def adminLogged():
 
 def adminLoggedOut():
     session.pop('user', None)
+    print("--Admin has been logged out--")
     return redirect('/manager')
 
 # -------------------------------
@@ -485,6 +487,7 @@ def managerFunc():
 
 
 
+
 # @app.route("/UserLogin")
 
 # def user():
@@ -497,7 +500,7 @@ def managerFunc():
 
 
 # @app.route("/UserLogin", methods=['GET', 'POST'])
-@app.route('/UserLogin', methods = ['GET', 'POST'])
+@app.route('/register', methods = ['GET', 'POST'])
 
 def registerUser():
     if(request.method =="POST"):
@@ -512,6 +515,7 @@ def registerUser():
         db.session.commit() 
         print ("User added successfully!")
         print("now reloading userLogin.html")
+        return render_template("userLogin.html")
 
     elif(request.method == "GET"):
         # session['user_info'] = {'email': request.form['email'], 'password': request.form['passkey']}
@@ -533,21 +537,94 @@ def registerUser():
 # -------------------------------
 
 # @app.route("/UserLogin", methods=['GET', 'POST'])
-@app.route('/login', methods = ['GET', 'POST'])
+@app.route('/userlogin', methods = ['GET', 'POST'])
 
 def login():
     if(request.method =="POST"):
-        session.pop('user', None)
-        username_in = request.form("username")
-
-        session['user'] = username_in  # making dictionary key
-        print("now reloading userLogin.html")
-        return render_template( url_for("user"), person = user)
+        session.pop('customer', None)
         
+        print('a post request')
+        login_username = request.form["email"]
+        login_password = request.form["passkey"]
+        print(login_username, login_password)
+
+        E = registry.query.filter_by(username=login_username).first()
+        print(E)
+        EP = registry.query.filter_by(username=login_username, password=login_password).first()
+        print(EP)
+
+        # if( E==True and EP==False):
+        #     print("User in Database but Wrong Password")
+        # else:
+        #     if check :
+        #         session['customer'] = login_username  # making dictionary key
+
+        #         print('--login successful--')
+        #         return redirect('/userSecured')
+                
+        #     else:
+        #         message = "Wrong Credentials"
+        #         print('--login failed-- --wrong password--')
+        #         return redirect('/user')
+
+
+        if EP is not None:
+            session['customer'] = login_username  # making dictionary key
+            print("--gotcha homie--")
+            print("--User Login Successfull--")
+
+            print('--login successful--')
+            return redirect('/userSecured')
+                
+        print("now reloading userLogin.html")
+        return redirect('/user')
+    else:
+        print('not a POST request')
+        if "customer" in session:
+            return redirect('/userSecured')
+        
+        print('--access denied--')
+        return render_template("/userLogin.html") 
     
-    print ("User added successfully!")
-    print("--Rendering User Login Page")
-    return render_template("userLogin.html")
+    # elif(request.method == "GET"):
+    #     return render_template("userLogin.html")
+    
+    # print(" error userLogin.html")
+    # return redirect('/')
+# -------------------------------
+
+
+@app.route("/userSecured", methods=['GET', 'POST']) 
+
+def userLogged():
+    if "customer" in session:
+        
+        customer = session["customer"]
+
+        print(customer)
+
+        return render_template('baseShop.html', customer = customer)
+
+        return f"<h1>{user}</h1>"
+    else:
+        print('--not in session babu :( --')
+        return redirect("/user")
+# -------------------------------
+
+@app.route("/userRetired", methods=['GET', 'POST']) 
+
+def userLoggedOut():
+    session.pop('customer', None)
+    print("--customer has been logged out--")
+    return redirect('/user')
+
+# -------------------------------
+# ! this routes and renders the userLogin html
+@app.route("/user", methods=['GET', 'POST']) # this targets the templates folder 
+# "/" means it is by default looking for index.html unless specified, like here its managerLogin.html
+def userFunc():
+        print('sent to /user route')
+        return render_template("/userLogin.html")
 
 # -------------------------------
 
@@ -697,6 +774,12 @@ def getAbout() :
     # user = session.get('user')
     return render_template('about.html')
 # -------------------------------
+@app.route('/shop')
+def getShop() :
+    # user = session.get('user')
+    customerLogged = session.get('customer')
+    return render_template('baseShop.html',customerLogged=customerLogged)
+# -------------------------------
 
 @app.route('/')
 def index() :
@@ -705,7 +788,7 @@ def index() :
 # -------------------------------
 
 
-# def userLoggedIn():
+# def customerLoggedLoggedIn():
 #     return render_template(); 
 
 # Mac OSX Monterey (12.x) currently uses ports 5000 and 7000 for its Control centre hence the issue.

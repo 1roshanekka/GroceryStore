@@ -523,7 +523,7 @@ def registerUser():
         # thisSessionEmail = session['user_info']['email']
         # thisSessionPassword = session['user_info']['password']
 
-        return render_template("userLogin.html")
+        return render_template("register.html")
 
 
 
@@ -535,7 +535,9 @@ def registerUser():
 
 
 # -------------------------------
-
+@app.route('/regRoute')
+def routeRegistration():
+    return render_template("register1.html")
 # @app.route("/UserLogin", methods=['GET', 'POST'])
 @app.route('/userlogin', methods = ['GET', 'POST'])
 

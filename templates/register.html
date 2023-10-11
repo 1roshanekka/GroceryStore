@@ -1,0 +1,135 @@
+{% extends "baseManagerUser.html" %}
+
+{% block title %} 
+Manager-Login
+{% endblock %}
+{% block foo %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+{% endblock %}
+
+
+{% block body %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
+             
+        var passedParams = '{{ params }}'
+        console.log(passedParams)
+
+        if (passedParams === '0') {
+            alert('Wrong Username')
+        }
+        else if (passedParams === '1') {
+            alert('Wrong Password')
+        }
+        else if (passedParams === '2') {
+            alert('Wrong Credentials')
+        }
+    </script>
+    
+    <div class="bodyinside">
+        <!-- <h4>"This is Manager Login Page"</h4> -->
+        <!-- <script>
+            document.write(passedParams);
+        </script> -->
+
+        <div class="login1">
+            <h1>
+            Register
+            </h1>
+        </div>
+        
+        <br>
+        <div class = "main">
+
+            <div class="profileIcon">
+                <!-- <img src="assets/profileIcon.png" alt="profile icon" width="40px" height="40px" id="profileIcon"> -->
+                <img src="{{ url_for ('static', filename='assets/profileIcon.png') }}" alt="profile icon" width="40px" height="40px" id="profileIcon">
+            </div>
+            <br>
+            <iframe src="/regRoute" style="background-color:transparent;"></iframe>
+            <div class="forms">
+                <div class="form-par">
+                    <form action="/" method="POST" autocomplete="off"> 
+                        <!-- will send it to adminRoute and render the template after submit is clicked -->
+                        
+                          <div class="parent">
+                        <!-- <div class="form-1">
+                            <div class="custom-form-floating mb-3">
+                                <input type="email" class="custom-form-control" id="customFloatingInput" placeholder="name@example.com">
+                                <label for="customFloatingInput">Email address</label>
+                              </div>
+                              <div class="custom-form-floating">
+                                <input type="password" class="custom-form-control" id="customFloatingPassword" placeholder="Password">
+                                <label for="customFloatingPassword">Password</label>
+                              </div>
+                              
+                        </div>
+                        <div class="form-1">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="off">
+                            <label for="floatingPassword">Password</label>
+                        </div> -->
+                        
+                        <!-- <div class="form-group">
+                            <input type="email" class="form-control" id="floatingInput" placeholder=" ">
+                            <label class="form-label" for="floatingInput">Email address</label>
+                        </div>
+                    
+                        <div class="form-group">
+                            <input type="password" class="form-control" id="floatingPassword" placeholder=" ">
+                            <label class="form-label" for="floatingPassword">Password</label>
+                        </div> -->
+
+
+
+                        <!-- <div class="l1">
+                            <span class = "stick">
+                            <label for="exampleFormControlInput1" class="username-label">Name</label>
+                            </span>
+                            <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <div class="l1">
+                            <span class = "stick">
+                            <label for="exampleFormControlInput1" class="username-label">Date of Birth</label>
+                            </span>
+                            <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div>
+                        <div class="l1">
+                            <span class = "stick">
+                            <label for="exampleFormControlInput1" class="username-label">Username</label>
+                            </span>
+                            <input type="email" class="form-control" name="email" id="exampleFormControlInput1" placeholder="name@example.com">
+                        </div> -->
+    
+                        <br><br>
+    
+                    <!-- <div class="l2">
+                        <span class="stick">
+                        <label for="inputPassword6" class="col-form-label">Password</label>
+                        </span>
+                        <input type="password" name="passkey" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+                        <br><br>
+                        <div class="col-auto">
+                        <span id="passwordHelpInline" class="form-text">
+                            Must be 8-20 characters long.
+                        </span>
+                        </div>
+                        <br><br>
+                    </div> -->
+    
+                       
+    
+                    </form>
+                </div>
+                <div class="submit">
+                    <button class="login">
+                        Login
+                    </button>
+                </div>
+                <br>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+{% endblock %}
+

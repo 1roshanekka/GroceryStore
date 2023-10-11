@@ -22,6 +22,7 @@ input[type=email] {
 input[type=email]:focus {
 	border: none;
 	border-radius: 5px;
+
 }
 
 input[type=password] {

@@ -18,7 +18,12 @@
     <link href="{{ url_for ('static', filename='assets/favicon.ico') }}" rel="icon" type="image/x-icon">
     
     <title> Grocery </title>
-    <!-- <style>{% block style %} {% endblock %}</style> -->
+    <style>
+      @media screen and (max-width: 800px) {
+      .left, .main, .right {
+        width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+      }
+    }</style>
 </head>
 
 <body class = "body" id="index">

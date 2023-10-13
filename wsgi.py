@@ -20,4 +20,6 @@ if path not in sys.path:
     sys.path.append(path)
 
 # Import your Flask application
-from core.app import app as application  # Assuming your Flask app object is named 'app'
+# from .core.app import app as application  # Assuming your Flask app object is named 'app'
+# from run import app
+from core.app import app

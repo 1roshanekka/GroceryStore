@@ -16,3 +16,5 @@ cd core
 
 # Start the Gunicorn server
 gunicorn -b 127.0.0.1:8000 wsgi:app
+
+# it will search for wsgi.py and find 'app' object

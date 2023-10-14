@@ -14,7 +14,10 @@ source venv/bin/activate
 # Navigate to the directory containing your Flask app
 cd core
 
+#path
+
+# Add the directory containing the 'core' folder to the Python path
 # Start the Gunicorn server
-gunicorn -b 127.0.0.1:8000 wsgi:app
+gunicorn -b 127.0.0.1:8000 wsgi:application
 
 # it will search for wsgi.py and find 'app' object

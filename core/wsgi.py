@@ -29,7 +29,7 @@ core_dir = os.path.join(base_dir, 'core')
 sys.path.append(core_dir)
 print(core_dir)
 # Import your Flask application
-from core import app
+from app import app
 
 # Create an application callable for the WSGI server
 application = app

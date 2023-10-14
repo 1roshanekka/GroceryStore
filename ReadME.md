@@ -10,4 +10,7 @@ This is a project on Grocery Store
  
 **can be hosted on replit.com**
 
+
+Deployed on Render : https://grocery-tbs.onrender.com/
+
 by Roshan Ekka, IIT Kharagpur

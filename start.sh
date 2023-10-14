@@ -19,5 +19,7 @@ cd core
 # Add the directory containing the 'core' folder to the Python path
 # Start the Gunicorn server
 # gunicorn -b 127.0.0.1:8000 wsgi:application
-gunicorn --log-level debug -b 127.0.0.1:8080 wsgi:application
+
+# Ensure the server is listening on 0.0.0.0, and not 127.0.0.1.
+gunicorn --log-level debug -b 0.0.0.0:8080 wsgi:application
 # it will search for wsgi.py and find 'app' object
